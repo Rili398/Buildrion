@@ -4,9 +4,9 @@ public class CanvasCamera : MonoBehaviour
 {
     [SerializeField] private Canvas canvas;
 
-    void Start()
+    private void Awake()
     {
-        canvas = transform.GetChild(0).GetComponent<Canvas>();
+        canvas = transform.GetComponent<Canvas>();
         canvas.worldCamera = Camera.main;
     }
 

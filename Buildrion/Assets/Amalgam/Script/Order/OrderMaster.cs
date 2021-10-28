@@ -16,15 +16,15 @@ public class OrderMaster : Singleton<OrderMaster>
     private GameTimer orderTimer; //依頼発生までのタイマー
     [Header("依頼発生タイマー設定")]
     [SerializeField, Tooltip("最短(秒)")] private float timerMin = 10.0f;
-    [SerializeField] private float timerMax = 30.0f;
+    [SerializeField, Tooltip("最長(秒)")] private float timerMax = 30.0f;
 
     [Header("レア度ごとの出現率")]
-    [SerializeField, Tooltip("最長(秒)"),
+    [SerializeField,
      NamedArrayAtr(new string[(int)OrdersRarity.OR_Max] { "Common", "Rare", "SuperRare" })]
     private float[] popRate = new float[(int)OrdersRarity.OR_Max] { 0.5f, 0.3f, 0.2f };
 
     [Header("ターゲット依頼オブジェクト")]
-    [SerializeField] private int target;    //依頼OBJクラス型
+    [SerializeField] private OrderRelay target;    //依頼OBJクラス型
 
     [Header("依頼IDの最大値")]
     [SerializeField] private int commonIdMax = 1;
@@ -148,6 +148,6 @@ public class OrderMaster : Singleton<OrderMaster>
         }
 
         //依頼OBJに登録
-        //target.SetOrder(rare, id);　みたいな感じで
+        target.SetOrder(rare, id);
     }
 }
