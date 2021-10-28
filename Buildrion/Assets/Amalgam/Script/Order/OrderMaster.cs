@@ -59,7 +59,6 @@ public class OrderMaster : Singleton<OrderMaster>
                 LotteryOrder();
             }
 
-            //タイマーリセット
             orderTimer.ResetTimer(Mathf.Floor(Random.Range(timerMin, timerMax)));
         }
     }
