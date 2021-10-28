@@ -404,17 +404,22 @@ public class gattai : MonoBehaviour
     void Cutin()
     {
         //Canvas
-        GameObject canvas = GameObject.Find("Canvas");
+        //GameObject canvas = GameObject.Find("Canvas");
 
 
-        //¶¬ˆ—
+        ////¶¬ˆ—
 
-        GameObject cutin = (GameObject)Resources.Load("Image");
-        Instantiate(cutin, new Vector3(375.0f, 200.0f, 0.0f), Quaternion.identity);
+        //GameObject cutin = (GameObject)Resources.Load("Image");
+        //Instantiate(cutin, new Vector3(375.0f, 200.0f, 0.0f), Quaternion.identity);
 
 
-        //Canvas‚É•R‚Ã‚¯
-        GameObject can = GameObject.Find("Image(Clone)");
-        can.transform.parent = canvas.transform;
+        ////Canvas‚É•R‚Ã‚¯
+        //GameObject can = GameObject.Find("Image(Clone)");
+        //can.transform.parent = canvas.transform;
+
+
+
+        GameObject cutin = (GameObject)Resources.Load("Cutin-tline");
+        Instantiate(cutin, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
     }
 }
