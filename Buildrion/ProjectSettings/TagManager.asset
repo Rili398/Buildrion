@@ -8,6 +8,7 @@ TagManager:
   - tama2
   - Capsule
   - OrderForm
+  - OrderObj
   layers:
   - Default
   - TransparentFX

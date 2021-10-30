@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 //依頼の発生を管理する。タイマーで依頼発生させ、各土地の依頼オブジェクトに指示を出す
@@ -11,7 +12,7 @@ public enum OrdersRarity
     OR_Max
 }
 
-public class OrderMaster : Singleton<OrderMaster>
+public class OrderMaster : MonoBehaviour
 {
     private GameTimer orderTimer; //依頼発生までのタイマー
     [Header("依頼発生タイマー設定")]
@@ -36,10 +37,11 @@ public class OrderMaster : Singleton<OrderMaster>
     {
         //依頼発生時間の設定
         orderTimer = new GameTimer(Mathf.Floor(Random.Range(timerMin, timerMax)));
+        target = null;
     }
 
-    // Update is called once per frame
-    void Update()
+// Update is called once per frame
+void Update()
     {
         //タイマー更新
         orderTimer.UpdateTimer();
@@ -50,11 +52,11 @@ public class OrderMaster : Singleton<OrderMaster>
 
             //依頼発生チェック
             bool result = OrderCheck(priority);
-            Debug.Log("優先度:" + priority);
-            Debug.Log("依頼発生:" + result);
+            //Debug.Log("依頼発生:" + result);
+            //Debug.Log("優先度:" + priority);
 
             //依頼の抽選
-            if(result)
+            if (result)
             {
                 LotteryOrder();
             }
@@ -74,12 +76,20 @@ public class OrderMaster : Singleton<OrderMaster>
         if(rate > 0.5f)
         {
             result = CheckConstructionOrder();
-            result = CheckRepairOrder();
+
+            if (!result)
+            {
+                result = CheckRepairOrder();
+            }
         }
         else
         {
             result = CheckRepairOrder();
-            result = CheckConstructionOrder();
+
+            if (!result)
+            {
+                result = CheckConstructionOrder();
+            }
         }
 
         //依頼が発生したか、結果報告
@@ -89,32 +99,62 @@ public class OrderMaster : Singleton<OrderMaster>
     //建築依頼の発生条件チェック
     bool CheckConstructionOrder()
     {
-        //シーン内の土地を取得して、条件チェック
-        //
+        List<GameObject> select = new List<GameObject>();
 
-        return true;
+        //シーン内の依頼OBJを取得して、条件チェック
+        foreach (var orderObj in GameObject.FindGameObjectsWithTag("OrderObj"))
+        {
+            //依頼が発生していない && 建設済み
+            if (orderObj.GetComponent<OrderRelay>().GetOrdePossibleCon())
+            {
+                select.Add(orderObj);
+            }
+        }
+
+        if (select.Count > 0)
+        {
+            target = select[Random.Range(0, select.Count)].GetComponent<OrderRelay>();
+            return true;
+        }
+
+        return false;
     }
 
     //改修依頼の発生条件チェック
     bool CheckRepairOrder()
     {
-        //シーン内の土地を取得して、条件チェック
-        //
+        List<GameObject> select = new List<GameObject>();
 
-        return true;
+        //シーン内の依頼OBJを取得して、条件チェック
+        foreach (var orderObj in GameObject.FindGameObjectsWithTag("OrderObj"))
+        {
+            //依頼が発生していない && 建設済み
+            if(orderObj.GetComponent<OrderRelay>().GetOrdePossibleRep())
+            {
+                select.Add(orderObj);
+            }
+        }
+
+        if(select.Count > 0)
+        {
+            target = select[Random.Range(0, select.Count)].GetComponent<OrderRelay>();
+            return true;
+        }
+
+        return false;
     }
 
     //依頼の抽選
     void LotteryOrder()
     {
         //レア度決定
-        OrdersRarity rare = OrdersRarity.OR_Max;
+        OrdersRarity rare = OrdersRarity.OR_Common;
 
         //今回の値を抽選
         float rate = Random.value;
 
         //レア度を確定させる
-        foreach(var value in popRate)
+        foreach (var value in popRate)
         {
             if(rate < value)
             {
@@ -132,22 +172,27 @@ public class OrderMaster : Singleton<OrderMaster>
 
         if(rare == OrdersRarity.OR_Common)
         {
-            id = Mathf.FloorToInt(Random.Range(0, commonIdMax));
+            id = Random.Range(0, commonIdMax + 1);
         }
         else if (rare == OrdersRarity.OR_Rare)
         {
-            id = Mathf.FloorToInt(Random.Range(0, rareIdMax));
+            id = Random.Range(0, rareIdMax + 1);
         }
         else if (rare == OrdersRarity.OR_SuperRare)
         {
-            id = Mathf.FloorToInt(Random.Range(0, superRareIdMax));
+            id = Random.Range(0, superRareIdMax + 1);
         }
         else
         {
             Debug.Log("依頼決定でバグってます(OrderMaster)");
         }
 
+        Debug.Log("id:" + id);
+
         //依頼OBJに登録
-        target.SetOrder(rare, id);
+        if (target != null)
+        {
+            target.SetOrder(rare, id);
+        }
     }
 }

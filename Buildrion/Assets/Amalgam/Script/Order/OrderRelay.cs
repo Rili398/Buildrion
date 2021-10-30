@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class OrderRelay : MonoBehaviour
@@ -17,23 +15,26 @@ public class OrderRelay : MonoBehaviour
     [SerializeField] private Land myLand;
 
     [Header("依頼情報")]
-    [SerializeField] private bool isOrderExist;
+    [SerializeField] private bool orderExistFlg;
     [SerializeField] private int orderID;
-    [SerializeField] private OrderInfo orderInfo;
+
+    private OrderInfo orderInfo;
 
     // Start is called before the first frame update
     void Awake()
     {
         orderForm = GameObject.FindGameObjectWithTag("OrderForm");
         myLand = gameObject.GetComponentInParent<Land>();
-        isOrderExist = false;
+
+        orderExistFlg = false;
+
         orderInfo = new OrderInfo();
     }
 
     //=========================================================================
     public void SetOrder(OrdersRarity rare, int id)
     {
-        isOrderExist = true;
+        orderExistFlg = true;
         orderInfo.rarity = rare;
         orderID = id;
 
@@ -61,19 +62,44 @@ public class OrderRelay : MonoBehaviour
         //各種情報を設定する
     }
 
+    public bool GetOrdePossibleCon()
+    {
+        LandStatus ls = myLand.GetLandStatus();
+
+        if(ls == LandStatus.NoBuild)
+        {
+            return !orderExistFlg;
+        }
+
+        return false;
+    }
+
+    public bool GetOrdePossibleRep()
+    {
+        LandStatus ls = myLand.GetLandStatus();
+
+        if(ls == LandStatus.IsBuilt)
+        {
+            return !orderExistFlg;
+        }
+
+        return false;
+    }
+
     //=========================================================================
 
     //オーダー決定
     public void AcceptOrder()
     {
-        myLand.SetLandStatus(Land.LandStatus.InConstruct);
-        myLand.SetOrderInfo(orderInfo.reward, orderInfo.lowRobotCount);
+        myLand.SetLandStatus(LandStatus.InConstruct);
+        myLand.SetOrderInfo(orderInfo.reward, orderInfo.lowRobotCount, orderInfo.name);
+        transform.GetChild(0).gameObject.SetActive(false);
     }
 
     //オーダーキャンセル
     public void CanselOrder()
     {
-        isOrderExist = false;
+        orderExistFlg = false;
     }
 
     //=========================================================================
@@ -82,5 +108,15 @@ public class OrderRelay : MonoBehaviour
     {
         //レア度で読み込むCSVを選ぶ
         //IDの行を読み込む
+
+        //デバッグ用テストケース
+        orderInfo = new OrderInfo
+        {
+            title = "テストケース",
+            reward = 1000,
+            lowRobotCount = 3,
+            rarity = orderInfo.rarity,
+            name = "HAL月面"
+        };
     }
 }

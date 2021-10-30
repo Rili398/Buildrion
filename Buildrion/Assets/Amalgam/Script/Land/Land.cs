@@ -4,31 +4,38 @@ using UnityEngine;
 
 //土地の情報を管理するクラス
 
+public enum LandStatus
+{
+    NoBuild = 0,
+    InConstruct,
+    IsBuilt,
+    LandStatMax
+}
+
 public class Land : MonoBehaviour
 {
-    public enum LandStatus
-    {
-        NoBuild = 0,
-        InConstruct,
-        IsBuilt,
-        LandStatMax
-    }
-
     [SerializeField, Tooltip("土地の状態")] private LandStatus landStatus;
 
     public bool isOrdered { get; set; }
     [SerializeField, Tooltip("作業中フラグ")] private bool isWarking;
+
+    [Header("依頼情報")]
     [SerializeField] private int reward;
     [SerializeField] private int repuiredCount;
+    [SerializeField] private string buildingName;
     public float workPower { get; set; } = 0;
 
+    [Header("各種パラメータ")]
     [SerializeField] private List<RobotBase> robotList;
     [SerializeField] private ProgressBar progressBar;
     [SerializeField] private float returnInterval = 1.0f;
 
+    //建物のリスト
+    private BuildingList buildingList;
+
     private void Awake()
     {
-        landStatus = LandStatus.NoBuild;
+        //landStatus = LandStatus.NoBuild;
         isOrdered = false;
         isWarking = false;
 
@@ -38,6 +45,7 @@ public class Land : MonoBehaviour
         }
 
         progressBar.gameObject.SetActive(false);
+        buildingList = new BuildingList();
     }
 
     // Update is called once per frame
@@ -51,7 +59,13 @@ public class Land : MonoBehaviour
                 if (repuiredCount < robotList.Count)
                 {
                     isWarking = true;
-                    progressBar.gameObject.SetActive(true);
+                    //建設中オブジェクト表示
+                    if (buildingName != null)
+                    {
+                        transform.GetChild(1).GetChild(
+                            buildingList.BuildingName.IndexOf(buildingName)
+                            ).gameObject.SetActive(true);
+                    }
                 }
             }
             else
@@ -62,6 +76,14 @@ public class Land : MonoBehaviour
                 if(progressBar.value >= 1.0f)
                 {
                     landStatus = LandStatus.IsBuilt;
+
+                    //建設後オブジェクトに切り替え
+                    if (buildingName != null)
+                    {
+                        transform.GetChild(2).GetChild(
+                            buildingList.BuildingName.IndexOf(buildingName)
+                            ).gameObject.SetActive(true);
+                    }
                 }
             }
         }
@@ -69,9 +91,11 @@ public class Land : MonoBehaviour
         {
             if(isWarking)
             {
+                //依頼終了
                 StartCoroutine(ReternRobot());
                 isWarking = false;
                 isOrdered = false;
+                transform.GetComponentInChildren<OrderRelay>().CanselOrder();
             }
         }
     }
@@ -103,11 +127,22 @@ public class Land : MonoBehaviour
         landStatus = ls;
     }
 
-    public void SetOrderInfo(int rew, int roboNum)
+    public LandStatus GetLandStatus()
+    {
+        return landStatus;
+    }
+
+    public void SetOrderInfo(int rew, int roboNum, string name)
     {
         reward = rew;
         repuiredCount = roboNum;
+        buildingName = name;
+        progressBar.gameObject.SetActive(true);
+
         isOrdered = true;
+
+        Debug.Log("reward:" + reward);
+        Debug.Log("reCon:" + repuiredCount);
     }
 
     //=========================================================================
