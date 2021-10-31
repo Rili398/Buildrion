@@ -26,7 +26,7 @@ public class Land : MonoBehaviour
     public float workPower { get; set; } = 0;
 
     [Header("各種パラメータ")]
-    [SerializeField] private List<RobotBase> robotList;
+    [SerializeField] private List<Robot> robotList;
     [SerializeField] private ProgressBar progressBar;
     [SerializeField] private float returnInterval = 1.0f;
 
@@ -110,9 +110,9 @@ public class Land : MonoBehaviour
             if (collision.gameObject.CompareTag("Robot"))
             {
                 //ロボットをリストに格納
-                RobotBase rbase = collision.gameObject.GetComponent<RobotBase>();
-                robotList.Add(rbase);
-                rbase.gameObject.SetActive(false);
+                Robot robot = collision.gameObject.GetComponent<Robot>();
+                robotList.Add(robot);
+                robot.gameObject.SetActive(false);
 
                 //作業力計算
                 //workPower += rbase.warkPower;
@@ -155,7 +155,7 @@ public class Land : MonoBehaviour
             robo.gameObject.SetActive(true);
 
             //帰還モードに変更
-            //robo.SetRobotState(RobotState.Return);
+            robo.SetRState(RobotState.Return);
             robotList.Remove(robo);
 
             yield return new WaitForSeconds(returnInterval);

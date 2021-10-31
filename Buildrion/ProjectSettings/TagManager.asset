@@ -9,6 +9,8 @@ TagManager:
   - Capsule
   - OrderForm
   - OrderObj
+  - RobotBase
+  - Robot
   layers:
   - Default
   - TransparentFX
