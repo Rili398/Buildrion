@@ -14,6 +14,7 @@ public class OrderRelay : MonoBehaviour
 
     [SerializeField] private GameObject orderForm;
     [SerializeField] private Land myLand;
+    [SerializeField] private RobotBase roboBase;
 
     [Header("依頼情報")]
     [SerializeField] private bool orderExistFlg;
@@ -25,6 +26,7 @@ public class OrderRelay : MonoBehaviour
     void Awake()
     {
         orderForm = GameObject.FindGameObjectWithTag("OrderForm");
+        orderForm.SetActive(false);
         myLand = gameObject.GetComponentInParent<Land>();
 
         orderExistFlg = false;
@@ -56,6 +58,7 @@ public class OrderRelay : MonoBehaviour
         //依頼書に依頼情報を設定
         //orderForm.
         SetOrderForm(orderInfo);
+        orderForm.SetActive(true);
         //ボタンに関数を設定
     }
 
@@ -94,8 +97,13 @@ public class OrderRelay : MonoBehaviour
     //オーダー決定
     public void AcceptOrder()
     {
+        //土地に依頼情報を渡す
         myLand.SetLandStatus(LandStatus.InConstruct);
         myLand.SetOrderInfo(orderInfo.reward, orderInfo.lowRobotCount, orderInfo.name);
+
+        //ロボット拠点に指示を出す
+
+
         transform.GetChild(0).gameObject.SetActive(false);
     }
 
