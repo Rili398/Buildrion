@@ -6,23 +6,27 @@ using UnityEngine.UI;
 
 public class OrderboardDisplay : MonoBehaviour
 {
-    [SerializeField] GameObject g_orderName;
-    [SerializeField] int g_reward;
-    [SerializeField] GameObject g_orderNumber;
-    [SerializeField] int g_rareNumber;
-    GameObject[] g_buttons = new GameObject[2];
+    [SerializeField] GameObject g_orderNameText;
+    [SerializeField] GameObject g_rewardText;
+    [SerializeField] GameObject g_orderNumberText;
+    [SerializeField] GameObject g_rareNumberText;
+    [SerializeField] GameObject g_needbuildrionText;
 
-    GameObject g_unableBoard;
+    private GameObject orderboardImage;
+    private GameObject acceptImage;
+    private GameObject destrcutionImage;
 
     // Start is called before the first frame update
     void Start()
     {
         //Text g_orderName = g_orderName.GetComponent<Text>();
         //g_orderName.text = "}‘ŠÙ‚ğŒš‚Ä‚Ä‚­‚¾‚³‚¢!!";
-        g_orderName.GetComponent<Text>().text = "}‘ŠÙ‚ğŒš‚Ä‚Ä‚­‚¾‚³‚¢!!";
+        //g_orderName.GetComponent<Text>().text = "}‘ŠÙ‚ğŒš‚Ä‚Ä‚­‚¾‚³‚¢!!";
 
-        GameObject RewardText = GameObject.Find("rewardText");
-        RewardText.GetComponent<Text>().text = "g_reward + ‰~";
+
+        GameObject orderboardImage = GameObject.Find("orderboardImage");
+        GameObject acceptImage = GameObject.Find("acceptImage");
+        GameObject destrcutionImage = GameObject.Find("destrcutionImage");
     }
 
     // Update is called once per frame
@@ -30,4 +34,5 @@ public class OrderboardDisplay : MonoBehaviour
     {
         
     }
+
 }
