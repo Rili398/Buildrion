@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//カメラにあたっちしといてね
+
 public class CameraShake : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -13,13 +15,12 @@ public class CameraShake : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            //shake.Shake(0.25f, 0.1f);
-        }
+        
     }
 
-    public void Shake(float duration, float magnitude)
+
+    //これをよぶ
+    public void Shake(float duration, float magnitude)  //引数　　1,どれくらいやるか：2,どれくらい揺らすか
     {
         StartCoroutine(DoShake(duration, magnitude));
     }
@@ -38,6 +39,7 @@ public class CameraShake : MonoBehaviour
             transform.localPosition = new Vector3(x, y, pos.z);
 
             elapsed += Time.deltaTime;
+            
 
             yield return null;
         }
