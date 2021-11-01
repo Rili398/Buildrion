@@ -115,7 +115,7 @@ public class Land : MonoBehaviour
                 robot.gameObject.SetActive(false);
 
                 //ì‹Æ—ÍŒvZ
-                //workPower += rbase.warkPower;
+                workPower += robot.warkPower;
             }
         }
     }

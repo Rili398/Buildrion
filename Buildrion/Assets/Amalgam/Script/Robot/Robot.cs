@@ -18,6 +18,8 @@ public class Robot : MonoBehaviour
     private NavMeshAgent agent;
     private RobotState robotState;
 
+    public float warkPower { get; set; }
+
     // Start is called before the first frame update
     private void Awake()
     {

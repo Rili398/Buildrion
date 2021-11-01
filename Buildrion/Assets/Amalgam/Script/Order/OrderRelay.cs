@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OrderRelay : MonoBehaviour
 {
@@ -40,6 +41,8 @@ public class OrderRelay : MonoBehaviour
 
         //ˆË—Šî•ñ“Ç‚İ‚İ
         LoadOrderFromCsv();
+
+        Debug.Log("ˆË—Š“Ç‚İ‚İ");
 
         //ˆË—ŠObjoŒ»
         transform.GetChild(0).gameObject.SetActive(true);
