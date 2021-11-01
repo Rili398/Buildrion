@@ -18,6 +18,9 @@ public class gattai : MonoBehaviour
     bool sle4 = false;
     bool sle5 = false;
 
+    //親
+    GameObject parent;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -211,7 +214,7 @@ public class gattai : MonoBehaviour
                     //mode = true;
                 }
                 // 親オブジェクトを探す
-                GameObject parent = GameObject.Find("parent");
+                parent = GameObject.Find("parent");
                 int child = parent.transform.childCount;
                 if(child <= 0)
                 {
@@ -254,18 +257,11 @@ public class gattai : MonoBehaviour
                     }
                 }
 
-                //生成処理
 
-                GameObject buildrion = (GameObject)Resources.Load("Capsule");
-                Instantiate(buildrion, new Vector3(0.0f, 2.0f, 0.0f), Quaternion.identity);
-
+                //秒数関係でこの中で生成処理
                 //親子関係を結んでおく
-                GameObject bdn = GameObject.Find("Capsule(Clone)");
-                bdn.transform.parent = parent.transform;
-
-
-                //カットイン
-                Cutin();
+                Birth(0.3f);
+                
 
 
 
@@ -318,7 +314,7 @@ public class gattai : MonoBehaviour
                 }
 
                 // 親オブジェクトを探す
-                GameObject parent = GameObject.Find("parent");
+                parent = GameObject.Find("parent");
 
                 //ひとまず親子関係だったら表示
                 {
@@ -401,25 +397,16 @@ public class gattai : MonoBehaviour
         }
     }
 
-    void Cutin()
+    private IEnumerator Birth(float waitTime)
     {
-        //Canvas
-        //GameObject canvas = GameObject.Find("Canvas");
+          yield return new WaitForSeconds(waitTime);
+
+        GameObject buildrion = (GameObject)Resources.Load("Capsule");
+        Instantiate(buildrion, new Vector3(0.0f, 2.0f, 0.0f), Quaternion.identity);
 
 
-        ////生成処理
-
-        //GameObject cutin = (GameObject)Resources.Load("Image");
-        //Instantiate(cutin, new Vector3(375.0f, 200.0f, 0.0f), Quaternion.identity);
-
-
-        ////Canvasに紐づけ
-        //GameObject can = GameObject.Find("Image(Clone)");
-        //can.transform.parent = canvas.transform;
-
-
-
-        GameObject cutin = (GameObject)Resources.Load("Cutin-tline");
-        Instantiate(cutin, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
+        GameObject bdn = GameObject.Find("Capsule(Clone)");
+        bdn.transform.parent = parent.transform;
     }
+
 }
