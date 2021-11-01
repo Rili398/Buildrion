@@ -1,35 +1,45 @@
-ï»¿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Mouse_Event : MonoBehaviour
 {
-    public void OnMouse() //ãƒã‚¤ãƒ³ã‚¿ãƒ¼ãŒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ä¹—ã£ãŸã¨ã
+    public void OnMouse() //ƒ|ƒCƒ“ƒ^[‚ªƒIƒuƒWƒFƒNƒg‚Éæ‚Á‚½‚Æ‚«
     {
-        Debug.Log("ãƒã‚¦ã‚¹ãŒInã—ãŸãŠï¼");
+        Debug.Log("ƒ}ƒEƒX‚ªIn‚µ‚½‚¨I");
         //  transform.localScale *= 1.5f;
     }
 
-    public void OutMouse() //ãƒã‚¤ãƒ³ã‚¿ãƒ¼ãŒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‹ã‚‰é›¢ã‚ŒãŸã¨ã
+    public void OutMouse() //ƒ|ƒCƒ“ƒ^[‚ªƒIƒuƒWƒFƒNƒg‚©‚ç—£‚ê‚½‚Æ‚«
     {
-        Debug.Log("ãƒã‚¦ã‚¹ãŒOutã—ãŸãŠï¼");
+        Debug.Log("ƒ}ƒEƒX‚ªOut‚µ‚½‚¨I");
 
     }
 
-    public void MouseCrick() //ãƒã‚¤ãƒ³ã‚¿ãƒ¼ãŒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æŠ¼ä¸‹ã—ãŸã¨ã
+    public void MouseCrick() //ƒ|ƒCƒ“ƒ^[‚ªƒIƒuƒWƒFƒNƒg‚ğ‰Ÿ‰º‚µ‚½‚Æ‚«
     {
-        Debug.Log("ãƒã‚¦ã‚¹ãŒã‚¯ãƒªãƒƒã‚¯ã—ãŸãŠï¼");
+        Debug.Log("ƒ}ƒEƒX‚ªƒNƒŠƒbƒN‚µ‚½‚¨I");
 
     }
 
-    public void MouseCrick_Out() //ãƒã‚¤ãƒ³ã‚¿ãƒ¼ã‚’æŠ¼ä¸‹çŠ¶æ…‹ã‹ã‚‰é›¢ã—ãŸã¨ã
+    public void MouseCrick_Out() //ƒ|ƒCƒ“ƒ^[‚ğ‰Ÿ‰ºó‘Ô‚©‚ç—£‚µ‚½‚Æ‚«
     {
-        Debug.Log("ãƒã‚¦ã‚¹ã®ã‚¯ãƒªãƒƒã‚¯ãŒé›¢ã‚ŒãŸãŠï¼");
+        Debug.Log("ƒ}ƒEƒX‚ÌƒNƒŠƒbƒN‚ª—£‚ê‚½‚¨I");
     }
 
-    public void MouseDrag() //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒãƒ‰ãƒ©ãƒƒã‚°ã•ã‚Œã¦ã„ã‚‹é–“
+    public void MouseDrag() //ƒIƒuƒWƒFƒNƒg‚ªƒhƒ‰ƒbƒO‚³‚ê‚Ä‚¢‚éŠÔ
     {
-        Debug.Log("ãƒã‚¦ã‚¹ã«å¼•ã£å¼µã‚‰ã‚Œã¦ã‚‹ãŠï¼");
+        Debug.Log("ƒ}ƒEƒX‚Éˆø‚Á’£‚ç‚ê‚Ä‚é‚¨I");
+
+        Vector3 objectPoint = Camera.main.WorldToScreenPoint(transform.position);
+
+        Vector3 pointScreen = new Vector3(Input.mousePosition.x,Input.mousePosition.y,objectPoint.z);
+
+        Vector3 pointWorld = Camera.main.ScreenToWorldPoint(pointScreen);
+
+        pointWorld.z = transform.position.z;
+
+        transform.position = pointWorld;
     }
 
 
