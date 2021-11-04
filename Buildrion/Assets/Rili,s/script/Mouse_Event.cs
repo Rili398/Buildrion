@@ -37,7 +37,7 @@ public class Mouse_Event : MonoBehaviour
 
         Vector3 pointWorld = Camera.main.ScreenToWorldPoint(pointScreen);
 
-        pointWorld.z = transform.position.z;
+       // pointWorld.z = transform.position.z;
 
         transform.position = pointWorld;
     }
