@@ -27,6 +27,7 @@ public class RobotBase : MonoBehaviour
     private void Start()
     {
         robotMax = defaultMax;
+        nowRobotCnt = robotMax;
 
         AddRobotList(robotMax);
     }
@@ -34,6 +35,7 @@ public class RobotBase : MonoBehaviour
     public void OrderCatcher(Vector3 dist, int num)
     {
         StartCoroutine(DispatchRobot(dist, num));
+        nowRobotCnt = nowRobotCnt - num;
     }
 
     private IEnumerator DispatchRobot(Vector3 dist, int num)
@@ -103,6 +105,7 @@ public class RobotBase : MonoBehaviour
             {
                 robot.SetRState(RobotState.Rest);
                 robot.gameObject.SetActive(false);
+                nowRobotCnt++;
             }
         }
     }
