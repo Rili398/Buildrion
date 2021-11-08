@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orderForm: {fileID: 0}
   myLand: {fileID: 0}
+  roboBase: {fileID: 0}
   orderExistFlg: 0
   orderID: 0
 --- !u!1 &8553889507496876440
@@ -164,7 +165,7 @@ MonoBehaviour:
         - m_Target: {fileID: 8553889506609078945}
           m_TargetAssemblyTypeName: OrderRelay, Assembly-CSharp
           m_MethodName: AcceptOrder
-          m_Mode: 1
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

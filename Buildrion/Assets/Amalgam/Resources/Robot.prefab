@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 7574085908035481340}
   - component: {fileID: 7574085908035481339}
   - component: {fileID: 7574085908035481338}
-  - component: {fileID: 7574085908035481337}
   - component: {fileID: 7574085908035481336}
   - component: {fileID: 7574085908035481319}
   - component: {fileID: 7574085908035481318}
+  - component: {fileID: 8053117891925423718}
   m_Layer: 0
   m_Name: Robot
   m_TagString: Robot
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 7574085908035481317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.5, y: 0.5, z: -4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -272,14 +272,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &7574085908035481337
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7574085908035481317}
-  m_Mesh: {fileID: 0}
 --- !u!64 &7574085908035481336
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -303,11 +295,11 @@ NavMeshAgent:
   m_GameObject: {fileID: 7574085908035481317}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.86602545
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Radius: 0.8
+  m_Speed: 2
+  m_Acceleration: 5
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 1000
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -328,3 +320,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a60940a6451c9847a0ce5c1c43d9a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &8053117891925423718
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7574085908035481317}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

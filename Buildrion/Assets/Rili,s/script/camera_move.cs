@@ -17,9 +17,21 @@ public class camera_move : MonoBehaviour
 
     private Vector3 preMousePos;
 
+    public float Limit_Hi_x = 0;
+    public float Limit_Low_x = 0;
+
+    public float Limit_Hi_y = 0;
+    public float Limit_Low_y = 0;
+
+    public float Limit_Hi_z = 0;
+    public float Limit_Low_z = 0;
+
+
+
     private void Update()
     {
         MouseUpdate();
+
         return;
     }
 
@@ -50,12 +62,24 @@ public class camera_move : MonoBehaviour
         if (diff.magnitude < Vector3.kEpsilon)
             return;
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(2))
             transform.Translate(-diff * Time.deltaTime * moveSpeed);
         else if (Input.GetMouseButton(1))
             CameraRotate(new Vector2(-diff.y, diff.x) * rotateSpeed);
 
         preMousePos = mousePos;
+
+
+
+
+        mousePos.x = Mathf.Clamp(transform.position.x, this.Limit_Low_x, this.Limit_Hi_x);
+
+        mousePos.y = Mathf.Clamp(transform.position.y, this.Limit_Low_y, this.Limit_Hi_y);
+
+        mousePos.z = Mathf.Clamp(transform.position.z, this.Limit_Low_z, this.Limit_Hi_z);
+
+        transform.position = new Vector3(mousePos.x, mousePos.y, mousePos.z);
+
     }
 
     public void CameraRotate(Vector2 angle)
