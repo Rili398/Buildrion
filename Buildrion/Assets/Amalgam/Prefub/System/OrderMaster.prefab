@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f916568902d20dc408a2bc093e801134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerMin: 1
-  timerMax: 3
+  timerMin: 3
+  timerMax: 5
   popRate:
   - 0.5
   - 0.3

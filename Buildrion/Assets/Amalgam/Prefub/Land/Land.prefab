@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3796059765313873675}
   - component: {fileID: 3796059765313873674}
+  - component: {fileID: 5732204163386468802}
   m_Layer: 0
   m_Name: Land
   m_TagString: Untagged
@@ -48,13 +49,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   landStatus: 0
+  io: 0
   isWarking: 0
   reward: 0
   repuiredCount: 0
   buildingName: 
+  wp: 0
   robotList: []
   progressBar: {fileID: 0}
   returnInterval: 1
+--- !u!65 &5732204163386468802
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3796059765313873677}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1.7, z: 1.5}
+  m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!1 &3796059765338620840
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,6 +147,7 @@ GameObject:
   - component: {fileID: 3796059766157395565}
   - component: {fileID: 3796059766157395564}
   - component: {fileID: 3796059766157395567}
+  - component: {fileID: 2856740146724026232}
   m_Layer: 0
   m_Name: Test
   m_TagString: Untagged
@@ -214,6 +231,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &2856740146724026232
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3796059766157395601}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &3796059766593302921
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,6 +259,7 @@ GameObject:
   - component: {fileID: 3796059766593302917}
   - component: {fileID: 3796059766593302916}
   - component: {fileID: 3796059766593302919}
+  - component: {fileID: 1124992018446607740}
   m_Layer: 0
   m_Name: HALmoon
   m_TagString: Untagged
@@ -309,6 +343,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &1124992018446607740
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3796059766593302921}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &3796059766630229875
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,6 +371,7 @@ GameObject:
   - component: {fileID: 3796059766630229839}
   - component: {fileID: 3796059766630229838}
   - component: {fileID: 3796059766630229873}
+  - component: {fileID: 3806889638197543699}
   m_Layer: 0
   m_Name: HALmoon
   m_TagString: Untagged
@@ -405,6 +456,22 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!208 &3806889638197543699
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3796059766630229875}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 1, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &3796059767138450155
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,6 +484,7 @@ GameObject:
   - component: {fileID: 3796059767138450151}
   - component: {fileID: 3796059767138450150}
   - component: {fileID: 3796059767138450153}
+  - component: {fileID: 3236286827244971916}
   m_Layer: 0
   m_Name: TestBullding
   m_TagString: Untagged
@@ -501,6 +569,22 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!208 &3236286827244971916
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3796059767138450155}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 1, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &4763635299949436353
 PrefabInstance:
   m_ObjectHideFlags: 0

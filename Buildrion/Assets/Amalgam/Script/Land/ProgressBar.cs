@@ -18,4 +18,9 @@ public class ProgressBar : MonoBehaviour
     {
         progressBar.fillAmount = value;
     }
+
+    public void ResetPb()
+    {
+        value = 0;
+    }
 }

@@ -23,11 +23,11 @@ public class OrderRelay : MonoBehaviour
     private OrderInfo orderInfo;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         orderForm = GameObject.FindGameObjectWithTag("OrderForm");
-        orderForm.SetActive(false);
         myLand = gameObject.GetComponentInParent<Land>();
+        roboBase = GameObject.FindGameObjectWithTag("RobotBase").GetComponent<RobotBase>();
 
         orderExistFlg = false;
 
@@ -58,7 +58,7 @@ public class OrderRelay : MonoBehaviour
         //依頼書に依頼情報を設定
         //orderForm.
         SetOrderForm(orderInfo);
-        orderForm.SetActive(true);
+        orderForm.GetComponent<Canvas>().enabled = true;
         //ボタンに関数を設定
     }
 
@@ -95,14 +95,14 @@ public class OrderRelay : MonoBehaviour
     //=========================================================================
 
     //オーダー決定
-    public void AcceptOrder()
+    public void AcceptOrder(int robotNum)
     {
         //土地に依頼情報を渡す
         myLand.SetLandStatus(LandStatus.InConstruct);
         myLand.SetOrderInfo(orderInfo.reward, orderInfo.lowRobotCount, orderInfo.name);
 
         //ロボット拠点に指示を出す
-
+        roboBase.OrderCatcher(myLand.transform.position, orderInfo.lowRobotCount);
 
         transform.GetChild(0).gameObject.SetActive(false);
     }

@@ -17,19 +17,16 @@ public class Robot : MonoBehaviour
 {
     private NavMeshAgent agent;
     private RobotState robotState;
-
+    private GameObject robotbase;
+ 
     public float warkPower { get; set; }
 
     // Start is called before the first frame update
     private void Awake()
     {
         robotState = RobotState.Rest;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        agent = GetComponent<NavMeshAgent>();
+        robotbase = GameObject.FindGameObjectWithTag("RobotBase");
     }
 
     //=========================================================================
@@ -44,5 +41,15 @@ public class Robot : MonoBehaviour
     public void SetRState(RobotState rs)
     {
         robotState = rs;
+
+        if(robotState == RobotState.Return)
+        {
+            SetDestination(robotbase.transform.position);
+        }
+    }
+
+    public RobotState GetRState()
+    {
+        return robotState;
     }
 }

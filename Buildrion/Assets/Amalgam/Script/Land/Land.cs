@@ -17,6 +17,7 @@ public class Land : MonoBehaviour
     [SerializeField, Tooltip("土地の状態")] private LandStatus landStatus;
 
     public bool isOrdered { get; set; }
+    [SerializeField] private bool io;
     [SerializeField, Tooltip("作業中フラグ")] private bool isWarking;
 
     [Header("依頼情報")]
@@ -24,6 +25,7 @@ public class Land : MonoBehaviour
     [SerializeField] private int repuiredCount;
     [SerializeField] private string buildingName;
     public float workPower { get; set; } = 0;
+    [SerializeField] private float wp;
 
     [Header("各種パラメータ")]
     [SerializeField] private List<Robot> robotList;
@@ -56,7 +58,7 @@ public class Land : MonoBehaviour
         {
             if (!isWarking)
             {
-                if (repuiredCount < robotList.Count)
+                if (repuiredCount <= robotList.Count)
                 {
                     isWarking = true;
                     //建設中オブジェクト表示
@@ -65,6 +67,10 @@ public class Land : MonoBehaviour
                         transform.GetChild(1).GetChild(
                             buildingList.BuildingName.IndexOf(buildingName)
                             ).gameObject.SetActive(true);
+
+                        transform.GetChild(2).GetChild(
+                            buildingList.BuildingName.IndexOf(buildingName)
+                            ).gameObject.SetActive(false);
                     }
                 }
             }
@@ -80,6 +86,10 @@ public class Land : MonoBehaviour
                     //建設後オブジェクトに切り替え
                     if (buildingName != null)
                     {
+                        transform.GetChild(1).GetChild(
+                            buildingList.BuildingName.IndexOf(buildingName)
+                            ).gameObject.SetActive(false);
+
                         transform.GetChild(2).GetChild(
                             buildingList.BuildingName.IndexOf(buildingName)
                             ).gameObject.SetActive(true);
@@ -95,23 +105,30 @@ public class Land : MonoBehaviour
                 StartCoroutine(ReternRobot());
                 isWarking = false;
                 isOrdered = false;
+                workPower = 0;
+                progressBar.ResetPb();
+                progressBar.gameObject.SetActive(false);
                 transform.GetComponentInChildren<OrderRelay>().CanselOrder();
             }
         }
+
+        io = isOrdered;
+        wp = workPower;
     }
 
     //=========================================================================
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         //依頼発生時
         if (isOrdered)
         {
-            if (collision.gameObject.CompareTag("Robot"))
+            if (other.gameObject.CompareTag("Robot"))
             {
                 //ロボットをリストに格納
-                Robot robot = collision.gameObject.GetComponent<Robot>();
+                Robot robot = other.gameObject.GetComponent<Robot>();
                 robotList.Add(robot);
+                robot.SetRState(RobotState.Working);
                 robot.gameObject.SetActive(false);
 
                 //作業力計算
@@ -156,9 +173,10 @@ public class Land : MonoBehaviour
 
             //帰還モードに変更
             robo.SetRState(RobotState.Return);
-            robotList.Remove(robo);
 
             yield return new WaitForSeconds(returnInterval);
         }
+
+        robotList.Clear();
     }
 }
