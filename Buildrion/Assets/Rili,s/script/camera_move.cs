@@ -87,11 +87,11 @@ public class camera_move : MonoBehaviour
 
         mousePos.x = Mathf.Clamp(transform.position.x, this.Limit_Low_x, this.Limit_Hi_x);
 
-        //mousePos.y = Mathf.Clamp(transform.position.y, this.Limit_Low_y, this.Limit_Hi_y);
+        mousePos.y = Mathf.Clamp(transform.position.y, this.Limit_Low_y, this.Limit_Hi_y);
 
         mousePos.z = Mathf.Clamp(transform.position.z, this.Limit_Low_z, this.Limit_Hi_z);
 
-        transform.position = new Vector3(mousePos.x, transform.position.y, mousePos.z);
+        transform.position = new Vector3(mousePos.x, mousePos.y, mousePos.z);
 
     }
 
