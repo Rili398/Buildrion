@@ -223,6 +223,8 @@ public class gattai : MonoBehaviour
 
 
 
+
+
                 //‚Ğ‚Æ‚Ü‚¸eqŠÖŒW‚¾‚Á‚½‚ç”ñ•\¦
                 {  
                     //”ñ•\¦ˆ—
@@ -260,8 +262,11 @@ public class gattai : MonoBehaviour
 
                 //•b”ŠÖŒW‚Å‚±‚Ì’†‚Å¶¬ˆ—
                 //eqŠÖŒW‚ğŒ‹‚ñ‚Å‚¨‚­
-                Birth(0.3f);
-                
+                Invoke(nameof(Birth), 0.8f);
+
+                GameObject buildrion = (GameObject)Resources.Load("cutin 1");
+                Instantiate(buildrion, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
+
 
 
 
@@ -397,12 +402,10 @@ public class gattai : MonoBehaviour
         }
     }
 
-    private IEnumerator Birth(float waitTime)
+    private void Birth()
     {
-          yield return new WaitForSeconds(waitTime);
-
         GameObject buildrion = (GameObject)Resources.Load("Capsule");
-        Instantiate(buildrion, new Vector3(0.0f, 2.0f, 0.0f), Quaternion.identity);
+        Instantiate(buildrion, new Vector3(0.0f, 4.0f, 0.0f), Quaternion.identity);
 
 
         GameObject bdn = GameObject.Find("Capsule(Clone)");

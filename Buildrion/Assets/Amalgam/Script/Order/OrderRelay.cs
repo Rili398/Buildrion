@@ -1,17 +1,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+public struct OrderInfo
+{
+    public string title;       //タイトル
+    public int reward;         //報酬金
+    public int lowRobotCount;    //最低台数
+    public OrdersRarity rarity;  //レア度
+    public string name;          //建物種類
+}
+
 public class OrderRelay : MonoBehaviour
 {
-    public struct OrderInfo
-    {
-        public string title;   　　 　//タイトル
-        public int reward;     　　　 //報酬金
-        public int lowRobotCount;    //最低台数
-        public OrdersRarity rarity;  //レア度
-        public string name;          //建物種類
-    }
-
     [SerializeField] private GameObject orderForm;
     [SerializeField] private Land myLand;
     [SerializeField] private RobotBase roboBase;
@@ -56,16 +56,9 @@ public class OrderRelay : MonoBehaviour
         Debug.Log("依頼表示");
 
         //依頼書に依頼情報を設定
-        //orderForm.
-        SetOrderForm(orderInfo);
+        orderForm.GetComponent<OrderForm>().SetOrderForm(orderInfo, this);
         orderForm.GetComponent<Canvas>().enabled = true;
         //ボタンに関数を設定
-    }
-
-    public void SetOrderForm(OrderInfo info)
-    {
-        //依頼書UIに移設予定
-        //各種情報を設定する
     }
 
     public bool GetOrdePossibleCon()
