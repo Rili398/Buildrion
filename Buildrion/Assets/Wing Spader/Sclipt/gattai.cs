@@ -11,6 +11,8 @@ public class gattai : MonoBehaviour
     //無限合体、分離防止用
     bool mode = false;
 
+    [SerializeField] private float gtime;
+
     //選ばれスイッチ
     bool sle1 = false;
     bool sle2 = false;
@@ -35,137 +37,138 @@ public class gattai : MonoBehaviour
         //ここは合体してたらやっちゃダメ
         if (mode == false)
         {
-            //親子切り替え
             {
-                if (Input.GetKeyDown(KeyCode.Alpha1))
-                {
-                    //親オブジェ取得
-                    GameObject parent = GameObject.Find("parent");
-
-                    //子オブジェにするやーつ
-                    GameObject tama = GameObject.Find("tama1");
-
-                    if (sle1 == false)
+                //親子切り替え
+                /*{
+                    if (Input.GetKeyDown(KeyCode.Alpha1))
                     {
-                        //子にする処理
-                        tama.transform.parent = parent.transform;
+                        //親オブジェ取得
+                        GameObject parent = GameObject.Find("parent");
 
-                        //切り替え
-                        sle1 = true;
+                        //子オブジェにするやーつ
+                        GameObject tama = GameObject.Find("tama1");
+
+                        if (sle1 == false)
+                        {
+                            //子にする処理
+                            tama.transform.parent = parent.transform;
+
+                            //切り替え
+                            sle1 = true;
+                        }
+                        else
+                        {
+                            //子オブジェクト解除
+                            tama.transform.parent = null;
+
+                            //切り替え
+                            sle1 = false;
+                        }
                     }
-                    else
+
+                    if (Input.GetKeyDown(KeyCode.Alpha2))
                     {
-                        //子オブジェクト解除
-                        tama.transform.parent = null;
+                        //親オブジェ取得
+                        GameObject parent = GameObject.Find("parent");
 
-                        //切り替え
-                        sle1 = false;
+                        //子オブジェにするやーつ
+                        GameObject tama = GameObject.Find("tama1 (1)");
+
+                        if (sle2 == false)
+                        {
+                            //子にする処理
+                            tama.transform.parent = parent.transform;
+
+                            //切り替え
+                            sle2 = true;
+                        }
+                        else
+                        {
+                            //子オブジェクト解除
+                            tama.transform.parent = null;
+
+                            //切り替え
+                            sle2 = false;
+                        }
                     }
-                }
 
-                if (Input.GetKeyDown(KeyCode.Alpha2))
-                {
-                    //親オブジェ取得
-                    GameObject parent = GameObject.Find("parent");
-
-                    //子オブジェにするやーつ
-                    GameObject tama = GameObject.Find("tama1 (1)");
-
-                    if (sle2 == false)
+                    if (Input.GetKeyDown(KeyCode.Alpha3))
                     {
-                        //子にする処理
-                        tama.transform.parent = parent.transform;
+                        //親オブジェ取得
+                        GameObject parent = GameObject.Find("parent");
 
-                        //切り替え
-                        sle2 = true;
+                        //子オブジェにするやーつ
+                        GameObject tama = GameObject.Find("tama1 (2)");
+
+                        if (sle3 == false)
+                        {
+                            //子にする処理
+                            tama.transform.parent = parent.transform;
+
+                            //切り替え
+                            sle3 = true;
+                        }
+                        else
+                        {
+                            //子オブジェクト解除
+                            tama.transform.parent = null;
+
+                            //切り替え
+                            sle3 = false;
+                        }
                     }
-                    else
+
+                    if (Input.GetKeyDown(KeyCode.Alpha4))
                     {
-                        //子オブジェクト解除
-                        tama.transform.parent = null;
+                        //親オブジェ取得
+                        GameObject parent = GameObject.Find("parent");
 
-                        //切り替え
-                        sle2 = false;
+                        //子オブジェにするやーつ
+                        GameObject tama = GameObject.Find("tama1 (3)");
+
+                        if (sle4 == false)
+                        {
+                            //子にする処理
+                            tama.transform.parent = parent.transform;
+
+                            //切り替え
+                            sle4 = true;
+                        }
+                        else
+                        {
+                            //子オブジェクト解除
+                            tama.transform.parent = null;
+
+                            //切り替え
+                            sle4 = false;
+                        }
                     }
-                }
 
-                if (Input.GetKeyDown(KeyCode.Alpha3))
-                {
-                    //親オブジェ取得
-                    GameObject parent = GameObject.Find("parent");
-
-                    //子オブジェにするやーつ
-                    GameObject tama = GameObject.Find("tama1 (2)");
-
-                    if (sle3 == false)
+                    if (Input.GetKeyDown(KeyCode.Alpha5))
                     {
-                        //子にする処理
-                        tama.transform.parent = parent.transform;
+                        //親オブジェ取得
+                        GameObject parent = GameObject.Find("parent");
 
-                        //切り替え
-                        sle3 = true;
-                    }
-                    else
-                    {
-                        //子オブジェクト解除
-                        tama.transform.parent = null;
+                        //子オブジェにするやーつ
+                        GameObject tama = GameObject.Find("tama1 (4)");
 
-                        //切り替え
-                        sle3 = false;
-                    }
-                }
+                        if (sle5 == false)
+                        {
+                            //子にする処理
+                            tama.transform.parent = parent.transform;
 
-                if (Input.GetKeyDown(KeyCode.Alpha4))
-                {
-                    //親オブジェ取得
-                    GameObject parent = GameObject.Find("parent");
+                            //切り替え
+                            sle5 = true;
+                        }
+                        else
+                        {
+                            //子オブジェクト解除
+                            tama.transform.parent = null;
 
-                    //子オブジェにするやーつ
-                    GameObject tama = GameObject.Find("tama1 (3)");
-
-                    if (sle4 == false)
-                    {
-                        //子にする処理
-                        tama.transform.parent = parent.transform;
-
-                        //切り替え
-                        sle4 = true;
-                    }
-                    else
-                    {
-                        //子オブジェクト解除
-                        tama.transform.parent = null;
-
-                        //切り替え
-                        sle4 = false;
-                    }
-                }
-
-                if (Input.GetKeyDown(KeyCode.Alpha5))
-                {
-                    //親オブジェ取得
-                    GameObject parent = GameObject.Find("parent");
-
-                    //子オブジェにするやーつ
-                    GameObject tama = GameObject.Find("tama1 (4)");
-
-                    if (sle5 == false)
-                    {
-                        //子にする処理
-                        tama.transform.parent = parent.transform;
-
-                        //切り替え
-                        sle5 = true;
-                    }
-                    else
-                    {
-                        //子オブジェクト解除
-                        tama.transform.parent = null;
-
-                        //切り替え
-                        sle5 = false;
-                    }
-                }
+                            //切り替え
+                            sle5 = false;
+                        }
+                    }*/
             }
         }
 
@@ -213,56 +216,43 @@ public class gattai : MonoBehaviour
 
                     //mode = true;
                 }
-                // 親オブジェクトを探す
-                parent = GameObject.Find("parent");
-                int child = parent.transform.childCount;
-                if(child <= 0)
-                {
-                    return;
-                }
-
-
-
-
 
                 //ひとまず親子関係だったら非表示
                 {  
-                    //非表示処理
-                    if (sle1 == true)
-                    {
-                        Transform tama1 = parent.transform.Find("tama1");
-                        tama1.gameObject.SetActive(false);
-                    }
+                    ////非表示処理
+                    //if (sle1 == true)
+                    //{
+                    //    Transform tama1 = parent.transform.Find("tama1");
+                    //    tama1.gameObject.SetActive(false);
+                    //}
 
-                    if (sle2 == true)
-                    {
-                        Transform tama2 = parent.transform.Find("tama1 (1)");
-                        tama2.gameObject.SetActive(false);
-                    }
+                    //if (sle2 == true)
+                    //{
+                    //    Transform tama2 = parent.transform.Find("tama1 (1)");
+                    //    tama2.gameObject.SetActive(false);
+                    //}
 
-                    if (sle3 == true)
-                    {
-                        Transform tama3 = parent.transform.Find("tama1 (2)");
-                        tama3.gameObject.SetActive(false);
-                    }
+                    //if (sle3 == true)
+                    //{
+                    //    Transform tama3 = parent.transform.Find("tama1 (2)");
+                    //    tama3.gameObject.SetActive(false);
+                    //}
 
-                    if (sle4 == true)
-                    {
-                        Transform tama4 = parent.transform.Find("tama1 (3)");
-                        tama4.gameObject.SetActive(false);
-                    }
+                    //if (sle4 == true)
+                    //{
+                    //    Transform tama4 = parent.transform.Find("tama1 (3)");
+                    //    tama4.gameObject.SetActive(false);
+                    //}
 
-                    if (sle5 == true)
-                    {
-                        Transform tama5 = parent.transform.Find("tama1 (4)");
-                        tama5.gameObject.SetActive(false);
-                    }
+                    //if (sle5 == true)
+                    //{
+                    //    Transform tama5 = parent.transform.Find("tama1 (4)");
+                    //    tama5.gameObject.SetActive(false);
+                    //}
                 }
 
 
-                //秒数関係でこの中で生成処理
-                //親子関係を結んでおく
-                Invoke(nameof(Birth), 0.8f);
+                Invoke(nameof(CreateParts), 1.0f);
 
                 GameObject buildrion = (GameObject)Resources.Load("cutin 1");
                 Instantiate(buildrion, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
@@ -406,10 +396,39 @@ public class gattai : MonoBehaviour
     {
         GameObject buildrion = (GameObject)Resources.Load("Capsule");
         Instantiate(buildrion, new Vector3(0.0f, 4.0f, 0.0f), Quaternion.identity);
+    }
+
+    private void CreateParts()
+    {
+        GameObject tama = (GameObject)Resources.Load("tama1");
+        Instantiate(tama, new Vector3(1.0f, 10.0f, -1.0f), Quaternion.identity);
+
+        Instantiate(tama, new Vector3(-1.0f, 15.0f, -1.0f), Quaternion.identity);
+
+        Instantiate(tama, new Vector3(-2.0f, 20.0f, 0.0f), Quaternion.identity);
+
+        Instantiate(tama, new Vector3(-1.0f, 25.0f, 1.0f), Quaternion.identity);
+
+        Instantiate(tama, new Vector3(1.0f, 30.0f, 1.0f), Quaternion.identity);
+
+        Instantiate(tama, new Vector3(2.0f, 35.0f, 0.0f), Quaternion.identity);
+
+        Invoke(nameof(DestroyParts), gtime);
+
+        Invoke(nameof(Birth), gtime);
+
+    }
+
+    private void DestroyParts()
+    {
+        GameObject[] parts = GameObject.FindGameObjectsWithTag("tama1");
+
+        foreach (GameObject partslist in parts)
+        {
+            Destroy(partslist);
+        }
 
 
-        GameObject bdn = GameObject.Find("Capsule(Clone)");
-        bdn.transform.parent = parent.transform;
     }
 
 }
