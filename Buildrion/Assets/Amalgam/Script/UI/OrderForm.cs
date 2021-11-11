@@ -71,11 +71,8 @@ public class OrderForm : MonoBehaviour
 
     public void AcceptButton()
     {
-        Debug.Log("1");
-
         if(orderRelay != null)
         {
-            Debug.Log("2");
             orderRelay.AcceptOrder(orderInfo.lowRobotCount);
         }
         GetComponent<Canvas>().enabled = false;

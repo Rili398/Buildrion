@@ -109,6 +109,10 @@ public class Land : MonoBehaviour
                 progressBar.ResetPb();
                 progressBar.gameObject.SetActive(false);
                 transform.GetComponentInChildren<OrderRelay>().CanselOrder();
+
+                //‚¨‹à‰ÁŽZ
+                Singleton<GameManager>.Instance.AddMoney(reward);
+                reward = 0;
             }
         }
 
