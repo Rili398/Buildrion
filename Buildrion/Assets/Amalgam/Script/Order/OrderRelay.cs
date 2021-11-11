@@ -58,7 +58,6 @@ public class OrderRelay : MonoBehaviour
         //依頼書に依頼情報を設定
         orderForm.GetComponent<OrderForm>().SetOrderForm(orderInfo, this);
         orderForm.GetComponent<Canvas>().enabled = true;
-        //ボタンに関数を設定
     }
 
     public bool GetOrdePossibleCon()
@@ -92,10 +91,10 @@ public class OrderRelay : MonoBehaviour
     {
         //土地に依頼情報を渡す
         myLand.SetLandStatus(LandStatus.InConstruct);
-        myLand.SetOrderInfo(orderInfo.reward, orderInfo.lowRobotCount, orderInfo.name);
+        myLand.SetOrderInfo(orderInfo.reward, robotNum, orderInfo.name);
 
         //ロボット拠点に指示を出す
-        roboBase.OrderCatcher(myLand.transform.position, orderInfo.lowRobotCount);
+        roboBase.OrderCatcher(myLand.transform.position, robotNum);
 
         transform.GetChild(0).gameObject.SetActive(false);
     }
@@ -104,6 +103,7 @@ public class OrderRelay : MonoBehaviour
     public void CanselOrder()
     {
         orderExistFlg = false;
+        transform.GetChild(0).gameObject.SetActive(false);
     }
 
     //=========================================================================

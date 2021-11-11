@@ -180,7 +180,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3796059766404777047, guid: e59b9711ee9d9cf4c9d1a1da305dd486, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3796059766404777047, guid: e59b9711ee9d9cf4c9d1a1da305dd486, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ViewOrderForm
       objectReference: {fileID: 0}
     - target: {fileID: 5732204163386468802, guid: e59b9711ee9d9cf4c9d1a1da305dd486, type: 3}
       propertyPath: m_IsTrigger
@@ -443,6 +447,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1385799039 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3508152894077522991, guid: 61bf8d5431b54b0459e8ffdb95551aa2, type: 3}
+  m_PrefabInstance: {fileID: 1576367956}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1385799040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385799039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 366c01d18c8546742b1796e27c2198a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderRelay: {fileID: 0}
+  titleText: {fileID: 0}
+  rewardText: {fileID: 0}
+  lowUnitCntText: {fileID: 0}
+  rarityImages: []
 --- !u!1001 &1576367956
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -450,6 +476,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3508152894077522986, guid: 61bf8d5431b54b0459e8ffdb95551aa2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3508152894077522987, guid: 61bf8d5431b54b0459e8ffdb95551aa2, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -538,7 +568,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: olderboardPrefab
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3508152894077522991, guid: 61bf8d5431b54b0459e8ffdb95551aa2, type: 3}
+      propertyPath: m_TagString
+      value: OrderForm
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3508152894077522984, guid: 61bf8d5431b54b0459e8ffdb95551aa2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 61bf8d5431b54b0459e8ffdb95551aa2, type: 3}
 --- !u!1001 &274138203992355635
 PrefabInstance:
