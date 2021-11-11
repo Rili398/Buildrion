@@ -5,12 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - tama1
-  - tama2
   - Capsule
   - OrderForm
   - OrderObj
   - RobotBase
   - Robot
+  - parent
   layers:
   - Default
   - TransparentFX

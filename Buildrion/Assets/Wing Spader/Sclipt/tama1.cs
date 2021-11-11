@@ -2,35 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class tama1 : MonoBehaviour
 {
-
+    public float Multiplier = 3.0f;
     public float speed = 3.0f;
+    private Rigidbody rigidbody;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.position += transform.forward * speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.position -= transform.forward * speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.position += transform.right * speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.position -= transform.right * speed * Time.deltaTime;
-        }
+
+    }
+
+    void FixedUpdate()
+    {
+        // ‰Á‘¬“x—^‚¦‚é
+        rigidbody.AddForce((Multiplier - 1f) * Physics.gravity, ForceMode.Acceleration);
     }
 }
