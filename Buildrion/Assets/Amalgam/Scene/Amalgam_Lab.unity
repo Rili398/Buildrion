@@ -580,7 +580,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3508152894077522986, guid: 61bf8d5431b54b0459e8ffdb95551aa2, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3508152894077522987, guid: 61bf8d5431b54b0459e8ffdb95551aa2, type: 3}
       propertyPath: m_Pivot.x
@@ -673,6 +673,10 @@ PrefabInstance:
     - target: {fileID: 3508152894077522991, guid: 61bf8d5431b54b0459e8ffdb95551aa2, type: 3}
       propertyPath: m_TagString
       value: OrderForm
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508152894281518957, guid: 61bf8d5431b54b0459e8ffdb95551aa2, type: 3}
+      propertyPath: m_Interactable
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3508152894077522984, guid: 61bf8d5431b54b0459e8ffdb95551aa2, type: 3}
