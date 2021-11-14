@@ -131,12 +131,22 @@ public class Land : MonoBehaviour
             {
                 //ロボットをリストに格納
                 Robot robot = other.gameObject.GetComponent<Robot>();
-                robotList.Add(robot);
-                robot.SetRState(RobotState.Working);
-                robot.gameObject.SetActive(false);
 
-                //作業力計算
-                workPower += robot.warkPower;
+                Debug.Log(robot.GetDestination());
+
+                Vector3 tmp = robot.GetDestination();
+                tmp.y = 0.0f;
+
+                //目的地がここじゃなければ格納しない
+                if (tmp == transform.position)
+                {
+                    robotList.Add(robot);
+                    robot.SetRState(RobotState.Working);
+                    robot.gameObject.SetActive(false);
+
+                    //作業力計算
+                    workPower += robot.warkPower;
+                }
             }
         }
     }

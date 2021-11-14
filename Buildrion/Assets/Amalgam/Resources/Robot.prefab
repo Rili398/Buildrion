@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7574085908035481319}
   - component: {fileID: 7574085908035481318}
   - component: {fileID: 8053117891925423718}
+  - component: {fileID: 1654447354147468826}
   m_Layer: 0
   m_Name: Robot
   m_TagString: Robot
@@ -30,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7574085908035481317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5, y: 0.5, z: -4}
+  m_LocalPosition: {x: -3.5, y: 0, z: -4}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -336,3 +337,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!33 &1654447354147468826
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7574085908035481317}
+  m_Mesh: {fileID: 0}

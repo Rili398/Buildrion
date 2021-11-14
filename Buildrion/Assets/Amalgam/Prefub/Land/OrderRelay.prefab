@@ -164,8 +164,8 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 8553889506609078945}
           m_TargetAssemblyTypeName: OrderRelay, Assembly-CSharp
-          m_MethodName: AcceptOrder
-          m_Mode: 3
+          m_MethodName: ViewOrderForm
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

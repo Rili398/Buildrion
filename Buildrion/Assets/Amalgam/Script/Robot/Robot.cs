@@ -37,6 +37,11 @@ public class Robot : MonoBehaviour
         agent.destination = distPoint;
     }
 
+    public Vector3 GetDestination()
+    {
+        return agent.destination;
+    }
+
     //
     public void SetRState(RobotState rs)
     {

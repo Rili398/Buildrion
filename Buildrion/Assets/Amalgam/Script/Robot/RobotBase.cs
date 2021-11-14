@@ -7,8 +7,8 @@ using UnityEngine;
 public class RobotBase : MonoBehaviour
 {
     [SerializeField] private string robotName;
-    [SerializeField] private int defaultMax = 10;
-    private int robotMax { get; set; }
+    public int defaultMax = 10;
+    public int robotMax { get; set; }
 
     [Header("現在基地に残っているロボットの数")]
     [SerializeField] private int nowRobotCnt;
@@ -27,8 +27,6 @@ public class RobotBase : MonoBehaviour
     private void Start()
     {
         robotMax = defaultMax;
-        nowRobotCnt = robotMax;
-
         AddRobotList(robotMax);
     }
 
@@ -54,7 +52,7 @@ public class RobotBase : MonoBehaviour
     }
 
     //指定した数だけロボットを出してリスト格納する
-    private void AddRobotList(int num)
+    public void AddRobotList(int num)
     {
         for (int i = 0; i < num; i++)
         {
@@ -64,6 +62,8 @@ public class RobotBase : MonoBehaviour
             robot.SetRState(RobotState.Rest);
             robot.gameObject.SetActive(false);
         }
+
+        nowRobotCnt += num;
     }
 
     //使っていないロボットを探して返す
