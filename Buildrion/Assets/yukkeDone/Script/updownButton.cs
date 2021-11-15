@@ -7,8 +7,8 @@ public class updownButton : MonoBehaviour
 {
 
     private int number = 0;
-    private int numberMin = 3;
-    private int numberMax = 21;
+    private int numberMin = 0;
+    private int numberMax = 0;
     public Text numberText;
 
     const int differenceamount = 3;
@@ -16,7 +16,8 @@ public class updownButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        numberText.GetComponent<Text>();
+        numberMin = 3;
+        numberMax = 21;
     }
 
     // Update is called once per frame
@@ -27,20 +28,26 @@ public class updownButton : MonoBehaviour
 
     public void add()
     {
-        if (number >= numberMax)
-            return;
-
         number += differenceamount;
         numberText.text = number.ToString();
+
+        if (number > numberMax)
+        {
+            number = numberMax;
+            numberText.text = number.ToString();
+        }
     }
 
     public void disadd()
     {
-        if (number <= numberMin)
-            return;
-
         number -= differenceamount;
         numberText.text = number.ToString();
+
+        if (number < numberMin)
+        {
+            number = numberMin;
+            numberText.text = number.ToString();
+        }
     }
 
 

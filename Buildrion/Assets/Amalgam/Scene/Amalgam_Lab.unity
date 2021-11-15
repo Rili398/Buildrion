@@ -358,6 +358,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1385799045}
     m_Modifications:
+    - target: {fileID: 1436746912940317453, guid: a6b2098e73bab514ba92b5478a0b103b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 484269658}
+    - target: {fileID: 1436746912940317453, guid: a6b2098e73bab514ba92b5478a0b103b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: disadd
+      objectReference: {fileID: 0}
+    - target: {fileID: 3275443645758911145, guid: a6b2098e73bab514ba92b5478a0b103b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 484269658}
+    - target: {fileID: 3275443645758911145, guid: a6b2098e73bab514ba92b5478a0b103b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: add
+      objectReference: {fileID: 0}
     - target: {fileID: 3367336957568289530, guid: a6b2098e73bab514ba92b5478a0b103b, type: 3}
       propertyPath: m_Name
       value: updownButton
@@ -448,6 +464,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6b2098e73bab514ba92b5478a0b103b, type: 3}
+--- !u!114 &484269658 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 383983578498431512, guid: a6b2098e73bab514ba92b5478a0b103b, type: 3}
+  m_PrefabInstance: {fileID: 484269657}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dabd465a30b3a49449eda8e85313a9be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1203834888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,6 +1055,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6835197758441798617, guid: ecffe0de260389e48adbc646e01d86e0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 457
+      objectReference: {fileID: 0}
     - target: {fileID: 8370431834331416843, guid: ecffe0de260389e48adbc646e01d86e0, type: 3}
       propertyPath: m_Pivot.x
       value: 0
