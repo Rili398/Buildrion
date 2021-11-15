@@ -11,6 +11,7 @@ TagManager:
   - RobotBase
   - Robot
   - parent
+  - Field
   layers:
   - Default
   - TransparentFX

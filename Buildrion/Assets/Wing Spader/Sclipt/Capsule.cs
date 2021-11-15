@@ -7,6 +7,7 @@ public class Capsule : MonoBehaviour
     //‡‘ÌŒ³Ši”[—p‚Ì•Ï”
     string sozai1; 
     string sozai2;
+    private Transform mytransform;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,15 @@ public class Capsule : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        mytransform = this.gameObject.GetComponent<Transform>();
+        Vector3 pos = transform.position;
+
+        GameObject efect = (GameObject)Resources.Load("tuchi2");
+        Instantiate(efect, pos, Quaternion.identity);
     }
 
     public void SetSozai(string name1, string name2)

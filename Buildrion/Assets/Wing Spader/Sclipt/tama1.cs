@@ -8,12 +8,14 @@ public class tama1 : MonoBehaviour
 {
     public float Multiplier = 3.0f;
     public float speed = 3.0f;
-    private Rigidbody rigidbody;
+    private Rigidbody myrigidbody;
+    private Transform mytransform;
 
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        myrigidbody = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
@@ -22,9 +24,18 @@ public class tama1 : MonoBehaviour
 
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        mytransform = this.gameObject.GetComponent<Transform>();
+        Vector3 pos = transform.position;
+
+        GameObject efect = (GameObject)Resources.Load("tuchi");
+        Instantiate(efect, pos, Quaternion.identity);
+    }
+
     void FixedUpdate()
     {
         // ‰Á‘¬“x—^‚¦‚é
-        rigidbody.AddForce((Multiplier - 1f) * Physics.gravity, ForceMode.Acceleration);
+        myrigidbody.AddForce((Multiplier - 1f) * Physics.gravity, ForceMode.Acceleration);
     }
 }

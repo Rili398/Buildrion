@@ -258,7 +258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8378553475353885106}
-  - component: {fileID: 7479921356984350902}
+  - component: {fileID: 383983578498431512}
   m_Layer: 5
   m_Name: updownButton
   m_TagString: Untagged
@@ -289,7 +289,7 @@ RectTransform:
   m_AnchoredPosition: {x: 199, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &7479921356984350902
+--- !u!114 &383983578498431512
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -380,7 +380,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: 3
 --- !u!1 &6724098971771063319
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,9 +502,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7479921356984350902}
+      - m_Target: {fileID: 11500000, guid: dabd465a30b3a49449eda8e85313a9be, type: 3}
         m_TargetAssemblyTypeName: updownButton, Assembly-CSharp
-        m_MethodName: add
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -635,9 +635,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7479921356984350902}
+      - m_Target: {fileID: 11500000, guid: dabd465a30b3a49449eda8e85313a9be, type: 3}
         m_TargetAssemblyTypeName: updownButton, Assembly-CSharp
-        m_MethodName: disadd
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
