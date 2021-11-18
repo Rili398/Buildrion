@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Mouse_Event : MonoBehaviour
 {
-    Material outline = Resources.Load<Material>("material/OutLine");
+
 
     private void Start()
     {
-            gameObject.GetComponent<Renderer>().material = new Material(outline);
 
     }
 
@@ -16,16 +15,11 @@ public class Mouse_Event : MonoBehaviour
     public void OnMouse() //ポインターがオブジェクトに乗ったとき
     {
         Debug.Log("マウスがInしたお！");
-        gameObject.GetComponent<Renderer>().material = outline;
-        gameObject.GetComponent<Renderer>().material.SetFloat("_Color", 1);
-        //  transform.localScale *= 1.5f;
     }
 
     public void OutMouse() //ポインターがオブジェクトから離れたとき
     {
         Debug.Log("マウスがOutしたお！");
-        // ParticleSystem.;
-        gameObject.GetComponent<Renderer>().material = outline;
 
     }
 
