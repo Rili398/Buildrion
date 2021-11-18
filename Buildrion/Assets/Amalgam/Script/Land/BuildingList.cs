@@ -12,6 +12,5 @@ public class BuildingList
         BuildingName = new List<string>();
         BuildingName.Add("テスト建物");
         BuildingName.Add("HAL月面");
-        BuildingName.Add("さいたまスーパーアリーナ");
     }
 }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8553889506609078946}
   - component: {fileID: 8553889506609078945}
+  - component: {fileID: 7893089381199128121}
   m_Layer: 0
   m_Name: OrderRelay
   m_TagString: OrderObj
@@ -49,6 +50,21 @@ MonoBehaviour:
   roboBase: {fileID: 0}
   orderExistFlg: 0
   orderID: 0
+--- !u!114 &7893089381199128121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8553889506609078947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf2c1cbd361d46c4abc50ea03f34b5cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  commonPath: Csv/CommonOrder
+  rarePath: Csv/RareOrder
+  sRarePath: Csv/SuperRareOrder
 --- !u!1 &8553889507496876440
 GameObject:
   m_ObjectHideFlags: 0
