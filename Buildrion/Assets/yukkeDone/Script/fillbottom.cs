@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class fillbottom : MonoBehaviour
 {
     public Image UIimg;
+    public GameObject UIbackimg;
     public Button UIbtn;
     private bool roop;
     //private float fillamountMax = 1.0f;
@@ -29,6 +30,7 @@ public class fillbottom : MonoBehaviour
             {
                 UIimg.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
                 UIbtn.interactable = true;
+                UIbackimg.SetActive(false);
                 roop = false;
             }
         }
