@@ -31,9 +31,12 @@ public class Land : MonoBehaviour
     [SerializeField] private List<Robot> robotList;
     [SerializeField] private ProgressBar progressBar;
     [SerializeField] private float returnInterval = 1.0f;
+    public float margeRate;
+    public int robotCnt;
 
     //建物のリスト
     private BuildingList buildingList;
+    private Marge marge;
 
     private void Awake()
     {
@@ -48,6 +51,9 @@ public class Land : MonoBehaviour
 
         progressBar.gameObject.SetActive(false);
         buildingList = new BuildingList();
+
+        marge = GetComponent<Marge>();
+        margeRate = 1.0f;
     }
 
     // Update is called once per frame
@@ -77,7 +83,7 @@ public class Land : MonoBehaviour
             else
             {
                 //プログレスバーの進行
-                progressBar.value += workPower;
+                progressBar.value += workPower * margeRate;
 
                 if(progressBar.value >= 1.0f)
                 {
@@ -116,8 +122,21 @@ public class Land : MonoBehaviour
             }
         }
 
-        io = isOrdered;
-        wp = workPower;
+       //ロボットの表示
+       if(isWarking)
+        {
+            //合体／非合体
+            if(marge.isMarge)
+            {
+                //合体ロボ召喚
+            }
+            else
+            {
+                //非合体ロボ召喚
+            }
+        }
+
+        robotCnt = robotList.Count;
     }
 
     //=========================================================================
@@ -131,9 +150,6 @@ public class Land : MonoBehaviour
             {
                 //ロボットをリストに格納
                 Robot robot = other.gameObject.GetComponent<Robot>();
-
-                Debug.Log(robot.GetDestination());
-
                 Vector3 tmp = robot.GetDestination();
                 tmp.y = 0.0f;
 

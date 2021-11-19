@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public struct OrderInfo
 {
@@ -21,6 +20,7 @@ public class OrderRelay : MonoBehaviour
     [SerializeField] private int orderID;
 
     private OrderInfo orderInfo;
+    private CSVLoader csvLoader;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +32,7 @@ public class OrderRelay : MonoBehaviour
         orderExistFlg = false;
 
         orderInfo = new OrderInfo();
+        csvLoader = GetComponent<CSVLoader>();
     }
 
     //=========================================================================
@@ -42,7 +43,9 @@ public class OrderRelay : MonoBehaviour
         orderID = id;
 
         //依頼情報読み込み
-        LoadOrderFromCsv();
+        Debug.Log(rare);
+
+        orderInfo = csvLoader.LoadOrderFromCsv(rare, id);
 
         Debug.Log("依頼読み込み");
 
@@ -107,20 +110,4 @@ public class OrderRelay : MonoBehaviour
     }
 
     //=========================================================================
-
-    private void LoadOrderFromCsv()
-    {
-        //レア度で読み込むCSVを選ぶ
-        //IDの行を読み込む
-
-        //デバッグ用テストケース
-        orderInfo = new OrderInfo
-        {
-            title = "テストケース",
-            reward = 1000,
-            lowRobotCount = 3,
-            rarity = orderInfo.rarity,
-            name = "HAL月面"
-        };
-    }
 }

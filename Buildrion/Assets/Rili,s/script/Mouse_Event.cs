@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class Mouse_Event : MonoBehaviour
 {
+
+
+    private void Start()
+    {
+
+    }
+
+
     public void OnMouse() //ポインターがオブジェクトに乗ったとき
     {
         Debug.Log("マウスがInしたお！");
-
-        //  transform.localScale *= 1.5f;
     }
 
     public void OutMouse() //ポインターがオブジェクトから離れたとき
     {
         Debug.Log("マウスがOutしたお！");
-       // ParticleSystem.;
+
     }
 
     public void MouseCrick() //ポインターがオブジェクトを押下したとき
