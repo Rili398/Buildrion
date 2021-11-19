@@ -28,22 +28,9 @@ public class Capsule : MonoBehaviour
 
         GameObject efect = (GameObject)Resources.Load("tuchi2");
         Instantiate(efect, pos, Quaternion.identity);
+
+        GameObject shake = (GameObject)Resources.Load("shake");
+        Instantiate(shake, pos, Quaternion.identity);
     }
 
-    public void SetSozai(string name1, string name2)
-    {
-        //ëfçﬁì¸ÇÍ
-        sozai1 = name1;
-        sozai2 = name2;
-    }
-
-    public string GetSozai1()
-    {
-        return sozai1;
-    }
-
-    public string GetSozai2()
-    {
-        return sozai2;
-    }
 }

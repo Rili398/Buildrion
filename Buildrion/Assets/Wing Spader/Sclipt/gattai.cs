@@ -395,7 +395,7 @@ public class gattai : MonoBehaviour
     private void Birth()
     {
         GameObject buildrion = (GameObject)Resources.Load("Capsule");
-        Instantiate(buildrion, new Vector3(0.0f, 4.0f, 0.0f), Quaternion.identity);
+        Instantiate(buildrion, new Vector3(0.0f, 3.0f, 0.0f), Quaternion.identity);
     }
 
     private void CreateParts()
@@ -413,6 +413,8 @@ public class gattai : MonoBehaviour
 
         Instantiate(tama, new Vector3(2.0f, 35.0f, 0.0f), Quaternion.identity);
 
+        Invoke(nameof(Flash), gtime - 1.5f);
+
         Invoke(nameof(DestroyParts), gtime);
 
         Invoke(nameof(Birth), gtime);
@@ -427,8 +429,14 @@ public class gattai : MonoBehaviour
         {
             Destroy(partslist);
         }
+        
+    }
 
+    private void Flash()
+    {
 
+        GameObject hikari = (GameObject)Resources.Load("hikari");
+        Instantiate(hikari, new Vector3(0.0f, 1.0f, -3.0f), Quaternion.identity);
     }
 
 }
