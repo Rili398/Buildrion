@@ -6,7 +6,7 @@ public class ProgressBar02 : MonoBehaviour
     [SerializeField] private Slider progressBar;
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         progressBar = transform.GetChild(0).GetComponent<Slider>();
 

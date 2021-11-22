@@ -17,7 +17,6 @@ public class Land : MonoBehaviour
     [SerializeField, Tooltip("土地の状態")] private LandStatus landStatus;
 
     public bool isOrdered { get; set; }
-    [SerializeField] private bool io;
     [SerializeField, Tooltip("作業中フラグ")] private bool isWarking;
 
     [Header("依頼情報")]
@@ -37,6 +36,9 @@ public class Land : MonoBehaviour
     //建物のリスト
     private BuildingList buildingList;
     private Marge marge;
+
+    public bool iot;
+    public bool iw;
 
     private void Awake()
     {
@@ -139,6 +141,12 @@ public class Land : MonoBehaviour
         }
 
         robotCnt = robotList.Count;
+
+        iot = isOrdered;
+        iw = isWarking;
+
+        Debug.Log(iot);
+        Debug.Log(iw);
     }
 
     //=========================================================================
