@@ -8,11 +8,13 @@ public class TlineEnd : MonoBehaviour
 {
 
     private PlayableDirector _playableDirector;
+    public GameObject Camera_Active;
 
     // Start is called before the first frame update
     void Start()
     {
         _playableDirector = GetComponent<PlayableDirector>();
+        Camera_Active = GameObject.Find("Buttom");
     }
     
 
@@ -23,7 +25,7 @@ public class TlineEnd : MonoBehaviour
 
         if (end == true)
         {
-
+            Camera_Active.GetComponent<fillbottom>().Camera_Actve(true,false);
             Destroy(this.gameObject);
         }
     }
