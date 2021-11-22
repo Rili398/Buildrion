@@ -13,6 +13,8 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private RobotBase roboBase;
     [SerializeField] private Text roboText;
 
+
+
     void Start()
     {
         //フレームレート設定
