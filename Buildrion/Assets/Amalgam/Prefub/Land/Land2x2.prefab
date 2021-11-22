@@ -233,6 +233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myLand: {fileID: 0}
   isMarge: 0
+  isWarking: 0
 --- !u!114 &-4990383538506119597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -800,6 +801,10 @@ PrefabInstance:
     - target: {fileID: 8553889506609078947, guid: 740471208c88ec8428241f06cb276697, type: 3}
       propertyPath: m_Name
       value: OrderRelay
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553889506609078947, guid: 740471208c88ec8428241f06cb276697, type: 3}
+      propertyPath: m_TagString
+      value: OrderObj_L
       objectReference: {fileID: 0}
     - target: {fileID: 8553889507496876438, guid: 740471208c88ec8428241f06cb276697, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode

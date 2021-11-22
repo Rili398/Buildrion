@@ -13,6 +13,9 @@ TagManager:
   - parent
   - Field
   - MargeButton
+  - OrderObj_S
+  - OrderObj_M
+  - OrderObj_L
   layers:
   - Default
   - TransparentFX
