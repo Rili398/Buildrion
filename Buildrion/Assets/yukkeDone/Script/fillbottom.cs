@@ -61,13 +61,8 @@ public class fillbottom : MonoBehaviour
     {
         // ここでタイムライン再生
         gSystem.Fusion();
-<<<<<<< HEAD
-        // カメラ切り替え?
-        Camera_Actve(false, true);
-=======
         // カメラ切り替え
-
->>>>>>> bf815f9241424f1f989c98e610f3e9b1fb8a7251
+        Camera_Actve(false, true);
         // fillamount初期状態戻す関数
         Resetfillamount();
     }
