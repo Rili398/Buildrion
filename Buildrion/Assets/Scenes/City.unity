@@ -2220,6 +2220,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6170476340895654359, guid: 071a469fcce5448418ed8729dafced18, type: 3}
   m_PrefabInstance: {fileID: 585330541}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &618874218 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 156062083443315157, guid: f93afc1e96ab5664399e633230a88e44, type: 3}
+  m_PrefabInstance: {fileID: 1165607875}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcd46260507c5c14280e35f166731fb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &632150113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3603,6 +3614,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 156062083443315160, guid: f93afc1e96ab5664399e633230a88e44, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 156062083443315160, guid: f93afc1e96ab5664399e633230a88e44, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 156062083443315160, guid: f93afc1e96ab5664399e633230a88e44, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 618874218}
+    - target: {fileID: 156062083443315160, guid: f93afc1e96ab5664399e633230a88e44, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 156062083443315160, guid: f93afc1e96ab5664399e633230a88e44, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Fusion
+      objectReference: {fileID: 0}
+    - target: {fileID: 156062083443315160, guid: f93afc1e96ab5664399e633230a88e44, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: fillbottom, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 156062083443315160, guid: f93afc1e96ab5664399e633230a88e44, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 172172817197459656, guid: f93afc1e96ab5664399e633230a88e44, type: 3}
       propertyPath: m_Pivot.x
       value: 0
