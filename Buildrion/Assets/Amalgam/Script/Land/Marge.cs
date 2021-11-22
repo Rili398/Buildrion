@@ -22,7 +22,7 @@ public class Marge : MonoBehaviour
         return myLand.robotCnt;
     }
 
-    public void ChangeBuildrion(bool command)
+    public void ChangeBuildrion(bool command = true)
     {
         isMarge = command;
         myLand.margeRate = 3.0f;    //‡‘Ì”{—¦
