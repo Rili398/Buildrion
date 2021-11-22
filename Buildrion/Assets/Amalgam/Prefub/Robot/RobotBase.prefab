@@ -111,6 +111,6 @@ MonoBehaviour:
   robotName: Robot
   defaultMax: 10
   nowRobotCnt: 0
-  baseWarkPower: 0.001
+  baseWarkPower: 1
   intervalTime: 0.5
   roboList: []

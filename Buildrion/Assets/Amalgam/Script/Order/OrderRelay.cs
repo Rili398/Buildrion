@@ -2,11 +2,12 @@ using UnityEngine;
 
 public struct OrderInfo
 {
-    public string title;       //タイトル
-    public int reward;         //報酬金
-    public int lowRobotCount;    //最低台数
-    public OrdersRarity rarity;  //レア度
-    public string name;          //建物種類
+    public string title;        //タイトル
+    public int reward;          //報酬金
+    public int lowRobotCount;   //最低台数
+    public OrdersRarity rarity; //レア度
+    public string name;         //建物種類
+    public float hp;            //依頼HP
 }
 
 public class OrderRelay : MonoBehaviour
@@ -42,12 +43,7 @@ public class OrderRelay : MonoBehaviour
         orderInfo.rarity = rare;
         orderID = id;
 
-        //依頼情報読み込み
-        Debug.Log(rare);
-
         orderInfo = csvLoader.LoadOrderFromCsv(rare, id);
-
-        Debug.Log("依頼読み込み");
 
         //依頼Obj出現
         transform.GetChild(0).gameObject.SetActive(true);
@@ -56,8 +52,6 @@ public class OrderRelay : MonoBehaviour
     //依頼アイコンをクリックしたときに発動
     public void ViewOrderForm()
     {
-        Debug.Log("依頼表示");
-
         //依頼書に依頼情報を設定
         orderForm.GetComponent<OrderForm>().SetOrderForm(orderInfo, this);
         orderForm.GetComponent<Canvas>().enabled = true;
@@ -94,7 +88,10 @@ public class OrderRelay : MonoBehaviour
     {
         //土地に依頼情報を渡す
         myLand.SetLandStatus(LandStatus.InConstruct);
-        myLand.SetOrderInfo(orderInfo.reward, robotNum, orderInfo.name);
+
+        Debug.Log(orderInfo);
+
+        myLand.SetOrderInfo(orderInfo.reward, robotNum, orderInfo.name, orderInfo.hp);
 
         //ロボット拠点に指示を出す
         roboBase.OrderCatcher(myLand.transform.position, robotNum);

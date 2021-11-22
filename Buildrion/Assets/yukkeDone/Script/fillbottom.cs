@@ -29,12 +29,8 @@ public class fillbottom : MonoBehaviour
         }
         else
         {
-            Debug.Log(marge);
-
             if (marge == null)
                 return;
-
-            Debug.Log(marge.GetRobotCnt());
 
             if (marge.isWarking)
             {

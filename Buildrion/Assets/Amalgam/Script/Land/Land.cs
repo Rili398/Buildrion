@@ -29,7 +29,7 @@ public class Land : MonoBehaviour
 
     [Header("各種パラメータ")]
     [SerializeField] private List<Robot> robotList;
-    [SerializeField] private ProgressBar progressBar;
+    [SerializeField] private ProgressBar02 progressBar;
     [SerializeField] private float returnInterval = 1.0f;
     public float margeRate;
     public int robotCnt;
@@ -46,7 +46,7 @@ public class Land : MonoBehaviour
 
         if(progressBar == null)
         {
-            progressBar = gameObject.GetComponentInChildren<ProgressBar>();
+            progressBar = gameObject.GetComponentInChildren<ProgressBar02>();
         }
 
         progressBar.gameObject.SetActive(false);
@@ -84,9 +84,9 @@ public class Land : MonoBehaviour
             else
             {
                 //プログレスバーの進行
-                progressBar.value += workPower * margeRate;
+                progressBar.AddValue(workPower * margeRate);
 
-                if(progressBar.value >= 1.0f)
+                if(progressBar.GetIsMax())
                 {
                     landStatus = LandStatus.IsBuilt;
 
@@ -113,7 +113,7 @@ public class Land : MonoBehaviour
                 isWarking = false;
                 isOrdered = false;
                 workPower = 0;
-                progressBar.ResetPb();
+                progressBar.ResetProgress();
                 progressBar.gameObject.SetActive(false);
                 transform.GetComponentInChildren<OrderRelay>().CanselOrder();
                 marge.isWarking = false;
@@ -181,12 +181,13 @@ public class Land : MonoBehaviour
         return landStatus;
     }
 
-    public void SetOrderInfo(int rew, int roboNum, string name)
+    public void SetOrderInfo(int rew, int roboNum, string name, float hp)
     {
         reward = rew;
         repuiredCount = roboNum;
         buildingName = name;
         progressBar.gameObject.SetActive(true);
+        progressBar.SetMaxValue(hp); 
 
         isOrdered = true;
 
