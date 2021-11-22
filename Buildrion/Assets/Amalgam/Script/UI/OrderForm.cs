@@ -13,6 +13,26 @@ public class OrderForm : MonoBehaviour
     [SerializeField] private Text rewardText;
     [SerializeField] private Text lowUnitCntText;
     [SerializeField] private Image[] rarityImages;
+    [SerializeField] private Button acceptButton;
+
+    private RobotBase robotBase;
+
+    private void Start()
+    {
+        robotBase = GameObject.FindGameObjectWithTag("RobotBase").GetComponent<RobotBase>();
+    }
+
+    private void Update()
+    {
+        if(robotBase.GetNowRobotCnt() >= orderInfo.lowRobotCount)
+        {
+            acceptButton.interactable = true;
+        }
+        else
+        {
+            acceptButton.interactable = false;
+        }
+    }
 
     public void SetOrderForm(OrderInfo info, OrderRelay orderR)
     {
