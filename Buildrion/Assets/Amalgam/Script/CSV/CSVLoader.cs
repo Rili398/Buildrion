@@ -29,7 +29,7 @@ public class CSVLoader : MonoBehaviour
         }
 
         StringReader stringReader = new StringReader(csvFile.text);
-        string line = "バグ依頼1,1,3," + rare + ",HAL月面";
+        string line = "バグ依頼1,1,3," + rare + ",HAL月面" + "3000";
 
         //IDの行まで読み込み
         for(int i = 0; i <= id; i++)
@@ -46,7 +46,8 @@ public class CSVLoader : MonoBehaviour
                     reward = 1,
                     lowRobotCount = 3,
                     rarity = rare,
-                    name = "HAL月面"
+                    name = "HAL月面",
+                    hp = 3000
                 };
 
                 return info;
@@ -60,6 +61,7 @@ public class CSVLoader : MonoBehaviour
         info.lowRobotCount = int.Parse(spritLine[2]);
         info.rarity = rare;
         info.name = spritLine[3];
+        info.hp = float.Parse(spritLine[4]);
 
         return info;
     }
