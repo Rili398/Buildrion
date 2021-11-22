@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class Mouse_Event : MonoBehaviour
 {
-
-
-    private void Start()
-    {
-
+    void Start()
+    {     
     }
+
 
 
     public void OnMouse() //ポインターがオブジェクトに乗ったとき
     {
         Debug.Log("マウスがInしたお！");
+
     }
 
     public void OutMouse() //ポインターがオブジェクトから離れたとき
     {
         Debug.Log("マウスがOutしたお！");
+
 
     }
 
