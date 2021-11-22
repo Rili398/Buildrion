@@ -3018,6 +3018,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4792816957146284270, guid: 5aedef929f5567545aec681e8355f61d, type: 3}
+      propertyPath: m_Carve
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4792816957146284270, guid: 5aedef929f5567545aec681e8355f61d, type: 3}
+      propertyPath: m_CarveOnlyStationary
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7156730470987023342, guid: 5aedef929f5567545aec681e8355f61d, type: 3}
       propertyPath: m_Name
       value: Dummy1x1
