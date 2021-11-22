@@ -7,12 +7,17 @@ public class Marge : MonoBehaviour
     [SerializeField] private Land myLand;
     public bool isMarge;
     //合体ボタン変数
+    private fillbottom margeButton;
+
+    public bool isWarking;
 
     void Start()
     {
         myLand = GetComponent<Land>();
         isMarge = false;
-        //合体ボタン変数Find
+        margeButton = GameObject.FindGameObjectWithTag("MargeButton").GetComponent<fillbottom>();
+
+        isWarking = false;
     }
 
     //=========================================================================
@@ -33,7 +38,6 @@ public class Marge : MonoBehaviour
     //クリックされたら関数
     public void OnClick()
     {
-        //合体ボタンに登録　Set〇〇
-        Debug.Log("合体！");
+        margeButton.SetMarge(this);
     }
 }

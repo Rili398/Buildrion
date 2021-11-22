@@ -67,6 +67,7 @@ public class Land : MonoBehaviour
                 if (repuiredCount <= robotList.Count)
                 {
                     isWarking = true;
+                    marge.isWarking = true;
                     //建設中オブジェクト表示
                     if (buildingName != null)
                     {
@@ -115,6 +116,7 @@ public class Land : MonoBehaviour
                 progressBar.ResetPb();
                 progressBar.gameObject.SetActive(false);
                 transform.GetComponentInChildren<OrderRelay>().CanselOrder();
+                marge.isWarking = false;
 
                 //お金加算
                 Singleton<GameManager>.Instance.AddMoney(reward);

@@ -23,23 +23,33 @@ public class fillbottom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            if (UIimg.fillAmount < 1.0f)
+        if (UIimg.fillAmount < 1.0f)
+        {
+            UIimg.fillAmount += 1.0f / countTime * Time.deltaTime;
+        }
+        else
+        {
+            Debug.Log(marge);
+
+            if (marge == null)
+                return;
+
+            Debug.Log(marge.GetRobotCnt());
+
+            if (marge.isWarking)
             {
-                UIimg.fillAmount += 1.0f / countTime * Time.deltaTime;
-            }
-            else
-            {
-                if (marge == null)
-                    return;
-                if(marge.GetRobotCnt() >= 6)
+                if (marge.GetRobotCnt() >= 6)
                 {
                     UIimg.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
                     UIbtn.interactable = true;
                     UIbackimg.SetActive(false);
                 }
-               
             }
- 
+            else
+            {
+                UIbtn.interactable = false;
+            }
+        }
     }
 
     public void SetMarge(Marge inmarge)
@@ -50,7 +60,7 @@ public class fillbottom : MonoBehaviour
     public void Fusion()
     {
         // ここでタイムライン再生
-        //gSystem.Fusion();
+        gSystem.Fusion();
         // カメラ切り替え?
         // fillamount初期状態戻す関数
         Resetfillamount();

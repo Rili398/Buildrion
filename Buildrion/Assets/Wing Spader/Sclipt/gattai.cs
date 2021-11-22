@@ -9,14 +9,7 @@ public class gattai : MonoBehaviour
     //êe
     GameObject parent;
 
-    // Update is called once per frame
-    void Update()
-    {
-        //çáÅöëÃ
-        Fusion();
-    }
-
-    void Fusion()
+    public void Fusion()
     {
         GameObject buildrion = (GameObject)Resources.Load("cutin 1");
         Instantiate(buildrion, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
