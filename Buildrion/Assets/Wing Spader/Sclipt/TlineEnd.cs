@@ -23,6 +23,7 @@ public class TlineEnd : MonoBehaviour
 
         if (end == true)
         {
+
             Destroy(this.gameObject);
         }
     }
