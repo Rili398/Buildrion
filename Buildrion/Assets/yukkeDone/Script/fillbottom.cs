@@ -61,8 +61,13 @@ public class fillbottom : MonoBehaviour
     {
         // ここでタイムライン再生
         gSystem.Fusion();
+<<<<<<< HEAD
+        // カメラ切り替え?
+        Camera_Actve(false, true);
+=======
         // カメラ切り替え
 
+>>>>>>> bf815f9241424f1f989c98e610f3e9b1fb8a7251
         // fillamount初期状態戻す関数
         Resetfillamount();
     }
@@ -73,5 +78,11 @@ public class fillbottom : MonoBehaviour
         UIbtn.interactable = false;
         UIimg.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
         UIimg.fillAmount = 0.0f;
+    }
+
+    public void Camera_Actve(bool MainActive,bool SubAutive)
+    {
+        MainActive = false;
+        SubAutive = false;
     }
 }
