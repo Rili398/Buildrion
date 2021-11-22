@@ -75,17 +75,17 @@ public class OrderRelay : MonoBehaviour
         return false;
     }
 
-    public bool GetOrdePossibleRep()
-    {
-        LandStatus ls = myLand.GetLandStatus();
+    //public bool GetOrdePossibleRep()
+    //{
+    //    LandStatus ls = myLand.GetLandStatus();
 
-        if(ls == LandStatus.IsBuilt)
-        {
-            return !orderExistFlg;
-        }
+    //    if(ls == LandStatus.IsBuilt)
+    //    {
+    //        return !orderExistFlg;
+    //    }
 
-        return false;
-    }
+    //    return false;
+    //}
 
     //=========================================================================
 

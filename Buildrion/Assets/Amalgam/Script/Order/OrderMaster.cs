@@ -28,9 +28,12 @@ public class OrderMaster : MonoBehaviour
     [SerializeField] private OrderRelay target;    //依頼OBJクラス型
 
     [Header("依頼IDの最大値")]
-    [SerializeField] private int commonIdMax = 1;
-    [SerializeField] private int rareIdMax = 1;
-    [SerializeField] private int superRareIdMax = 1;
+    [SerializeField] private int commonId;
+    [SerializeField] private int rareId;
+    [SerializeField] private int superRareId;
+
+    [Header("依頼OBJのタグ名")]
+    [SerializeField] private string rerayTag;
 
     // Start is called before the first frame update
     void Start()
@@ -79,12 +82,12 @@ void Update()
 
             if (!result)
             {
-                result = CheckRepairOrder();
+                //result = CheckRepairOrder();
             }
         }
         else
         {
-            result = CheckRepairOrder();
+            //result = CheckRepairOrder();
 
             if (!result)
             {
@@ -102,7 +105,7 @@ void Update()
         List<GameObject> select = new List<GameObject>();
 
         //シーン内の依頼OBJを取得して、条件チェック
-        foreach (var orderObj in GameObject.FindGameObjectsWithTag("OrderObj"))
+        foreach (var orderObj in GameObject.FindGameObjectsWithTag(rerayTag))
         {
             //依頼が発生していない && 建設済み
             if (orderObj.GetComponent<OrderRelay>().GetOrdePossibleCon())
@@ -121,28 +124,28 @@ void Update()
     }
 
     //改修依頼の発生条件チェック
-    bool CheckRepairOrder()
-    {
-        List<GameObject> select = new List<GameObject>();
+    //bool CheckRepairOrder()
+    //{
+    //    List<GameObject> select = new List<GameObject>();
 
-        //シーン内の依頼OBJを取得して、条件チェック
-        foreach (var orderObj in GameObject.FindGameObjectsWithTag("OrderObj"))
-        {
-            //依頼が発生していない && 建設済み
-            if(orderObj.GetComponent<OrderRelay>().GetOrdePossibleRep())
-            {
-                select.Add(orderObj);
-            }
-        }
+    //    //シーン内の依頼OBJを取得して、条件チェック
+    //    foreach (var orderObj in GameObject.FindGameObjectsWithTag("OrderObj"))
+    //    {
+    //        //依頼が発生していない && 建設済み
+    //        if(orderObj.GetComponent<OrderRelay>().GetOrdePossibleRep())
+    //        {
+    //            select.Add(orderObj);
+    //        }
+    //    }
 
-        if(select.Count > 0)
-        {
-            target = select[Random.Range(0, select.Count)].GetComponent<OrderRelay>();
-            return true;
-        }
+    //    if(select.Count > 0)
+    //    {
+    //        target = select[Random.Range(0, select.Count)].GetComponent<OrderRelay>();
+    //        return true;
+    //    }
 
-        return false;
-    }
+    //    return false;
+    //}
 
     //依頼の抽選
     void LotteryOrder()
@@ -170,24 +173,22 @@ void Update()
         //依頼ID決定
         int id = 0;
 
-        if(rare == OrdersRarity.OR_Common)
+        if (rare == OrdersRarity.OR_Common)
         {
-            id = Random.Range(0, commonIdMax + 1);
+            id = commonId;
         }
         else if (rare == OrdersRarity.OR_Rare)
         {
-            id = Random.Range(0, rareIdMax + 1);
+            id = rareId;
         }
         else if (rare == OrdersRarity.OR_SuperRare)
         {
-            id = Random.Range(0, superRareIdMax + 1);
+            id = superRareId;
         }
         else
         {
             Debug.Log("依頼決定でバグってます(OrderMaster)");
         }
-
-        Debug.Log("id:" + id);
 
         //依頼OBJに登録
         if (target != null)
