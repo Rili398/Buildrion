@@ -12,6 +12,7 @@ TagManager:
   - Robot
   - parent
   - Field
+  - MargeButton
   layers:
   - Default
   - TransparentFX
