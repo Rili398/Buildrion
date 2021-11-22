@@ -51,7 +51,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   landStatus: 0
-  io: 0
   isWarking: 0
   reward: 0
   repuiredCount: 0
@@ -62,6 +61,8 @@ MonoBehaviour:
   returnInterval: 1
   margeRate: 0
   robotCnt: 0
+  iot: 0
+  iw: 0
 --- !u!65 &5732204163386468802
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -812,7 +813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3701227279956823471, guid: 6d631fd2467eff54893121cb630b3a38, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3701227279956823471, guid: 6d631fd2467eff54893121cb630b3a38, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

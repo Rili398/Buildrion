@@ -89,8 +89,6 @@ public class OrderRelay : MonoBehaviour
         //土地に依頼情報を渡す
         myLand.SetLandStatus(LandStatus.InConstruct);
 
-        Debug.Log(orderInfo);
-
         myLand.SetOrderInfo(orderInfo.reward, robotNum, orderInfo.name, orderInfo.hp);
 
         //ロボット拠点に指示を出す

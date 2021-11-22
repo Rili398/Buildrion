@@ -18,7 +18,7 @@ public class GameManager : Singleton<GameManager>
     void Start()
     {
         //フレームレート設定
-        //Application.targetFrameRate = 60;
+        Application.targetFrameRate = 60;
 
         roboBase = GameObject.FindGameObjectWithTag("RobotBase").GetComponent<RobotBase>();
     }

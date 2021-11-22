@@ -144,9 +144,6 @@ public class Land : MonoBehaviour
 
         iot = isOrdered;
         iw = isWarking;
-
-        Debug.Log(iot);
-        Debug.Log(iw);
     }
 
     //=========================================================================
