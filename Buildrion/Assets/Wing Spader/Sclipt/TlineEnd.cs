@@ -14,7 +14,7 @@ public class TlineEnd : MonoBehaviour
     void Start()
     {
         _playableDirector = GetComponent<PlayableDirector>();
-        Camera_Active = GameObject.Find("Buttom");
+        Camera_Active = GameObject.Find("Button");
     }
     
 
@@ -25,7 +25,7 @@ public class TlineEnd : MonoBehaviour
 
         if (end == true)
         {
-            Camera_Active.GetComponent<fillbottom>().Camera_Actve(true,false);
+            Camera_Active.GetComponent<fillbottom>().Camera_Actve(true, false);
             Destroy(this.gameObject);
         }
     }

@@ -15,9 +15,19 @@ public class fillbottom : MonoBehaviour
     private Marge marge;
     private gattai gSystem;
 
+    private GameObject mainCamera;      //メインカメラ格納用
+    private GameObject subCamera;       //サブカメラ格納用 
+
+
     private void Start()
     {
         gSystem = GetComponent<gattai>();
+
+        mainCamera = GameObject.Find("Main Camera");
+        subCamera = GameObject.Find("Sub Camera");
+
+        subCamera.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -58,7 +68,7 @@ public class fillbottom : MonoBehaviour
         // ここでタイムライン再生
         gSystem.Fusion();
         // カメラ切り替え
-        Camera_Actve(false, true);
+        Camera_Actve(false,true);
         // fillamount初期状態戻す関数
         Resetfillamount();
     }
@@ -71,9 +81,19 @@ public class fillbottom : MonoBehaviour
         UIimg.fillAmount = 0.0f;
     }
 
-    public void Camera_Actve(bool MainActive,bool SubAutive)
+    public void Camera_Actve(bool MainActive,bool SubActive)
     {
-        MainActive = false;
-        SubAutive = false;
+        if(MainActive == true && SubActive == false)
+        {
+            mainCamera.SetActive(true);
+            subCamera.SetActive(false);
+        }
+
+        if (MainActive == false && SubActive == true)
+        {
+            mainCamera.SetActive(false);
+            subCamera.SetActive(true);
+        }
+
     }
 }
