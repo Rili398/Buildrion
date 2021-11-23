@@ -12,7 +12,7 @@ public class Shaking : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        shake = Camera.main.GetComponent<CameraShake>();
+        shake = GameObject.Find("Sub Camera");
         shake.Shake(duration, magnitude);
     }
 

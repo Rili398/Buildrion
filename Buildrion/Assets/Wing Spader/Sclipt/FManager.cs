@@ -48,6 +48,7 @@ public class FManager : MonoBehaviour
     {
         GameObject buildrion = (GameObject)Resources.Load("Capsule");
         Instantiate(buildrion, new Vector3(0.0f + pos_x, 3.0f + pos_y, 0.0f + pos_z), Quaternion.identity);
+        
     }
 
 
