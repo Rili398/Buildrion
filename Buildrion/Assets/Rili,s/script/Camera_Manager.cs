@@ -16,25 +16,26 @@ public class Camera_Manager : MonoBehaviour
         subCamera = GameObject.Find("Sub Camera");
 
         //サブカメラを非アクティブにする
-        subCamera.SetActive(false);
+        Camera_Actve(false, true);
     }
 
 
     //単位時間ごとに実行される関数
-    void Update()
+
+    public void Camera_Actve(bool MainActive, bool SubActive)
     {
-        //スペースキーが押されている間、サブカメラをアクティブにする
-        if (Input.GetKey("space"))
+        if (MainActive == true && SubActive == false)
         {
-            //サブカメラをアクティブに設定
+            mainCamera.SetActive(true);
+            subCamera.SetActive(false);
+        }
+
+        if (MainActive == false && SubActive == true)
+        {
             mainCamera.SetActive(false);
             subCamera.SetActive(true);
         }
-        else
-        {
-            //メインカメラをアクティブに設定
-            subCamera.SetActive(false);
-            mainCamera.SetActive(true);
-        }
+
     }
+
 }
