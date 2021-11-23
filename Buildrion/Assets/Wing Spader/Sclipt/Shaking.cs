@@ -7,12 +7,16 @@ public class Shaking : MonoBehaviour
 
     [SerializeField] private CameraShake shake;
     [SerializeField] private float duration, magnitude;
-    
+
+    private GameObject subCamera;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        shake = GameObject.Find("Sub Camera");
+        subCamera = GameObject.Find("Sub Camera");
+
+        shake = subCamera.GetComponent<CameraShake>();
         shake.Shake(duration, magnitude);
     }
 
