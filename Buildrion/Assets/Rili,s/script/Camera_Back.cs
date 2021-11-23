@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camera_Manager : MonoBehaviour
+public class Camera_Back : MonoBehaviour
 {
     private GameObject mainCamera;      //メインカメラ格納用
     private GameObject subCamera;       //サブカメラ格納用 
@@ -17,9 +17,8 @@ public class Camera_Manager : MonoBehaviour
         subCamera = GameObject.Find("Sub Camera");
         Camera_Active = GameObject.Find("Button");
 
-        //サブカメラに切り替える
-            Camera_Active.GetComponent<fillbottom>().Camera_Actve(false, true);
+
+        Camera_Active.GetComponent<fillbottom>().Camera_Actve(true, false);
 
     }
-
 }

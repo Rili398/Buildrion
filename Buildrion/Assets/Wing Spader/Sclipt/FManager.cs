@@ -5,6 +5,9 @@ using UnityEngine;
 public class FManager : MonoBehaviour
 {
     [SerializeField] private float gtime;
+    [SerializeField] private float pos_x = 0;
+    [SerializeField] private float pos_y = 0;
+    [SerializeField] private float pos_z = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -21,17 +24,17 @@ public class FManager : MonoBehaviour
     private void CreateParts()
     {
         GameObject tama = (GameObject)Resources.Load("tama1");
-        Instantiate(tama, new Vector3(1.0f, 10.0f, -1.0f), Quaternion.identity);
+        Instantiate(tama, new Vector3(1.0f + pos_x, 10.0f + pos_y, -1.0f + pos_z), Quaternion.identity);
 
-        Instantiate(tama, new Vector3(-1.0f, 15.0f, -1.0f), Quaternion.identity);
+        Instantiate(tama, new Vector3(-1.0f + pos_x, 15.0f + pos_y, -1.0f + pos_z), Quaternion.identity);
 
-        Instantiate(tama, new Vector3(-2.0f, 20.0f, 0.0f), Quaternion.identity);
+        Instantiate(tama, new Vector3(-2.0f + pos_x, 20.0f + pos_y, 0.0f + pos_z), Quaternion.identity);
 
-        Instantiate(tama, new Vector3(-1.0f, 25.0f, 1.0f), Quaternion.identity);
+        Instantiate(tama, new Vector3(-1.0f + pos_x, 25.0f + pos_y, 1.0f + pos_z), Quaternion.identity);
 
-        Instantiate(tama, new Vector3(1.0f, 30.0f, 1.0f), Quaternion.identity);
+        Instantiate(tama, new Vector3(1.0f + pos_x, 30.0f + pos_y, 1.0f + pos_z), Quaternion.identity);
 
-        Instantiate(tama, new Vector3(2.0f, 35.0f, 0.0f), Quaternion.identity);
+        Instantiate(tama, new Vector3(2.0f + pos_x, 35.0f + pos_y, 0.0f + pos_z), Quaternion.identity);
 
         Invoke(nameof(Flash), gtime - 1.5f);
 
@@ -44,7 +47,7 @@ public class FManager : MonoBehaviour
     private void Birth()
     {
         GameObject buildrion = (GameObject)Resources.Load("Capsule");
-        Instantiate(buildrion, new Vector3(0.0f, 3.0f, 0.0f), Quaternion.identity);
+        Instantiate(buildrion, new Vector3(0.0f + pos_x, 3.0f + pos_y, 0.0f + pos_z), Quaternion.identity);
     }
 
 
@@ -64,7 +67,7 @@ public class FManager : MonoBehaviour
     {
 
         GameObject hikari = (GameObject)Resources.Load("hikari");
-        Instantiate(hikari, new Vector3(0.0f, 1.0f, -3.0f), Quaternion.identity);
+        Instantiate(hikari, new Vector3(0.0f + pos_x, 1.0f + pos_y, -3.0f + pos_z), Quaternion.identity);
     }
 
 }

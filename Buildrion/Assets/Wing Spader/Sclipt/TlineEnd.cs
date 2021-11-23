@@ -25,7 +25,8 @@ public class TlineEnd : MonoBehaviour
 
         if (end == true)
         {
-            Camera_Active.GetComponent<fillbottom>().Camera_Actve(true, false);
+            //ƒƒCƒ“ƒJƒƒ‰‚É–ß‚·
+           // Camera_Active.GetComponent<fillbottom>().Camera_Actve(true, false);
             Destroy(this.gameObject);
         }
     }
