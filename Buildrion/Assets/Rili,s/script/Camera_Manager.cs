@@ -6,6 +6,7 @@ public class Camera_Manager : MonoBehaviour
 {
     private GameObject mainCamera;      //メインカメラ格納用
     private GameObject subCamera;       //サブカメラ格納用 
+    public GameObject Camera_Active;
 
 
     //呼び出し時に実行される関数
@@ -14,27 +15,11 @@ public class Camera_Manager : MonoBehaviour
         //メインカメラとサブカメラをそれぞれ取得
         mainCamera = GameObject.Find("Main Camera");
         subCamera = GameObject.Find("Sub Camera");
+        Camera_Active = GameObject.Find("Button");
 
-        //サブカメラを非アクティブにする
-        subCamera.SetActive(false);
+        //サブカメラに切り替える
+            Camera_Active.GetComponent<fillbottom>().Camera_Actve(false, true);
+
     }
 
-
-    //単位時間ごとに実行される関数
-    void Update()
-    {
-        //スペースキーが押されている間、サブカメラをアクティブにする
-        if (Input.GetKey("space"))
-        {
-            //サブカメラをアクティブに設定
-            mainCamera.SetActive(false);
-            subCamera.SetActive(true);
-        }
-        else
-        {
-            //メインカメラをアクティブに設定
-            subCamera.SetActive(false);
-            mainCamera.SetActive(true);
-        }
-    }
 }

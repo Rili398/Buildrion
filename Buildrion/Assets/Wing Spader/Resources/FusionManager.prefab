@@ -44,3 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gtime: 3.5
+  pos_x: -40
+  pos_y: 5
+  pos_z: 0
