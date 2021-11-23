@@ -44,7 +44,8 @@ public class fillbottom : MonoBehaviour
 
             if (marge.isWarking)
             {
-                if (marge.GetRobotCnt() >= 6)
+
+                if (marge.GetRobotCnt() >= 6 && UIbackimg.activeSelf)
                 {
                     UIimg.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
                     UIbtn.interactable = true;
@@ -69,11 +70,10 @@ public class fillbottom : MonoBehaviour
         gSystem.Fusion();
         // ƒJƒƒ‰Ø‚è‘Ö‚¦
         //Camera_Actve(false,true);
-        // fillamount‰Šúó‘Ô–ß‚·ŠÖ”
-        Resetfillamount();
+        UIbtn.interactable = false;
     }
 
-    private void Resetfillamount()
+    public void Resetfillamount()
     {
         UIbackimg.SetActive(true);
         UIbtn.interactable = false;

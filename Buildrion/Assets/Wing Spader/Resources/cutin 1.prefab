@@ -61,3 +61,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d177464300d157b44b983b607ab9e02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Camera_Active: {fileID: 0}
+  union_button: {fileID: 3106354399486801276, guid: f93afc1e96ab5664399e633230a88e44, type: 3}

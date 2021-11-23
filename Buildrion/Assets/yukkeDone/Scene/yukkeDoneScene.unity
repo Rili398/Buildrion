@@ -1487,3 +1487,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcd46260507c5c14280e35f166731fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &156062082139654527 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3106354399486801276, guid: f93afc1e96ab5664399e633230a88e44, type: 3}
+  m_PrefabInstance: {fileID: 156062082139654525}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7657934769253431928
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7657934768910210232, guid: d13eef1e1b0d02440b44640b8206ec64, type: 3}
+      propertyPath: m_Name
+      value: UnionButtonSwitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657934768910210233, guid: d13eef1e1b0d02440b44640b8206ec64, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657934768910210233, guid: d13eef1e1b0d02440b44640b8206ec64, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 504.25262
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657934768910210233, guid: d13eef1e1b0d02440b44640b8206ec64, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 614.42334
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657934768910210233, guid: d13eef1e1b0d02440b44640b8206ec64, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 212.63916
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657934768910210233, guid: d13eef1e1b0d02440b44640b8206ec64, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657934768910210233, guid: d13eef1e1b0d02440b44640b8206ec64, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657934768910210233, guid: d13eef1e1b0d02440b44640b8206ec64, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657934768910210233, guid: d13eef1e1b0d02440b44640b8206ec64, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657934768910210233, guid: d13eef1e1b0d02440b44640b8206ec64, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657934768910210233, guid: d13eef1e1b0d02440b44640b8206ec64, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657934768910210233, guid: d13eef1e1b0d02440b44640b8206ec64, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657934768910210234, guid: d13eef1e1b0d02440b44640b8206ec64, type: 3}
+      propertyPath: unionbutton
+      value: 
+      objectReference: {fileID: 156062082139654527}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d13eef1e1b0d02440b44640b8206ec64, type: 3}

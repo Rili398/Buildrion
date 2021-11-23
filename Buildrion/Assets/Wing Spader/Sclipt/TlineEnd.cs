@@ -9,12 +9,12 @@ public class TlineEnd : MonoBehaviour
 
     private PlayableDirector _playableDirector;
     public GameObject Camera_Active;
-
+    public GameObject union_button;
     // Start is called before the first frame update
     void Start()
     {
         _playableDirector = GetComponent<PlayableDirector>();
-        Camera_Active = GameObject.Find("Button");
+        union_button = GameObject.Find("button");
     }
     
 
@@ -26,7 +26,10 @@ public class TlineEnd : MonoBehaviour
         if (end == true)
         {
             //メインカメラに戻す
-           // Camera_Active.GetComponent<fillbottom>().Camera_Actve(true, false);
+            // Camera_Active.GetComponent<fillbottom>().Camera_Actve(true, false);
+            //合体ボタン有効
+            union_button.GetComponent<fillbottom>().Resetfillamount();
+
             Destroy(this.gameObject);
         }
     }

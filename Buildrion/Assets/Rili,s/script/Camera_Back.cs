@@ -8,7 +8,6 @@ public class Camera_Back : MonoBehaviour
     private GameObject subCamera;       //サブカメラ格納用 
     public GameObject Camera_Active;
 
-
     //呼び出し時に実行される関数
     void Start()
     {
@@ -16,7 +15,6 @@ public class Camera_Back : MonoBehaviour
         mainCamera = GameObject.Find("Main Camera");
         subCamera = GameObject.Find("Sub Camera");
         Camera_Active = GameObject.Find("Button");
-
 
         Camera_Active.GetComponent<fillbottom>().Camera_Actve(true, false);
 
