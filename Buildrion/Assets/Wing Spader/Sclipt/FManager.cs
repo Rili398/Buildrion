@@ -67,7 +67,7 @@ public class FManager : MonoBehaviour
     {
 
         GameObject hikari = (GameObject)Resources.Load("hikari");
-        Instantiate(hikari, new Vector3(0.0f, 1.0f, -3.0f), Quaternion.identity);
+        Instantiate(hikari, new Vector3(0.0f + pos_x, 1.0f + pos_y, -3.0f + pos_z), Quaternion.identity);
     }
 
 }
