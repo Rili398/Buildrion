@@ -5523,6 +5523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdd7bfa3d36f7b94eaad3176bac74c98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Camera_Active: {fileID: 0}
 --- !u!1 &1383930503
 GameObject:
   m_ObjectHideFlags: 0
@@ -5965,6 +5966,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8462308168209921436, guid: 1ef92aa07eb64e141af0525409beec67, type: 3}
       propertyPath: EmissionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462308168209921436, guid: 1ef92aa07eb64e141af0525409beec67, type: 3}
+      propertyPath: VelocityModule.enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8462308168209921438, guid: 1ef92aa07eb64e141af0525409beec67, type: 3}
