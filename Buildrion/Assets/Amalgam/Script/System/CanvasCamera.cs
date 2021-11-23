@@ -12,6 +12,9 @@ public class CanvasCamera : MonoBehaviour
 
     void Update()
     {
-        canvas.transform.rotation = Camera.main.transform.rotation;
+        if (Camera.main.enabled)
+        {
+            canvas.transform.rotation = Camera.main.transform.rotation;
+        }
     }
 }
