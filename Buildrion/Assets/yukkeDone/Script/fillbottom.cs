@@ -19,6 +19,8 @@ public class fillbottom : MonoBehaviour
     private GameObject subCamera;       //サブカメラ格納用 
 
 
+    public bool inta;
+
     private void Start()
     {
         gSystem = GetComponent<gattai>();
@@ -44,8 +46,7 @@ public class fillbottom : MonoBehaviour
 
             if (marge.isWarking)
             {
-
-                if (marge.GetRobotCnt() >= 6 && UIbackimg.activeSelf)
+                if (marge.GetRobotCnt() >= 6)
                 {
                     UIimg.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
                     UIbtn.interactable = true;
@@ -57,6 +58,8 @@ public class fillbottom : MonoBehaviour
                 UIbtn.interactable = false;
             }
         }
+
+        inta = UIbtn.interactable;
     }
 
     public void SetMarge(Marge inmarge)
@@ -70,6 +73,8 @@ public class fillbottom : MonoBehaviour
         gSystem.Fusion();
         // カメラ切り替え
         //Camera_Actve(false,true);
+        marge.ChangeBuildrion();
+        marge = null;
         UIbtn.interactable = false;
     }
 

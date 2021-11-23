@@ -14,7 +14,7 @@ public class TlineEnd : MonoBehaviour
     void Start()
     {
         _playableDirector = GetComponent<PlayableDirector>();
-        union_button = GameObject.Find("button");
+        union_button = GameObject.FindGameObjectWithTag("MargeButton");
     }
     
 
