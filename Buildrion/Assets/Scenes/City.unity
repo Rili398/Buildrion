@@ -2391,6 +2391,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Land1x2 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6495252970596701032, guid: 32f6f200bb7be3a44bcaa805b656a47c, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 985968780}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32f6f200bb7be3a44bcaa805b656a47c, type: 3}
 --- !u!1001 &652175156
@@ -3553,6 +3557,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8215382335393994453, guid: 5aedef929f5567545aec681e8355f61d, type: 3}
   m_PrefabInstance: {fileID: 983699437}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &985968780 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 6778267272410470005, guid: 9fae464ceb5dbcc4a82df2ddce3374fe, type: 3}
+  m_PrefabInstance: {fileID: 496688800}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1006551768
 PrefabInstance:
@@ -5947,12 +5956,12 @@ GameObject:
   - component: {fileID: 1912455263}
   - component: {fileID: 1912455262}
   m_Layer: 0
-  m_Name: SubCamera
+  m_Name: Sub Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &1912455262
 AudioListener:
   m_ObjectHideFlags: 0
