@@ -31,6 +31,7 @@ public class Capsule : MonoBehaviour
 
         GameObject shake = (GameObject)Resources.Load("shake");
         Instantiate(shake, pos, Quaternion.identity);
+        Destroy(this.gameObject, 2.0f);
     }
 
 }
