@@ -85,8 +85,11 @@ public class Land : MonoBehaviour
             }
             else
             {
-                //プログレスバーの進行
-                progressBar.AddValue(workPower * margeRate);
+                //プログレスバーの進行　ここ時止め
+                if (!marge.timeStop)
+                {
+                    progressBar.AddValue(workPower * margeRate);
+                }
 
                 if(progressBar.GetIsMax())
                 {
