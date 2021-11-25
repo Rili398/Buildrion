@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CloseUpgradeBtn : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject closeobject;
+    public GameObject Ongameobject;
 
-    // Update is called once per frame
-    void Update()
+
+    public void OnClick()
     {
-        
+        closeobject.SetActive(false);
+
+        Ongameobject.SetActive(true);
+
+        if (Ongameobject.GetComponent<Button>() == null)
+            return;
+        Ongameobject.GetComponent<Button>().interactable = true;
     }
 }
