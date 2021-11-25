@@ -11,6 +11,9 @@ EditorUserSettings:
       value: 224247031146464218050727342c511559241b2f222d692938221636c6ef3a3dd1e433e7e2742a323016f6
       flags: 0
     RecentlyUsedScenePath-1:
+<<<<<<< HEAD
+      value: 224247031146464218050727342c511559241b2f222d692938221636c6ef3a3dd1e433e7e2742a323016f6
+=======
       value: 224247031146467a000f0025112e10231512162f63092b31212e1c3eddcc353aacf238e0f323
       flags: 0
     RecentlyUsedScenePath-2:
@@ -21,6 +24,7 @@ EditorUserSettings:
       flags: 0
     RecentlyUsedScenePath-4:
       value: 224247031146467a000f0025112e10231512162f63042732121a0831acf53a31f6fe
+>>>>>>> 72adb15d791d3cd675486c22165d46572d70d79b
       flags: 0
 >>>>>>> 72adb15d791d3cd675486c22165d46572d70d79b
     vcSharedLogLevel:
