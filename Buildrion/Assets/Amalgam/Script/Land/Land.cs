@@ -198,9 +198,6 @@ public class Land : MonoBehaviour
         progressBar.SetMaxValue(hp); 
 
         isOrdered = true;
-
-        Debug.Log("reward:" + reward);
-        Debug.Log("reCon:" + repuiredCount);
     }
 
     //=========================================================================
