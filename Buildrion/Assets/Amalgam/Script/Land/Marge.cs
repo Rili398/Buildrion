@@ -32,7 +32,7 @@ public class Marge : MonoBehaviour
     public void ChangeBuildrion(bool command = true)
     {
         isMarge = command;
-        myLand.margeRate = 3.0f;    //‡‘Ì”{—¦
+        myLand.margeRate = Singleton<GameManager>.Instance.GetMargeRate();    //‡‘Ì”{—¦
         timeStop = true;
     }
 

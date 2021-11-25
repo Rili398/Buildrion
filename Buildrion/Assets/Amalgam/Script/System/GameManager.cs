@@ -13,6 +13,8 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private RobotBase roboBase;
     [SerializeField] private Text roboText;
 
+    [Header("çáëÃéûÇÃî{ó¶")]
+    [SerializeField] private float margedRate;
 
 
     void Start()
@@ -21,6 +23,8 @@ public class GameManager : Singleton<GameManager>
         Application.targetFrameRate = 60;
 
         roboBase = GameObject.FindGameObjectWithTag("RobotBase").GetComponent<RobotBase>();
+
+        margedRate = 3.0f;
     }
 
     private void Update()
@@ -36,6 +40,8 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    //=========================================================================
+
     public void AddMoney(int value)
     {
         money += value;
@@ -44,5 +50,15 @@ public class GameManager : Singleton<GameManager>
     public int GetMoney()
     {
         return money;
+    }
+
+    public float GetMargeRate()
+    {
+        return margedRate;
+    }
+
+    public void SetMargeRate(float inMRate)
+    {
+        margedRate = inMRate;
     }
 }
