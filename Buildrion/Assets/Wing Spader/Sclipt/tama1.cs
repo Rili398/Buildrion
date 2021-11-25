@@ -28,6 +28,7 @@ public class tama1 : MonoBehaviour
     {
         mytransform = this.gameObject.GetComponent<Transform>();
         Vector3 pos = transform.position;
+        pos.y -= 1.25f;
 
         GameObject efect = (GameObject)Resources.Load("tuchi");
         Instantiate(efect, pos, Quaternion.identity);
