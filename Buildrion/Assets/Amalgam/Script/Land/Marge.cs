@@ -10,6 +10,7 @@ public class Marge : MonoBehaviour
     private fillbottom margeButton;
 
     public bool isWarking;
+    public bool timeStop;
 
     void Start()
     {
@@ -18,6 +19,7 @@ public class Marge : MonoBehaviour
         margeButton = GameObject.FindGameObjectWithTag("MargeButton").GetComponent<fillbottom>();
 
         isWarking = false;
+        timeStop = false;
     }
 
     //=========================================================================
@@ -31,6 +33,7 @@ public class Marge : MonoBehaviour
     {
         isMarge = command;
         myLand.margeRate = 3.0f;    //çáëÃî{ó¶
+        timeStop = true;
     }
 
     //=========================================================================

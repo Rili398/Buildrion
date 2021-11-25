@@ -18,8 +18,7 @@ public class fillbottom : MonoBehaviour
     private GameObject mainCamera;      //メインカメラ格納用
     private GameObject subCamera;       //サブカメラ格納用 
 
-
-    public bool inta;
+    private bool margeExistFlg;
 
     private void Start()
     {
@@ -29,7 +28,7 @@ public class fillbottom : MonoBehaviour
         subCamera = GameObject.Find("Sub Camera");
 
         subCamera.SetActive(false);
-
+        margeExistFlg = false;
     }
 
     // Update is called once per frame
@@ -41,7 +40,7 @@ public class fillbottom : MonoBehaviour
         }
         else
         {
-            if (marge == null)
+            if (marge == null || !margeExistFlg)
                 return;
 
             if (marge.isWarking)
@@ -58,13 +57,12 @@ public class fillbottom : MonoBehaviour
                 UIbtn.interactable = false;
             }
         }
-
-        inta = UIbtn.interactable;
     }
 
     public void SetMarge(Marge inmarge)
     {
         marge = inmarge;
+        margeExistFlg = true;
     }
 
     public void Fusion()
@@ -74,7 +72,7 @@ public class fillbottom : MonoBehaviour
         // カメラ切り替え
         //Camera_Actve(false,true);
         marge.ChangeBuildrion();
-        marge = null;
+        margeExistFlg = false;
         UIbtn.interactable = false;
     }
 
@@ -84,6 +82,10 @@ public class fillbottom : MonoBehaviour
         UIbtn.interactable = false;
         UIimg.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
         UIimg.fillAmount = 0.0f;
+
+        marge.timeStop = false;
+        marge = null;
+        margeExistFlg = false;
     }
 
     public void Camera_Actve(bool MainActive,bool SubActive)
