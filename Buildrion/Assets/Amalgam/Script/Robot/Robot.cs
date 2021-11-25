@@ -15,9 +15,11 @@ public enum RobotState
 [RequireComponent(typeof(NavMeshAgent))]
 public class Robot : MonoBehaviour
 {
-    private NavMeshAgent agent;
+    [SerializeField] private NavMeshAgent agent;
     private RobotState robotState;
     private GameObject robotbase;
+
+    [SerializeField] private Animator animator;
  
     public float warkPower { get; set; }
 
@@ -25,7 +27,6 @@ public class Robot : MonoBehaviour
     private void Awake()
     {
         robotState = RobotState.Rest;
-        agent = GetComponent<NavMeshAgent>();
         robotbase = GameObject.FindGameObjectWithTag("RobotBase");
     }
 
@@ -35,6 +36,7 @@ public class Robot : MonoBehaviour
     public void SetDestination(Vector3 distPoint)
     {
         agent.destination = distPoint;
+        animator.SetBool("walk", true);
     }
 
     public Vector3 GetDestination()
@@ -50,6 +52,11 @@ public class Robot : MonoBehaviour
         if(robotState == RobotState.Return)
         {
             SetDestination(robotbase.transform.position);
+        }
+
+        if(robotState == RobotState.Rest)
+        {
+            animator.SetBool("walk", false);
         }
     }
 

@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a03ed7b764587d4086c1849f89eb5c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  robotName: Robot
+  robotName: RobotTron
   defaultMax: 10
   nowRobotCnt: 0
   baseWarkPower: 1
