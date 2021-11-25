@@ -23,7 +23,7 @@ public class FManager : MonoBehaviour
 
     private void CreateParts()
     {
-        GameObject tama = (GameObject)Resources.Load("tama1");
+        GameObject tama = (GameObject)Resources.Load("buildtron");
         Instantiate(tama, new Vector3(1.0f + pos_x, 10.0f + pos_y, -1.0f + pos_z), Quaternion.identity);
 
         Instantiate(tama, new Vector3(-1.0f + pos_x, 15.0f + pos_y, -1.0f + pos_z), Quaternion.identity);
@@ -47,7 +47,7 @@ public class FManager : MonoBehaviour
     private void Birth()
     {
         GameObject buildrion = (GameObject)Resources.Load("Capsule");
-        Instantiate(buildrion, new Vector3(0.0f + pos_x, 3.0f + pos_y, 0.0f + pos_z), Quaternion.identity);
+        Instantiate(buildrion, new Vector3(0.0f + pos_x, 5.0f + pos_y, 0.0f + pos_z), Quaternion.identity);
         
     }
 
