@@ -252,10 +252,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: CameraChange
   - m_Version: 1
-    m_Start: 8.5
+    m_Start: 8.2
     m_ClipIn: 0
     m_Asset: {fileID: 1665012753784230355}
-    m_Duration: 1.5
+    m_Duration: 1.333333333333334
     m_TimeScale: 1
     m_ParentTrack: {fileID: -4064874378906864823}
     m_EaseInDuration: 0
@@ -598,10 +598,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Fade-canvas
   - m_Version: 1
-    m_Start: 6.666666666666667
+    m_Start: 7.15
     m_ClipIn: 0
     m_Asset: {fileID: -8563284263556856284}
-    m_Duration: 3.333333333333333
+    m_Duration: 3.333333333333334
     m_TimeScale: 1
     m_ParentTrack: {fileID: 3823331743082624318}
     m_EaseInDuration: 0
