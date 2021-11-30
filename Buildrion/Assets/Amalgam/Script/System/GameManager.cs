@@ -3,8 +3,19 @@ using UnityEngine.UI;
 
 //ƒIƒvƒVƒ‡ƒ“‚Æ‚©‚ÌŠÇ—‚ğ‚·‚é—\’è
 
+public enum GameState
+{
+    Title = 0,
+    Game,
+    Result,
+    GameStateMax
+}
+
 public class GameManager : Singleton<GameManager>
 {
+    [Header("§ŒÀŠÔ")]
+    [SerializeField] private float timer;
+
     [Header("Š‹à")]
     [SerializeField] private int money;
     [SerializeField] private Text moneyText;
@@ -16,6 +27,10 @@ public class GameManager : Singleton<GameManager>
     [Header("‡‘Ì‚Ì”{—¦")]
     [SerializeField] private float margedRate;
 
+    private GameState gameState;
+    public bool isGameEnd;
+
+    private GameTimer gameTimer;
 
     void Start()
     {
@@ -25,18 +40,57 @@ public class GameManager : Singleton<GameManager>
         roboBase = GameObject.FindGameObjectWithTag("RobotBase").GetComponent<RobotBase>();
 
         margedRate = 3.0f;
+
+        gameState = GameState.Game;
+        isGameEnd = false;
+
+        gameTimer = new GameTimer(timer);
     }
 
     private void Update()
     {
-        if (moneyText != null)
+        if(gameState == GameState.Title)
         {
-            moneyText.text = "MONEY :" + money.ToString("D8");
+            isGameEnd = false;
         }
-
-        if(roboText != null)
+        else if(gameState == GameState.Game)
         {
-            roboText.text = "ƒƒ{”^Å‘å” = " + roboBase.GetNowRobotCnt() + "^" + roboBase.robotMax;
+            if (moneyText != null)
+            {
+                moneyText.text = "MONEY :" + money.ToString("D8");
+            }
+
+            if (roboText != null)
+            {
+                roboText.text = "ƒƒ{”^Å‘å” = " + roboBase.GetNowRobotCnt() + "^" + roboBase.robotMax;
+            }
+
+            gameTimer.UpdateTimer();
+
+            if(gameTimer.IsTimeUp)
+            {
+                gameState = GameState.Result;
+
+                //“¾“_ŒvZ
+                
+            }
+        }
+        else if(gameState == GameState.Result)
+        {
+            if(!isGameEnd)
+            {
+                isGameEnd = true;
+            }
+
+            if (moneyText != null)
+            {
+                moneyText.text = "MONEY :" + money.ToString("D8");
+            }
+
+            if (roboText != null)
+            {
+                roboText.text = "ƒƒ{”^Å‘å” = " + roboBase.GetNowRobotCnt() + "^" + roboBase.robotMax;
+            }
         }
     }
 
@@ -60,5 +114,15 @@ public class GameManager : Singleton<GameManager>
     public void SetMargeRate(float inMRate)
     {
         margedRate = inMRate;
+    }
+
+    public GameState GetGameState()
+    {
+        return gameState;
+    }
+
+    public void SetGameState(GameState gs)
+    {
+        gameState = gs;
     }
 }
