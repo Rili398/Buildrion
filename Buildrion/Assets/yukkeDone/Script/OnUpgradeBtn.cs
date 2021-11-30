@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OnUpgradeBtn : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject infoBtn;
+    public GameObject upgradeBtn;
+    
+    public void Onclick()
     {
-        
+        infoBtn.GetComponent<Button>().interactable = false;
+        infoBtn.SetActive(false);
+        upgradeBtn.SetActive(true);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

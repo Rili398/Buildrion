@@ -40,8 +40,8 @@ public class OrderForm : MonoBehaviour
         orderRelay = orderR;
 
         titleText.text = info.title;
-        rewardText.text = info.reward.ToString();
-        lowUnitCntText.text = info.lowRobotCount.ToString();
+        rewardText.text = "報酬金　" + info.reward.ToString();
+        lowUnitCntText.text = "必要機体　" + info.lowRobotCount.ToString();
 
         //レア度
         if (orderInfo.rarity == OrdersRarity.OR_Common)
