@@ -26,17 +26,17 @@ public class FManager : MonoBehaviour
         GameObject tama = (GameObject)Resources.Load("buildtron");
         Instantiate(tama, new Vector3(1.0f + pos_x, 10.0f + pos_y, -1.0f + pos_z), Quaternion.identity);
 
-        Instantiate(tama, new Vector3(-1.0f + pos_x, 15.0f + pos_y, -1.0f + pos_z), Quaternion.identity);
+        Instantiate(tama, new Vector3(-1.0f + pos_x, 12.0f + pos_y, -1.0f + pos_z), Quaternion.identity);
 
-        Instantiate(tama, new Vector3(-2.0f + pos_x, 20.0f + pos_y, 0.0f + pos_z), Quaternion.identity);
+        Instantiate(tama, new Vector3(-2.0f + pos_x, 14.0f + pos_y, 0.0f + pos_z), Quaternion.identity);
 
-        Instantiate(tama, new Vector3(-1.0f + pos_x, 25.0f + pos_y, 1.0f + pos_z), Quaternion.identity);
+        Instantiate(tama, new Vector3(-1.0f + pos_x, 16.0f + pos_y, 1.0f + pos_z), Quaternion.identity);
 
-        Instantiate(tama, new Vector3(1.0f + pos_x, 30.0f + pos_y, 1.0f + pos_z), Quaternion.identity);
+        Instantiate(tama, new Vector3(1.0f + pos_x, 18.0f + pos_y, 1.0f + pos_z), Quaternion.identity);
 
-        Instantiate(tama, new Vector3(2.0f + pos_x, 35.0f + pos_y, 0.0f + pos_z), Quaternion.identity);
+        Instantiate(tama, new Vector3(2.0f + pos_x, 20.0f + pos_y, 0.0f + pos_z), Quaternion.identity);
 
-        Invoke(nameof(Flash), gtime - 1.5f);
+        Invoke(nameof(Flash), gtime - 0.5f);
 
         Invoke(nameof(DestroyParts), gtime);
 
