@@ -16,7 +16,10 @@ public class ProgressBar : MonoBehaviour
 
     void Update()
     {
-        progressBar.fillAmount = value;
+        if (Singleton<GameManager>.Instance.isGameEnd == false)
+        {
+            progressBar.fillAmount = value;
+        }
     }
 
     public void ResetPb()
