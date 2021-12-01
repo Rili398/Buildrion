@@ -7,6 +7,7 @@ public class CloseUpgradeBtn : MonoBehaviour
 {
     public GameObject closeobject;
     public GameObject Ongameobject;
+    public Button infoBtn;
 
 
     public void OnClick()
@@ -15,8 +16,6 @@ public class CloseUpgradeBtn : MonoBehaviour
 
         Ongameobject.SetActive(true);
 
-        if (Ongameobject.GetComponent<Button>() == null)
-            return;
-        Ongameobject.GetComponent<Button>().interactable = true;
+        infoBtn.GetComponent<Button>().interactable = true;
     }
 }
