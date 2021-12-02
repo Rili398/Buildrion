@@ -61,12 +61,12 @@ public class GameManager : Singleton<GameManager>
         {
             if (moneyText != null)
             {
-                moneyText.text = "MONEY :" + money.ToString("D8");
+                moneyText.text = money.ToString("D8");
             }
 
             if (roboText != null)
             {
-                roboText.text = "ÉçÉ{êîÅ^ç≈ëÂêî = " + roboBase.GetNowRobotCnt() + "Å^" + roboBase.robotMax;
+                roboText.text = "ÉçÉ{êîÅFÅ@" + roboBase.GetNowRobotCnt() + "Å^" + roboBase.robotMax;
             }
 
             if(timeText != null)
