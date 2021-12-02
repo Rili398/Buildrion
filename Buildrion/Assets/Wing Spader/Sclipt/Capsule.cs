@@ -25,7 +25,7 @@ public class Capsule : MonoBehaviour
     {
         mytransform = this.gameObject.GetComponent<Transform>();
         Vector3 pos = transform.position;
-        pos.y -= 2.0f;
+        pos.y -= 1.0f;
 
         GameObject efect = (GameObject)Resources.Load("tuchi2");
         Instantiate(efect, pos, Quaternion.identity);

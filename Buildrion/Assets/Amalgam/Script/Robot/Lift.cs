@@ -6,7 +6,13 @@ public class Lift : MonoBehaviour
 
     void Start()
     {
-        animator.SetBool("lift", true);
-        Debug.Log("lift" + animator.GetBool("lift"));
+        
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        animator.SetBool("lift", true);
+    }
+
+
 }
