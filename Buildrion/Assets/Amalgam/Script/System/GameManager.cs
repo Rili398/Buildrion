@@ -69,10 +69,10 @@ public class GameManager : Singleton<GameManager>
 
             if(gameTimer.IsTimeUp)
             {
-                gameState = GameState.Result;
-
                 //“¾“_ŒvŽZ
-                
+                Singleton<ResultMaster>.Instance.ScoreCalculate();
+                gameTimer.ResetTimer();
+                gameState = GameState.Result;
             }
         }
         else if(gameState == GameState.Result)
