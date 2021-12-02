@@ -13,12 +13,12 @@ public class Camera_Manager : MonoBehaviour
     void Start()
     {
         //メインカメラとサブカメラをそれぞれ取得
-     //   mainCamera = GameObject.Find("Main Camera");
-      //  subCamera = GameObject.Find("Sub Camera");
-       // Camera_Active = GameObject.Find("Button");
+        mainCamera = GameObject.Find("Main Camera");
+        subCamera = GameObject.Find("Sub Camera");
+        Camera_Active = GameObject.Find("Button");
 
         //サブカメラに切り替える
-          //  Camera_Active.GetComponent<fillbottom>().Camera_Actve(false, true);
+        Camera_Active.GetComponent<fillbottom>().Camera_Actve(false, true);
 
     }
 
