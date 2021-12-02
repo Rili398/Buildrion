@@ -42,7 +42,7 @@ public class RoboCntUG : MonoBehaviour
         if (Singleton<GameManager>.Instance.GetMoney() >= nextCost)
         {
             upGradeButton.interactable = true;
-            costText.color = Color.black;
+            costText.color = Color.white;
         }
         else
         {
