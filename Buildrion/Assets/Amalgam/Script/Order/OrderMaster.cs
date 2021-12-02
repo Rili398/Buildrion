@@ -46,6 +46,11 @@ public class OrderMaster : MonoBehaviour
 // Update is called once per frame
 void Update()
     {
+        if(Singleton<GameManager>.Instance.isGameEnd)
+        {
+            return;
+        }
+
         //タイマー更新
         orderTimer.UpdateTimer();
 

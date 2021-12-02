@@ -61,6 +61,12 @@ public class Land : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //ゲーム進行状態確認
+        if(Singleton<GameManager>.Instance.isGameEnd)
+        {
+            return; 
+        }
+
         //ステート管理
        if (landStatus == LandStatus.InConstruct)
         {

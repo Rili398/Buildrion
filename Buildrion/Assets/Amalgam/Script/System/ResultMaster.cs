@@ -105,28 +105,28 @@ public class ResultMaster : Singleton<ResultMaster>
 
         if (slotRate < SlotRate_Low)
         {
-            moneyScore = 1;
+            rateScore = 1;
         }
         else if (slotRate >= SlotRate_Low && slotRate < SlotRate_Middle)
         {
-            moneyScore = 2;
+            rateScore = 2;
         }
         else if (slotRate >= SlotRate_Middle && slotRate < SlotRate_High)
         {
-            moneyScore = 3;
+            rateScore = 3;
         }
         else if (slotRate >= SlotRate_High && slotRate < SlotRate_Highest)
         {
-            moneyScore = 4;
+            rateScore = 4;
         }
         else if (slotRate >= SlotRate_Highest)
         {
-            moneyScore = 5;
+            rateScore = 5;
         }
 
         //総合スコアに応じてUI書き換えて表示
         moneyText.text = totalMoney.ToString();
-        rateText.text = Mathf.FloorToInt(slotRate).ToString();
+        rateText.text = Mathf.FloorToInt(slotRate * 100).ToString();
 
         totalScore = moneyScore + rateScore;
 
@@ -134,15 +134,15 @@ public class ResultMaster : Singleton<ResultMaster>
         {
             rankText.text = "C";
         }
-        else if (slotRate >= TotalScore_Low && slotRate < TotalScore_Middle)
+        else if (totalScore >= TotalScore_Low && totalScore < TotalScore_Middle)
         {
             rankText.text = "B";
         }
-        else if (slotRate >= TotalScore_Middle && slotRate < TotalScore_High)
+        else if (totalScore >= TotalScore_Middle && totalScore < TotalScore_High)
         {
             rankText.text = "A";
         }
-        else if (slotRate >= TotalScore_High)
+        else if (totalScore >= TotalScore_High)
         {
             rankText.text = "S";
         }

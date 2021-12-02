@@ -55,6 +55,11 @@ public class RoboCntUG : MonoBehaviour
 
     public void Upgrade()
     {
+        if(Singleton<GameManager>.Instance.isGameEnd)
+        {
+            return;
+        }
+
         if(level >= maxLevel)
         {
             return;
