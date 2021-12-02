@@ -15,7 +15,7 @@ SubShader{
 	};
 
 	void surf(Input IN, inout SurfaceOutputStandard o) {
-		fixed4 baseColor = fixed4(1, 1, 1, 1);
+		fixed4 baseColor = fixed4(0.1, 0.1, 0.1, 1);
 		fixed4 rimColor = fixed4(1, 1, 1, 1);
 
 		o.Albedo = baseColor;

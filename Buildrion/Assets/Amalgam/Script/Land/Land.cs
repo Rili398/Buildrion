@@ -32,6 +32,7 @@ public class Land : MonoBehaviour
     [SerializeField] private float returnInterval = 1.0f;
     public float margeRate;
     public int robotCnt;
+    public ParticleSystem particle;
 
     //Œš•¨‚ÌƒŠƒXƒg
     private BuildingList buildingList;
@@ -128,6 +129,9 @@ public class Land : MonoBehaviour
                 progressBar.gameObject.SetActive(false);
                 transform.GetComponentInChildren<OrderRelay>().CanselOrder();
                 marge.isWarking = false;
+                particle.Play();
+
+
 
                 //‚¨‹à‰ÁŽZ
                 Singleton<GameManager>.Instance.AddMoney(reward);
