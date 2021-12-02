@@ -77,9 +77,18 @@ public class RoboCntUG : MonoBehaviour
         nextRoboCnt = table.roboUGT[level - 1].roboMax;
 
         //テキスト更新
-        levelText.text = "Level." + level;
-        costText.text = "COST:" + nextCost;
-        upgradeText.text = nowRoboCnt + " → " + nextRoboCnt;
+        if (level >= maxLevel)
+        {
+            levelText.text = "Level.MAX";
+            costText.text = "COST: ---";
+            upgradeText.text = "最大強化済みです";
+        }
+        else
+        {
+            levelText.text = "Level." + level;
+            costText.text = "COST:" + nextCost;
+            upgradeText.text = nowRoboCnt + " → " + nextRoboCnt;
+        }
 
         //roboBaseを更新
         roboBase.robotMax = nowRoboCnt;
