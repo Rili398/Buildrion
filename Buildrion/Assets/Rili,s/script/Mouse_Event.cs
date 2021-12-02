@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class Mouse_Event : MonoBehaviour
 {
+       // Material red = Resources.Load<Material>("sozai/materials/red");
+       // Material rim = Resources.Load<Material>("sozai/materials/red");
+
+    public Material basemat;
+    public Material rimmat;
+
     void Start()
-    {     
+    {
+
     }
 
 
@@ -13,13 +20,15 @@ public class Mouse_Event : MonoBehaviour
     public void OnMouse() //ポインターがオブジェクトに乗ったとき
     {
         Debug.Log("マウスがInしたお！");
-
+        // クラスAのGameObject
+        gameObject.GetComponent<Renderer>().material = rimmat;
     }
 
     public void OutMouse() //ポインターがオブジェクトから離れたとき
     {
         Debug.Log("マウスがOutしたお！");
 
+        gameObject.GetComponent<Renderer>().material = basemat;
 
     }
 
