@@ -300,6 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5b4f572baba578448c163e9de082b44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infoBtnCvs: {fileID: 2638834037611477276}
   infoBtn: {fileID: 2638834035714835629}
   upgradeBtn: {fileID: 8487997893866838863}
 --- !u!1 &2638834037237822175
@@ -449,6 +450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   closeobject: {fileID: 8487997893866838863}
   Ongameobject: {fileID: 2638834035714835629}
+  infoBtn: {fileID: 0}
 --- !u!1001 &2638834036964426147
 PrefabInstance:
   m_ObjectHideFlags: 0
