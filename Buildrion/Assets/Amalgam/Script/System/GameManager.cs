@@ -61,7 +61,7 @@ public class GameManager : Singleton<GameManager>
         {
             if (moneyText != null)
             {
-                moneyText.text = money.ToString("D8");
+                moneyText.text = "所持金：" + money.ToString("D8");
             }
 
             if (roboText != null)
@@ -94,12 +94,12 @@ public class GameManager : Singleton<GameManager>
 
             if (moneyText != null)
             {
-                moneyText.text = "MONEY :" + money.ToString("D8");
+                moneyText.text = "所持金：" + money.ToString("D8");
             }
 
             if (roboText != null)
             {
-                roboText.text = "ロボ数／最大数 = " + roboBase.GetNowRobotCnt() + "／" + roboBase.robotMax;
+                roboText.text = "ロボ数　" + roboBase.GetNowRobotCnt() + "／" + roboBase.robotMax;
             }
         }
     }
