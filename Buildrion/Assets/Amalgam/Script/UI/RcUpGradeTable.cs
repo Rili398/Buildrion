@@ -13,7 +13,7 @@ public class RcUpGradeTable
 
     public RcUpGradeTable()
     {
-        roboUGT = new RobotUpgradeTable[9];
+        roboUGT = new RobotUpgradeTable[10];
 
         roboUGT[0] = new RobotUpgradeTable() { cost =  300, roboMax = 12 };
         roboUGT[1] = new RobotUpgradeTable() { cost =  350, roboMax = 15 };
@@ -24,5 +24,6 @@ public class RcUpGradeTable
         roboUGT[6] = new RobotUpgradeTable() { cost = 1500, roboMax = 30 };
         roboUGT[7] = new RobotUpgradeTable() { cost = 2500, roboMax = 36 };
         roboUGT[8] = new RobotUpgradeTable() { cost = 4000, roboMax = 45 };
+        roboUGT[9] = new RobotUpgradeTable() { cost = 900000, roboMax = 100 };
     }
 }
