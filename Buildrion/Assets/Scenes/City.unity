@@ -1467,11 +1467,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 274138203546845790, guid: ec99efa012cb4d54f921cae01e1e9c7e, type: 3}
       propertyPath: timerMax
-      value: 15
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 274138203546845790, guid: ec99efa012cb4d54f921cae01e1e9c7e, type: 3}
       propertyPath: timerMin
-      value: 8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 274138203546845790, guid: ec99efa012cb4d54f921cae01e1e9c7e, type: 3}
       propertyPath: superRareId
@@ -1876,7 +1876,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5909866413228652884, guid: 152b7fcfd1effb0438bf3b57917b04e8, type: 3}
       propertyPath: timer
-      value: 180
+      value: 50000
       objectReference: {fileID: 0}
     - target: {fileID: 5909866413228652884, guid: 152b7fcfd1effb0438bf3b57917b04e8, type: 3}
       propertyPath: roboText
@@ -9756,11 +9756,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 274138203546845790, guid: ec99efa012cb4d54f921cae01e1e9c7e, type: 3}
       propertyPath: timerMax
-      value: 20
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 274138203546845790, guid: ec99efa012cb4d54f921cae01e1e9c7e, type: 3}
       propertyPath: timerMin
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 274138203546845790, guid: ec99efa012cb4d54f921cae01e1e9c7e, type: 3}
       propertyPath: superRareId
@@ -10168,11 +10168,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 274138203546845790, guid: ec99efa012cb4d54f921cae01e1e9c7e, type: 3}
       propertyPath: timerMax
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 274138203546845790, guid: ec99efa012cb4d54f921cae01e1e9c7e, type: 3}
       propertyPath: timerMin
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 274138203546845791, guid: ec99efa012cb4d54f921cae01e1e9c7e, type: 3}
       propertyPath: m_RootOrder
