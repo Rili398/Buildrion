@@ -7,5 +7,6 @@ public class Lift : MonoBehaviour
     void Start()
     {
         animator.SetBool("lift", true);
+        Debug.Log("lift" + animator.GetBool("lift"));
     }
 }
