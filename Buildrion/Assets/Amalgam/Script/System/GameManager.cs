@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 //ƒIƒvƒVƒ‡ƒ“‚Æ‚©‚ÌŠÇ—‚ğ‚·‚é—\’è
 
@@ -26,6 +27,7 @@ public class GameManager : Singleton<GameManager>
 
     [Header("‡‘Ì‚Ì”{—¦")]
     [SerializeField] private float margedRate;
+    const float DefaultMargeRate = 3.0f;
 
     private GameState gameState;
     public bool isGameEnd;
@@ -52,6 +54,7 @@ public class GameManager : Singleton<GameManager>
         if(gameState == GameState.Title)
         {
             isGameEnd = false;
+            gameState = GameState.Game;
         }
         else if(gameState == GameState.Game)
         {
@@ -124,5 +127,14 @@ public class GameManager : Singleton<GameManager>
     public void SetGameState(GameState gs)
     {
         gameState = gs;
+    }
+
+    public void ResetGame()
+    {
+        gameTimer.ResetTimer();
+        money = 0;
+        gameState = GameState.Title;
+        margedRate = DefaultMargeRate;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

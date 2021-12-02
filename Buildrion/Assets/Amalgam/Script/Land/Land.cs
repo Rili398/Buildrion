@@ -125,6 +125,11 @@ public class Land : MonoBehaviour
 
                 //Ç®ã‡â¡éZ
                 Singleton<GameManager>.Instance.AddMoney(reward);
+
+                //ÉXÉRÉAâ¡éZ
+                Singleton<ResultMaster>.Instance.AddNowSlot();
+                Singleton<ResultMaster>.Instance.AddTotalMoney(reward);
+
                 reward = 0;
             }
         }
