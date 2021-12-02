@@ -33,6 +33,7 @@ public class GameManager : Singleton<GameManager>
     public bool isGameEnd;
 
     private GameTimer gameTimer;
+    [SerializeField] private Text timeText;
 
     void Start()
     {
@@ -66,6 +67,12 @@ public class GameManager : Singleton<GameManager>
             if (roboText != null)
             {
                 roboText.text = "ÉçÉ{êîÅ^ç≈ëÂêî = " + roboBase.GetNowRobotCnt() + "Å^" + roboBase.robotMax;
+            }
+
+            if(timeText != null)
+            {
+                int tmp = Mathf.FloorToInt(gameTimer.LeftTime);
+                timeText.text = tmp.ToString();
             }
 
             gameTimer.UpdateTimer();
