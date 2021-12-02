@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class tama1 : MonoBehaviour
 {
+
     public float Multiplier = 3.0f;
     public float speed = 3.0f;
     private Rigidbody myrigidbody;
@@ -32,6 +33,7 @@ public class tama1 : MonoBehaviour
 
         GameObject efect = (GameObject)Resources.Load("tuchi");
         Instantiate(efect, pos, Quaternion.identity);
+       
     }
 
     void FixedUpdate()

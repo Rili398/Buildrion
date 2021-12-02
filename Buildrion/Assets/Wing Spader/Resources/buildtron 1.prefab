@@ -404,6 +404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221aa19360a677d4f90c15f637668775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lift: {fileID: 3680820987214899465}
   Multiplier: 3
   speed: 3
 --- !u!65 &8598539199417419362
