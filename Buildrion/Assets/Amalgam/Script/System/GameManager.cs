@@ -34,6 +34,7 @@ public class GameManager : Singleton<GameManager>
 
     private GameTimer gameTimer;
     [SerializeField] private Text timeText;
+    public bool isTimeStop;
 
     void Start()
     {
@@ -46,6 +47,7 @@ public class GameManager : Singleton<GameManager>
 
         gameState = GameState.Game;
         isGameEnd = false;
+        isTimeStop = false;
 
         gameTimer = new GameTimer(timer);
     }
@@ -75,7 +77,10 @@ public class GameManager : Singleton<GameManager>
                 timeText.text = tmp.ToString();
             }
 
-            gameTimer.UpdateTimer();
+            if (!isTimeStop)
+            {
+                gameTimer.UpdateTimer();
+            }
 
             if(gameTimer.IsTimeUp)
             {
