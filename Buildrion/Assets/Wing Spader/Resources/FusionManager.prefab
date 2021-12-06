@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c027bcb455bc8f9468ffcffe0ad0bf22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gtime: 2
+  gtime: 3
   pos_x: -40
   pos_y: 5
   pos_z: 0
