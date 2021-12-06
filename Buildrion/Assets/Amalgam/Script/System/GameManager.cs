@@ -34,7 +34,7 @@ public class GameManager : Singleton<GameManager>
 
     private GameTimer gameTimer;
     [SerializeField] private Text timeText;
-    private bool isTimeStop;
+    public bool isTimeStop;
 
     void Start()
     {
