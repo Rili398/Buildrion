@@ -72,6 +72,7 @@ public class fillbottom : MonoBehaviour
         // ƒJƒƒ‰Ø‚è‘Ö‚¦
         //Camera_Actve(false,true);
         marge.ChangeBuildrion();
+        Singleton<GameManager>.Instance.isTimeStop = true;
         margeExistFlg = false;
         UIbtn.interactable = false;
     }
@@ -84,6 +85,7 @@ public class fillbottom : MonoBehaviour
         UIimg.fillAmount = 0.0f;
 
         marge.timeStop = false;
+        Singleton<GameManager>.Instance.isTimeStop = false;
         marge = null;
         margeExistFlg = false;
     }
