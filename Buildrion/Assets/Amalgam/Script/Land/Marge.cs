@@ -9,6 +9,7 @@ public class Marge : MonoBehaviour
     //‡‘Ìƒ{ƒ^ƒ“•Ï”
     private fillbottom margeButton;
 
+    public ParticleSystem particle;
     public bool isWarking;
     public bool timeStop;
 
@@ -34,6 +35,8 @@ public class Marge : MonoBehaviour
         isMarge = command;
         myLand.margeRate = Singleton<GameManager>.Instance.GetMargeRate();    //‡‘Ì”{—¦
         timeStop = true;
+
+        particle.Play();
     }
 
     //=========================================================================
