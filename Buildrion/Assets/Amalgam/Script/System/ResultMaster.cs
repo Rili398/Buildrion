@@ -132,19 +132,19 @@ public class ResultMaster : Singleton<ResultMaster>
 
         if(totalScore < TotalScore_Low)
         {
-            rankText.text = "–Ø‘¢Œš’zŽm";
+            rankText.text = "C";
         }
         else if (totalScore >= TotalScore_Low && totalScore < TotalScore_Middle)
         {
-            rankText.text = "“ñ‹‰Œš’zŽm";
+            rankText.text = "B";
         }
         else if (totalScore >= TotalScore_Middle && totalScore < TotalScore_High)
         {
-            rankText.text = "ˆê‹‰Œš’zŽm";
+            rankText.text = "A";
         }
         else if (totalScore >= TotalScore_High)
         {
-            rankText.text = "“Á‹‰Œš’zŽm";
+            rankText.text = "S";
         }
 
         ResultUIEnable = true;

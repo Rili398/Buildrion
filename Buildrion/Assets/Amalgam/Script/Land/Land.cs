@@ -131,6 +131,8 @@ public class Land : MonoBehaviour
                 marge.isWarking = false;
                 particle.Play();
 
+
+
                 //‚¨‹à‰ÁŽZ
                 Singleton<GameManager>.Instance.AddMoney(reward);
 
