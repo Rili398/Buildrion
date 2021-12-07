@@ -27,18 +27,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-<<<<<<< HEAD
-  - {fileID: 5646470907327953538}
-  - {fileID: 1682333368522541494}
-  - {fileID: 1758052138390169795}
-  - {fileID: 1784080633357198344}
-=======
   - {fileID: 8343610081732986719}
   - {fileID: 1389873294972157353}
   - {fileID: 6267455297561482671}
   - {fileID: 8532408438511868966}
   - {fileID: 290455354712150001}
->>>>>>> 47c13f7cdcce2b667551f067d96184d3c0d00bd3
   m_Father: {fileID: 8174680219556434783}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
