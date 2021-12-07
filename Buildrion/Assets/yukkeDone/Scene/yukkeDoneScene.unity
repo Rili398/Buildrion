@@ -488,10 +488,10 @@ PrefabInstance:
     - target: {fileID: 9084305568873969758, guid: 584f4114d0a6c1c4681bc270baf60942, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: 21b50bb0dd8c5eb4b8fa4b6eb336d055, type: 3}
+      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 9084305568873969759, guid: 584f4114d0a6c1c4681bc270baf60942, type: 3}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9084305568971328602, guid: 584f4114d0a6c1c4681bc270baf60942, type: 3}
       propertyPath: m_RootOrder
@@ -541,6 +541,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RobsUI
       objectReference: {fileID: 0}
+    - target: {fileID: 9084305568971328603, guid: 584f4114d0a6c1c4681bc270baf60942, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 584f4114d0a6c1c4681bc270baf60942, type: 3}
 --- !u!1001 &1833906003
@@ -553,6 +557,10 @@ PrefabInstance:
     - target: {fileID: 345995285163662844, guid: e1af586e20b0ce547b275ee0f15dacb5, type: 3}
       propertyPath: m_Name
       value: moneyUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 345995285163662844, guid: e1af586e20b0ce547b275ee0f15dacb5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 345995285163662845, guid: e1af586e20b0ce547b275ee0f15dacb5, type: 3}
       propertyPath: m_RootOrder
@@ -729,7 +737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3106354399486801276, guid: f93afc1e96ab5664399e633230a88e44, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f93afc1e96ab5664399e633230a88e44, type: 3}
@@ -838,6 +846,18 @@ PrefabInstance:
     - target: {fileID: 731855434115698677, guid: 545fc1de9af327f4a98c35a97394c7f3, type: 3}
       propertyPath: m_Name
       value: duration
+      objectReference: {fileID: 0}
+    - target: {fileID: 731855434115698677, guid: 545fc1de9af327f4a98c35a97394c7f3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268239089860090292, guid: 545fc1de9af327f4a98c35a97394c7f3, type: 3}
+      propertyPath: m_Color.a
+      value: 0.1254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504545547363661094, guid: 545fc1de9af327f4a98c35a97394c7f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 545fc1de9af327f4a98c35a97394c7f3, type: 3}
