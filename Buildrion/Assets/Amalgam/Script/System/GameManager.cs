@@ -68,7 +68,7 @@ public class GameManager : Singleton<GameManager>
 
             if (roboText != null)
             {
-                roboText.text = "ロボ数：　" + roboBase.GetNowRobotCnt() + "／" + roboBase.robotMax;
+                roboText.text = "ロボ数：" + roboBase.GetNowRobotCnt() + "／" + roboBase.robotMax;
             }
 
             if(timeText != null)

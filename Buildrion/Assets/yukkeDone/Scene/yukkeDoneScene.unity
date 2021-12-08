@@ -488,10 +488,10 @@ PrefabInstance:
     - target: {fileID: 9084305568873969758, guid: 584f4114d0a6c1c4681bc270baf60942, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+      objectReference: {fileID: 12800000, guid: 71067cc5fab5b8c4285f32aa3f4bb5df, type: 3}
     - target: {fileID: 9084305568873969759, guid: 584f4114d0a6c1c4681bc270baf60942, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9084305568971328602, guid: 584f4114d0a6c1c4681bc270baf60942, type: 3}
       propertyPath: m_RootOrder
@@ -554,13 +554,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 345995283889741054, guid: e1af586e20b0ce547b275ee0f15dacb5, type: 3}
+      propertyPath: m_Text
+      value: "\u6240\u6301\u91D1:000000"
+      objectReference: {fileID: 0}
     - target: {fileID: 345995285163662844, guid: e1af586e20b0ce547b275ee0f15dacb5, type: 3}
       propertyPath: m_Name
       value: moneyUI
       objectReference: {fileID: 0}
     - target: {fileID: 345995285163662844, guid: e1af586e20b0ce547b275ee0f15dacb5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 345995285163662845, guid: e1af586e20b0ce547b275ee0f15dacb5, type: 3}
       propertyPath: m_RootOrder
@@ -759,6 +763,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 731855433627863195, guid: 545fc1de9af327f4a98c35a97394c7f3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e9e6f4bddb888dd49a6b3df19c99a665, type: 3}
     - target: {fileID: 731855434115698673, guid: 545fc1de9af327f4a98c35a97394c7f3, type: 3}
       propertyPath: m_Pivot.x
       value: 0
