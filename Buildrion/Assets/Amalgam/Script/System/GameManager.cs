@@ -92,8 +92,6 @@ public class GameManager : Singleton<GameManager>
             //ˆê’èŽžŠÔ‚²‚Æ‚É‰ñŽû
             if(collectTimer.IsTimeUp)
             {
-                AddMoney()
-
                 //“¾“_ŒvŽZ
                 Singleton<ResultMaster>.Instance.ScoreCalculate();
                 gameTimer.ResetTimer();
