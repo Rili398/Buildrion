@@ -4943,7 +4943,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4875561976704180687, guid: bc9c23d933e819b459e4222b6f0c00ca, type: 3}
   m_PrefabInstance: {fileID: 461581661}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
 --- !u!114 &476076878 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5909866413228652884, guid: 152b7fcfd1effb0438bf3b57917b04e8, type: 3}
@@ -4955,7 +4954,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bc49c53dde91341893827e88ce4308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-=======
 --- !u!1001 &463161662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5025,7 +5023,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50e4ef05fbed8374491a50bc8fd76507, type: 3}
->>>>>>> ebac9f4c0af799f218d22e21f10484eead767f6c
 --- !u!1001 &476610722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7438,11 +7435,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 74d21c92a0adb664bbfa374de62ae210, type: 3}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
       value: 17
-=======
-      value: 36
->>>>>>> ebac9f4c0af799f218d22e21f10484eead767f6c
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 74d21c92a0adb664bbfa374de62ae210, type: 3}
       propertyPath: m_LocalScale.x
@@ -9611,9 +9604,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c80fee3b33b5f15479aaebca33fe2f5a, type: 2}
     - target: {fileID: 4875561976704180687, guid: bc9c23d933e819b459e4222b6f0c00ca, type: 3}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
-      value: 16
-=======
       value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4875561976704180687, guid: bc9c23d933e819b459e4222b6f0c00ca, type: 3}
@@ -9681,7 +9671,6 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 50e4ef05fbed8374491a50bc8fd76507, type: 3}
       propertyPath: m_RootOrder
       value: 14
->>>>>>> ebac9f4c0af799f218d22e21f10484eead767f6c
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 50e4ef05fbed8374491a50bc8fd76507, type: 3}
       propertyPath: m_LocalScale.x
