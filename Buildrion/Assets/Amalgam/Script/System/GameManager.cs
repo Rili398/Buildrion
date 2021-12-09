@@ -19,7 +19,7 @@ public class GameManager : Singleton<GameManager>
 
     [Header("回収")]
     [SerializeField] private float cTimer;
-    [SerializeField] private float collectValue;
+    [SerializeField] private int collectValue;
 
     [Header("所持金")]
     [SerializeField] private int money;
@@ -86,6 +86,31 @@ public class GameManager : Singleton<GameManager>
             if (!isTimeStop)
             {
                 gameTimer.UpdateTimer();
+                collectTimer.UpdateTimer();
+            }
+
+            //回収
+            if(collectTimer.IsTimeUp)
+            {
+                AddMoney(-collectValue);
+
+                //0未満ならゲーム終了
+                if(money < 0)
+                {
+                    if (moneyText != null)
+                    {
+                        moneyText.text = "所持金：" + money.ToString("D8");
+                        moneyText.color = Color.red;
+                    }
+
+                    //得点計算
+                    Singleton<ResultMaster>.Instance.ScoreCalculate();
+                    gameTimer.ResetTimer();
+                    collectTimer.ResetTimer();
+                    gameState = GameState.Result;
+                }
+
+                collectTimer.ResetTimer();
             }
 
             if(gameTimer.IsTimeUp)
@@ -93,6 +118,7 @@ public class GameManager : Singleton<GameManager>
                 //得点計算
                 Singleton<ResultMaster>.Instance.ScoreCalculate();
                 gameTimer.ResetTimer();
+                collectTimer.ResetTimer();
                 gameState = GameState.Result;
             }
         }
