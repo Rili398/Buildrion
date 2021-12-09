@@ -39,7 +39,7 @@ public class OrderMaster : MonoBehaviour
     void Start()
     {
         //ˆË—Š”­¶ŠÔ‚Ìİ’è
-        orderTimer = new GameTimer(Mathf.Floor(Random.Range(timerMin, timerMax)));
+        orderTimer = new GameTimer(timerMin);
         target = null;
     }
 
