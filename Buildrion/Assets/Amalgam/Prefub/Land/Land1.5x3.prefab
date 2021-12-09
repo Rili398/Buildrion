@@ -103,7 +103,7 @@ MonoBehaviour:
   - {fileID: 17376594958157897}
   - {fileID: 2961772377298198224}
   - {fileID: 4140121608271144975}
-  margedRoboAnimator: {fileID: 0}
+  margedRoboAnimator: {fileID: 552324622362605017}
 --- !u!65 &6473796947889440593
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1578,5 +1578,10 @@ PrefabInstance:
 --- !u!4 &1825187940427079716 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7650862429120634088, guid: c0a7bf027a2ed5f4ba68c1cc646f1882, type: 3}
+  m_PrefabInstance: {fileID: 8320695071219760332}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &552324622362605017 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8418155984517220629, guid: c0a7bf027a2ed5f4ba68c1cc646f1882, type: 3}
   m_PrefabInstance: {fileID: 8320695071219760332}
   m_PrefabAsset: {fileID: 0}
