@@ -5815,12 +5815,8 @@ Transform:
   - {fileID: 1174482370}
   - {fileID: 547080922}
   - {fileID: 42623843}
-<<<<<<< HEAD
-  - {fileID: 459949636}
-=======
   - {fileID: 1362310992}
   - {fileID: 2084664093}
->>>>>>> 71b85bd211cdd35a3fa363dd7a3c15b5db9eed39
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
