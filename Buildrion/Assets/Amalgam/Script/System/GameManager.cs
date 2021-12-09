@@ -15,7 +15,11 @@ public enum GameState
 public class GameManager : Singleton<GameManager>
 {
     [Header("制限時間")]
-    [SerializeField] private float timer;
+    [SerializeField] private float gTimer;
+
+    [Header("回収時間")]
+    [SerializeField] private float cTimer;
+    [SerializeField] private int collectValue;
 
     [Header("所持金")]
     [SerializeField] private int money;
@@ -33,6 +37,7 @@ public class GameManager : Singleton<GameManager>
     public bool isGameEnd;
 
     private GameTimer gameTimer;
+    private GameTimer collectTimer;
     [SerializeField] private Text timeText;
     public bool isTimeStop;
 
@@ -49,7 +54,8 @@ public class GameManager : Singleton<GameManager>
         isGameEnd = false;
         isTimeStop = false;
 
-        gameTimer = new GameTimer(timer);
+        gameTimer = new GameTimer(gTimer);
+        collectTimer = new GameTimer(cTimer);
     }
 
     private void Update()
@@ -80,13 +86,29 @@ public class GameManager : Singleton<GameManager>
             if (!isTimeStop)
             {
                 gameTimer.UpdateTimer();
+                collectTimer.UpdateTimer();
             }
 
-            if(gameTimer.IsTimeUp)
+            //一定時間ごとに回収
+            if(collectTimer.IsTimeUp)
+            {
+                AddMoney()
+
+                //得点計算
+                Singleton<ResultMaster>.Instance.ScoreCalculate();
+                gameTimer.ResetTimer();
+                collectTimer.ResetTimer();
+                gameState = GameState.Result;
+
+                collectTimer.ResetTimer();
+            }
+
+            if (gameTimer.IsTimeUp)
             {
                 //得点計算
                 Singleton<ResultMaster>.Instance.ScoreCalculate();
                 gameTimer.ResetTimer();
+                collectTimer.ResetTimer();
                 gameState = GameState.Result;
             }
         }
