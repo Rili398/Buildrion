@@ -15,7 +15,11 @@ public enum GameState
 public class GameManager : Singleton<GameManager>
 {
     [Header("§ŒÀŠÔ")]
-    [SerializeField] private float timer;
+    [SerializeField] private float gTimer;
+
+    [Header("‰ñû")]
+    [SerializeField] private float cTimer;
+    [SerializeField] private float collectValue;
 
     [Header("Š‹à")]
     [SerializeField] private int money;
@@ -33,6 +37,7 @@ public class GameManager : Singleton<GameManager>
     public bool isGameEnd;
 
     private GameTimer gameTimer;
+    private GameTimer collectTimer;
     [SerializeField] private Text timeText;
     public bool isTimeStop;
 
@@ -49,7 +54,8 @@ public class GameManager : Singleton<GameManager>
         isGameEnd = false;
         isTimeStop = false;
 
-        gameTimer = new GameTimer(timer);
+        gameTimer = new GameTimer(gTimer);
+        collectTimer = new GameTimer(cTimer);
     }
 
     private void Update()
