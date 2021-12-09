@@ -41,7 +41,6 @@ public class Land : MonoBehaviour
     //作業中ロボット
     [SerializeField, NamedArrayAtr(new string[2] { "合体前", "合体後" })]
     private Animator[] roboAnimator;
-    private bool isViewRobot = false;
 
     private void Awake()
     {
