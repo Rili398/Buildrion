@@ -39,8 +39,8 @@ public class Land : MonoBehaviour
     private Marge marge;
 
     //作業中ロボット
-    [SerializeField, NamedArrayAtr(new string[2] { "合体前", "合体後" })]
-    private Animator[] roboAnimator;
+    [SerializeField] private Animator[] roboAnimator;
+    [SerializeField] private Animator margedRoboAnimator;
 
     private void Awake()
     {
@@ -216,26 +216,46 @@ public class Land : MonoBehaviour
         if (isMarge)
         {
             //合体ロボ召喚
-            roboAnimator[0].gameObject.SetActive(false);
-            roboAnimator[1].gameObject.SetActive(true);
+            foreach(var anim in roboAnimator)
+            {
+                anim.gameObject.SetActive(false);
+            }
 
-            roboAnimator[1].SetBool("build", true);
+            if (margedRoboAnimator != null)
+            {
+                margedRoboAnimator.gameObject.SetActive(true);
+            }
+
+            margedRoboAnimator.SetBool("build", true);
         }
         else
         {
             //非合体ロボ召喚
-            roboAnimator[0].gameObject.SetActive(true);
-            roboAnimator[1].gameObject.SetActive(false);
+            foreach (var anim in roboAnimator)
+            {
+                anim.gameObject.SetActive(true);
+                anim.SetBool("build", true);
+            }
 
-            roboAnimator[0].SetBool("build", true);
+            if (margedRoboAnimator != null)
+            {
+                margedRoboAnimator.gameObject.SetActive(false);
+            }
         }
     }
 
     //建築中ロボット非表示
     public void InvisibleRobot()
     {
-        roboAnimator[0].gameObject.SetActive(false);
-        roboAnimator[1].gameObject.SetActive(false);
+        foreach (var anim in roboAnimator)
+        {
+            anim.gameObject.SetActive(false);
+        }
+
+        if (margedRoboAnimator != null)
+        {
+            margedRoboAnimator.gameObject.SetActive(false);
+        }
     }
 
     //=========================================================================
