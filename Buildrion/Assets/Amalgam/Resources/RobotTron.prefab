@@ -514,7 +514,7 @@ GameObject:
   - component: {fileID: 2285232521570489696}
   m_Layer: 0
   m_Name: RobotTron
-  m_TagString: Untagged
+  m_TagString: Robot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
