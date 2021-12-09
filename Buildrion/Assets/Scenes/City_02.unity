@@ -1756,6 +1756,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1880651491621480413, guid: 9fae464ceb5dbcc4a82df2ddce3374fe, type: 3}
+      propertyPath: Limit_Hi_x
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880651491621480413, guid: 9fae464ceb5dbcc4a82df2ddce3374fe, type: 3}
+      propertyPath: Limit_Hi_z
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880651491621480413, guid: 9fae464ceb5dbcc4a82df2ddce3374fe, type: 3}
+      propertyPath: wheelSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880651491621480413, guid: 9fae464ceb5dbcc4a82df2ddce3374fe, type: 3}
+      propertyPath: Limit_Low_x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880651491621480413, guid: 9fae464ceb5dbcc4a82df2ddce3374fe, type: 3}
+      propertyPath: Limit_Low_z
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880651491621480413, guid: 9fae464ceb5dbcc4a82df2ddce3374fe, type: 3}
+      propertyPath: rotateSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6778267272410470005, guid: 9fae464ceb5dbcc4a82df2ddce3374fe, type: 3}
       propertyPath: m_Depth
       value: 0
