@@ -12997,6 +12997,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: infoBtn2
       objectReference: {fileID: 0}
+    - target: {fileID: 3614515046141397891, guid: 97ae409ad5f8fe64292a8e4fdd9b79a2, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614515046141397891, guid: 97ae409ad5f8fe64292a8e4fdd9b79a2, type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614515046141397891, guid: 97ae409ad5f8fe64292a8e4fdd9b79a2, type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4372435884767449326, guid: 97ae409ad5f8fe64292a8e4fdd9b79a2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4372435884767449326, guid: 97ae409ad5f8fe64292a8e4fdd9b79a2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97ae409ad5f8fe64292a8e4fdd9b79a2, type: 3}
 --- !u!1001 &1696085426
@@ -14568,7 +14588,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1310844
+  m_Name: pb_Mesh92564
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
