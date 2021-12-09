@@ -859,6 +859,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3391604904147146066, guid: 545fc1de9af327f4a98c35a97394c7f3, type: 3}
+      propertyPath: m_Text
+      value: 000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391604904147146066, guid: 545fc1de9af327f4a98c35a97394c7f3, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4268239089860090292, guid: 545fc1de9af327f4a98c35a97394c7f3, type: 3}
       propertyPath: m_Color.a
       value: 0.1254902
