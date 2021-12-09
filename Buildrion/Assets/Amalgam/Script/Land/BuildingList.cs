@@ -10,7 +10,9 @@ public class BuildingList
     {
         //建物名
         BuildingName = new List<string>();
-        BuildingName.Add("テスト建物");
-        BuildingName.Add("HAL月面");
+        BuildingName.Add("家");
+        BuildingName.Add("アパート");
+        BuildingName.Add("豪邸");
+        BuildingName.Add("ビル");
     }
 }
