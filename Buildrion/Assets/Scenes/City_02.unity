@@ -5814,8 +5814,8 @@ Transform:
   - {fileID: 1808909701}
   - {fileID: 1174482370}
   - {fileID: 547080922}
-  - {fileID: 459949636}
   - {fileID: 42623843}
+  - {fileID: 459949636}
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11805,6 +11805,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5909866413228652884, guid: 152b7fcfd1effb0438bf3b57917b04e8, type: 3}
       propertyPath: timer
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909866413228652884, guid: 152b7fcfd1effb0438bf3b57917b04e8, type: 3}
+      propertyPath: gTimer
       value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 5909866413228652884, guid: 152b7fcfd1effb0438bf3b57917b04e8, type: 3}
