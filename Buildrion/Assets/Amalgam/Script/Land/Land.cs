@@ -38,8 +38,10 @@ public class Land : MonoBehaviour
     private BuildingList buildingList;
     private Marge marge;
 
-    public bool iot;
-    public bool iw;
+    //作業中ロボット
+    [SerializeField, NamedArrayAtr(new string[2] { "合体前", "合体後" })]
+    private Animator[] roboAnimator;
+    private bool isViewRobot = false;
 
     private void Awake()
     {
@@ -87,6 +89,8 @@ public class Land : MonoBehaviour
                         transform.GetChild(2).GetChild(
                             buildingList.BuildingName.IndexOf(buildingName)
                             ).gameObject.SetActive(false);
+
+                        SetViewRobot(false);
                     }
                 }
             }
@@ -121,7 +125,11 @@ public class Land : MonoBehaviour
             if(isWarking)
             {
                 //依頼終了
+
+                //ロボット送り返し
                 StartCoroutine(ReternRobot());
+
+                //パラメータ等リセット
                 isWarking = false;
                 isOrdered = false;
                 workPower = 0;
@@ -129,6 +137,9 @@ public class Land : MonoBehaviour
                 progressBar.gameObject.SetActive(false);
                 transform.GetComponentInChildren<OrderRelay>().CanselOrder();
                 marge.isWarking = false;
+                InvisibleRobot();
+
+                //完成パーティクル発生
                 particle.Play();
 
                 //お金加算
@@ -142,24 +153,7 @@ public class Land : MonoBehaviour
             }
         }
 
-       //ロボットの表示
-       if(isWarking)
-        {
-            //合体／非合体
-            if(marge.isMarge)
-            {
-                //合体ロボ召喚
-            }
-            else
-            {
-                //非合体ロボ召喚
-            }
-        }
-
         robotCnt = robotList.Count;
-
-        iot = isOrdered;
-        iw = isWarking;
     }
 
     //=========================================================================
@@ -192,16 +186,19 @@ public class Land : MonoBehaviour
 
     //=========================================================================
 
+    //土地の状態設定
     public void SetLandStatus(LandStatus ls)
     {
         landStatus = ls;
     }
 
+    //土地の状態取得
     public LandStatus GetLandStatus()
     {
         return landStatus;
     }
 
+    //依頼情報受け取り
     public void SetOrderInfo(int rew, int roboNum, string name, float hp)
     {
         reward = rew;
@@ -211,6 +208,35 @@ public class Land : MonoBehaviour
         progressBar.SetMaxValue(hp); 
 
         isOrdered = true;
+    }
+
+    //建築中ロボット表示設定
+    public void SetViewRobot(bool isMarge)
+    {
+        //合体／非合体
+        if (isMarge)
+        {
+            //合体ロボ召喚
+            roboAnimator[0].gameObject.SetActive(false);
+            roboAnimator[1].gameObject.SetActive(true);
+
+            roboAnimator[1].SetBool("build", true);
+        }
+        else
+        {
+            //非合体ロボ召喚
+            roboAnimator[0].gameObject.SetActive(true);
+            roboAnimator[1].gameObject.SetActive(false);
+
+            roboAnimator[0].SetBool("build", true);
+        }
+    }
+
+    //建築中ロボット非表示
+    public void InvisibleRobot()
+    {
+        roboAnimator[0].gameObject.SetActive(false);
+        roboAnimator[1].gameObject.SetActive(false);
     }
 
     //=========================================================================

@@ -34,6 +34,7 @@ public class Marge : MonoBehaviour
     {
         isMarge = command;
         myLand.margeRate = Singleton<GameManager>.Instance.GetMargeRate();    //‡‘Ì”{—¦
+        myLand.SetViewRobot(true);
         timeStop = true;
 
         particle.Play();

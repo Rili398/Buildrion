@@ -97,8 +97,9 @@ MonoBehaviour:
   margeRate: 0
   robotCnt: 0
   particle: {fileID: 1932521133069526218}
-  iot: 0
-  iw: 0
+  roboAnimator:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!65 &7519278869266589840
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -463,6 +464,10 @@ PrefabInstance:
     - target: {fileID: 3701227279956823471, guid: 6d631fd2467eff54893121cb630b3a38, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944388618222032331, guid: 6d631fd2467eff54893121cb630b3a38, type: 3}
+      propertyPath: m_FillAmount
+      value: 0.33
       objectReference: {fileID: 0}
     - target: {fileID: 6186011012409483946, guid: 6d631fd2467eff54893121cb630b3a38, type: 3}
       propertyPath: m_Name

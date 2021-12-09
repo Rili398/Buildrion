@@ -97,8 +97,7 @@ MonoBehaviour:
   margeRate: 0
   robotCnt: 0
   particle: {fileID: 4330538009347761114}
-  iot: 0
-  iw: 0
+  roboAnimator: []
 --- !u!65 &5661377201010323328
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -868,7 +867,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 74d21c92a0adb664bbfa374de62ae210, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74d21c92a0adb664bbfa374de62ae210, type: 3}
