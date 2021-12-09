@@ -96,7 +96,7 @@ MonoBehaviour:
   returnInterval: 1
   margeRate: 0
   robotCnt: 0
-  particle: {fileID: 4330538009347761114}
+  particle: {fileID: 0}
   iot: 0
   iw: 0
 --- !u!65 &5661377201010323328
@@ -126,7 +126,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myLand: {fileID: 0}
   isMarge: 0
-  particle: {fileID: 0}
   isWarking: 0
   timeStop: 0
 --- !u!114 &6989762308859446714
@@ -788,11 +787,6 @@ PrefabInstance:
 --- !u!4 &4330538009347761061 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8462308168209921507, guid: 1ef92aa07eb64e141af0525409beec67, type: 3}
-  m_PrefabInstance: {fileID: 5289760412257605190}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &4330538009347761114 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 8462308168209921436, guid: 1ef92aa07eb64e141af0525409beec67, type: 3}
   m_PrefabInstance: {fileID: 5289760412257605190}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5317780037514242986
