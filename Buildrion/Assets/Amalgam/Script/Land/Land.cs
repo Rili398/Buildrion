@@ -98,7 +98,7 @@ public class Land : MonoBehaviour
                 //プログレスバーの進行　ここ時止め
                 if (!marge.timeStop)
                 {
-                    progressBar.AddValue(workPower * margeRate);
+                    progressBar.AddValue(workPower * margeRate * Time.deltaTime);
                 }
 
                 if(progressBar.GetIsMax())
