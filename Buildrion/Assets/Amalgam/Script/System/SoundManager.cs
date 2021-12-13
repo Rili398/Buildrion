@@ -94,18 +94,6 @@ public class SoundManager : Singleton<SoundManager>
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     //名前から番号を検索
     private int GetBgmIndex(string name)
     {
