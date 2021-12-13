@@ -21,7 +21,7 @@ public class SoundManager : Singleton<SoundManager>
     private Dictionary<string, int> SeIndex = new Dictionary<string, int>();
 
     private AudioSource BgmAudioSource;
-    private AudioSource SeAudioSource;
+    private AudioSource[] SeAudioSourceList;
 
     public float MasterVolumeProperty
     {
@@ -29,7 +29,11 @@ public class SoundManager : Singleton<SoundManager>
         {
             MasterVolume = Mathf.Clamp01(value);
             BgmAudioSource.volume = BgmVolume * MasterVolume;
-            SeAudioSource.volume = SeVolume * MasterVolume;
+
+            foreach (var seAs in SeAudioSourceList)
+            {
+                seAs.volume = SeVolume * MasterVolume;
+            }
         }
         get
         {
@@ -55,7 +59,11 @@ public class SoundManager : Singleton<SoundManager>
         set
         {
             SeVolume = Mathf.Clamp01(value);
-            SeAudioSource.volume = SeVolume * MasterVolume;
+
+            foreach (var seAs in SeAudioSourceList)
+            {
+                seAs.volume = SeVolume * MasterVolume;
+            }
         }
         get
         {
@@ -78,7 +86,13 @@ public class SoundManager : Singleton<SoundManager>
         DontDestroyOnLoad(gameObject);
 
         BgmAudioSource = gameObject.AddComponent<AudioSource>();
-        SeAudioSource = gameObject.AddComponent<AudioSource>();
+
+        SeAudioSourceList = new AudioSource[8];
+
+        for (var i = 0; i < SeAudioSourceList.Length; i++)
+        {
+            SeAudioSourceList[i] = gameObject.AddComponent<AudioSource>();
+        }
 
         BgmClips = Resources.LoadAll<AudioClip>("Sound/BGM");
         SeClips = Resources.LoadAll<AudioClip>("Sound/SE");
@@ -92,6 +106,10 @@ public class SoundManager : Singleton<SoundManager>
         {
             SeIndex.Add(SeClips[i].name, i);
         }
+
+        MasterVolumeProperty = MasterVolume;
+        BgmVolumeProperty = BgmVolume;
+        SeVolumeProperty = SeVolume;
     }
 
     //名前から番号を検索
@@ -165,6 +183,19 @@ public class SoundManager : Singleton<SoundManager>
     }
 
     //SE ===============================================================
+    private AudioSource GetUnusedAudioSourse()
+    {
+        foreach(var seAs in SeAudioSourceList)
+        {
+            if(!seAs.isPlaying)
+            {
+                return seAs;
+            }
+        }
+
+        return null;
+    }
+
     public void PlaySe(int index)
     {
         if (SeClips.Length == 0)
@@ -175,7 +206,7 @@ public class SoundManager : Singleton<SoundManager>
 
         index = Mathf.Clamp(index, 0, SeClips.Length);
 
-        SeAudioSource.PlayOneShot(SeClips[index], SeVolume * MasterVolume);
+        GetUnusedAudioSourse().PlayOneShot(SeClips[index], SeVolume * MasterVolume);
     }
 
     public void PlaySeByName(string name)
@@ -183,10 +214,10 @@ public class SoundManager : Singleton<SoundManager>
         PlaySe(GetSeIndex(name));
     }
 
-    public void StopSe()
+    public void StopSe(int num)
     {
-        SeAudioSource.Stop();
-        SeAudioSource.clip = null;
+        SeAudioSourceList[num].Stop();
+        SeAudioSourceList[num].clip = null;
     }
 
     //インスペクタからの変更 ===========================================
@@ -201,9 +232,12 @@ public class SoundManager : Singleton<SoundManager>
             BgmAudioSource.volume = BgmVolume * MasterVolume;
         }
 
-        if (SeAudioSource != null)
+        if (SeAudioSourceList != null)
         {
-            SeAudioSource.volume = SeVolume * MasterVolume;
+            foreach (var seAs in SeAudioSourceList)
+            {
+                seAs.volume = SeVolume * MasterVolume;
+            }
         }
     }
 }
