@@ -51,12 +51,12 @@ public class camera_move : MonoBehaviour
 
     private void MouseWheel(float delta)
     {
-        if (transform.position.y > Limit_Low_y && transform.position.y < Limit_Hi_y)
+        if (transform.position.x >= Limit_Low_x || transform.position.x <= Limit_Hi_x)
         {
             transform.position += transform.forward * delta * wheelSpeed;
         }
         
-        if(transform.position.y < Limit_Low_y || transform.position.y > Limit_Hi_y)
+        if(transform.position.y <= Limit_Low_y || transform.position.y >= Limit_Hi_y)
         {
             transform.position -= transform.forward * delta * wheelSpeed;
 
