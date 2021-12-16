@@ -14,11 +14,12 @@ public class CloseUpgradeBtn : MonoBehaviour
 
     public void OnClick()
     {
-        InfoAnim.GetComponent<Animator>().SetBool("Open", false);
-        UpgradAnim.GetComponent<Animator>().SetBool("Open", false);
-        //closeobject.SetActive(false);
-        //Ongameobject.SetActive(true);
 
-        infoBtn.GetComponent<Button>().interactable = true;
+        closeobject.SetActive(false);
+        Ongameobject.SetActive(true);
+
+        InfoAnim.GetComponent<Animator>().SetBool("Open", !InfoAnim.GetBool("Open"));
+        UpgradAnim.GetComponent<Animator>().SetBool("Open", !InfoAnim.GetBool("Open"));
+        //infoBtn.GetComponent<Button>().interactable = true;
     }
 }
