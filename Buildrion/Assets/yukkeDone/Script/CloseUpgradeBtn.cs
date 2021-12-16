@@ -19,7 +19,7 @@ public class CloseUpgradeBtn : MonoBehaviour
         Ongameobject.SetActive(true);
 
         InfoAnim.GetComponent<Animator>().SetBool("Open", !InfoAnim.GetBool("Open"));
-        UpgradAnim.GetComponent<Animator>().SetBool("Open", !UpgradAnim.GetBool("Open"));
+        UpgradAnim.GetComponent<Animator>().SetBool("Open", !InfoAnim.GetBool("Open"));
         //infoBtn.GetComponent<Button>().interactable = true;
     }
 }
