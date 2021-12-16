@@ -69,6 +69,7 @@ public class FManager : MonoBehaviour
 
         GameObject hikari = (GameObject)Resources.Load("hikari");
         Instantiate(hikari, new Vector3(0.0f + pos_x, 1.0f + pos_y, -3.0f + pos_z), Quaternion.identity);
+        Singleton<SoundManager>.Instance.PlaySeByName("gattai2");
     }
 
 }
