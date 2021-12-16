@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FusionTitle : MonoBehaviour
 {
+    [SerializeField] private float stime;
     [SerializeField] private float gtime;
     [SerializeField] private float pos_x = 0;
     [SerializeField] private float pos_y = 0;
@@ -12,7 +13,7 @@ public class FusionTitle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CreateParts();
+        Invoke(nameof(CreateParts),3.0f);
     }
 
     // Update is called once per frame
