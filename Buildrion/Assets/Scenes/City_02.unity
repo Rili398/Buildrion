@@ -10367,6 +10367,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 74d21c92a0adb664bbfa374de62ae210, type: 3}
   m_PrefabInstance: {fileID: 1890898684}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &531039215 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7129671369097923863, guid: 97ae409ad5f8fe64292a8e4fdd9b79a2, type: 3}
+  m_PrefabInstance: {fileID: 520162672}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &539013822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28383,6 +28394,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -400
       objectReference: {fileID: 0}
+    - target: {fileID: 156062083443315157, guid: f93afc1e96ab5664399e633230a88e44, type: 3}
+      propertyPath: upgradUI
+      value: 
+      objectReference: {fileID: 531039215}
     - target: {fileID: 156062083443315160, guid: f93afc1e96ab5664399e633230a88e44, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
