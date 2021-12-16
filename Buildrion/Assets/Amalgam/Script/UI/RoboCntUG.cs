@@ -93,6 +93,8 @@ public class RoboCntUG : MonoBehaviour
         //roboBase‚ğXV
         roboBase.robotMax = nowRoboCnt;
         roboBase.AddRobotList(addNum);
+
+        Singleton<SoundManager>.Instance.PlaySeByName("upgrade");
     }
 }
 
