@@ -8,6 +8,7 @@ public class fillbottom : MonoBehaviour
     public Image UIimg;
     public GameObject UIbackimg;
     public Button UIbtn;
+    public Button upgradUI;
     
     //private float fillamountMax = 1.0f;
     public float countTime = 5.0f;
@@ -74,7 +75,10 @@ public class fillbottom : MonoBehaviour
         marge.ChangeBuildrion();
         Singleton<GameManager>.Instance.isTimeStop = true;
         margeExistFlg = false;
+
         UIbtn.interactable = false;
+        upgradUI.interactable = false;
+
         Singleton<SoundManager>.Instance.PlaySeByName("gattai_button");
     }
 
@@ -84,6 +88,8 @@ public class fillbottom : MonoBehaviour
         UIbtn.interactable = false;
         UIimg.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
         UIimg.fillAmount = 0.0f;
+
+        upgradUI.interactable = true;
 
         marge.timeStop = false;
         Singleton<GameManager>.Instance.isTimeStop = false;

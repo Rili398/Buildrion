@@ -33,7 +33,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private float margedRate;
     const float DefaultMargeRate = 3.0f;
 
-    private GameState gameState;
+    [SerializeField] private GameState gameState;
     public bool isGameEnd;
 
     private GameTimer gameTimer;
@@ -50,7 +50,6 @@ public class GameManager : Singleton<GameManager>
 
         margedRate = 3.0f;
 
-        gameState = GameState.Game;
         isGameEnd = false;
         isTimeStop = false;
 
@@ -65,7 +64,6 @@ public class GameManager : Singleton<GameManager>
         if(gameState == GameState.Title)
         {
             isGameEnd = false;
-            gameState = GameState.Game;
         }
         else if(gameState == GameState.Game)
         {
@@ -182,6 +180,6 @@ public class GameManager : Singleton<GameManager>
         gameState = GameState.Title;
         margedRate = DefaultMargeRate;
         Singleton<SoundManager>.Instance.PlaySeByName("click2");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("Title");
     }
 }
