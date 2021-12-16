@@ -110,7 +110,7 @@ public class GameManager : Singleton<GameManager>
                     gameState = GameState.Result;
                 }
 
-                collectTimer.ResetTimer();
+                collectTimer.ResetTimer(1.0f);
             }
 
             if(gameTimer.IsTimeUp)

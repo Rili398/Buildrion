@@ -22485,6 +22485,7 @@ Transform:
   - {fileID: 363379892}
   - {fileID: 144571091}
   - {fileID: 1690285278}
+  - {fileID: 1362634979}
   - {fileID: 283731680}
   - {fileID: 751437145}
   - {fileID: 1080584918}
@@ -22495,28 +22496,27 @@ Transform:
   - {fileID: 1958601568}
   - {fileID: 517839135}
   - {fileID: 1266722693}
+  - {fileID: 1449108209}
   - {fileID: 1726596955}
-  - {fileID: 1362634979}
   - {fileID: 129905812}
+  - {fileID: 1524065071}
   - {fileID: 133429763}
+  - {fileID: 518626719}
   - {fileID: 167092899}
   - {fileID: 1250431681}
+  - {fileID: 1827827262}
   - {fileID: 587318061}
+  - {fileID: 500158663}
   - {fileID: 572410043}
   - {fileID: 910779007}
-  - {fileID: 518626719}
+  - {fileID: 330140910}
   - {fileID: 2120299265}
+  - {fileID: 1693882282}
   - {fileID: 374081224}
   - {fileID: 1866070561}
+  - {fileID: 1502341697}
   - {fileID: 37795669}
   - {fileID: 353701621}
-  - {fileID: 1449108209}
-  - {fileID: 1524065071}
-  - {fileID: 1827827262}
-  - {fileID: 330140910}
-  - {fileID: 1693882282}
-  - {fileID: 500158663}
-  - {fileID: 1502341697}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -27142,7 +27142,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1624196131
 PrefabInstance:
@@ -32303,7 +32303,7 @@ PrefabInstance:
       objectReference: {fileID: 1719540604}
     - target: {fileID: 5909866413228652884, guid: 152b7fcfd1effb0438bf3b57917b04e8, type: 3}
       propertyPath: collectValue
-      value: 600
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5909866413228652885, guid: 152b7fcfd1effb0438bf3b57917b04e8, type: 3}
       propertyPath: m_RootOrder
