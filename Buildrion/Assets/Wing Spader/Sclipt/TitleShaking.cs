@@ -17,6 +17,8 @@ public class TitleShaking : MonoBehaviour
 
         shake = subCamera.GetComponent<CameraShake>();
         shake.Shake(duration, magnitude);
+
+        Singleton<SoundManager>.Instance.PlayBgmByName("bgm_game");
     }
 
     // Update is called once per frame
