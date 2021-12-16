@@ -3777,8 +3777,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dea1194e7502e6048a840c01eed18e59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MasterVolume: 0.5
-  BgmVolume: 0.8
+  MasterVolume: 1
+  BgmVolume: 0.15
   SeVolume: 1
   BgmClips: []
   SeClips: []

@@ -56,6 +56,8 @@ public class GameManager : Singleton<GameManager>
 
         gameTimer = new GameTimer(gTimer);
         collectTimer = new GameTimer(cTimer);
+
+        Singleton<SoundManager>.Instance.PlayBgmByName("bgm_game");
     }
 
     private void Update()
@@ -179,6 +181,7 @@ public class GameManager : Singleton<GameManager>
         money = 0;
         gameState = GameState.Title;
         margedRate = DefaultMargeRate;
+        Singleton<SoundManager>.Instance.PlaySeByName("click2");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
