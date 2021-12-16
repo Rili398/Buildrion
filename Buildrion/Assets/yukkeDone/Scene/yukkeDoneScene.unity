@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &434184646 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6884115689862289653, guid: 97ae409ad5f8fe64292a8e4fdd9b79a2, type: 3}
+  m_PrefabInstance: {fileID: 1807060627}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &894686726
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1284709809416910739, guid: 373c23a78596a0e4ab4452cf184f9b7d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1284709809416910742, guid: 373c23a78596a0e4ab4452cf184f9b7d, type: 3}
       propertyPath: m_Enabled
@@ -566,6 +571,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 165781668108408240, guid: 97ae409ad5f8fe64292a8e4fdd9b79a2, type: 3}
+      propertyPath: Ongameobject
+      value: 
+      objectReference: {fileID: 434184646}
+    - target: {fileID: 1778632175374741787, guid: 97ae409ad5f8fe64292a8e4fdd9b79a2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -433
+      objectReference: {fileID: 0}
     - target: {fileID: 2402629220106568662, guid: 97ae409ad5f8fe64292a8e4fdd9b79a2, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -616,7 +629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2915238352323965271, guid: 97ae409ad5f8fe64292a8e4fdd9b79a2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3614515046141397891, guid: 97ae409ad5f8fe64292a8e4fdd9b79a2, type: 3}
       propertyPath: m_FontData.m_Font
@@ -633,6 +646,14 @@ PrefabInstance:
     - target: {fileID: 4127479717240315701, guid: 97ae409ad5f8fe64292a8e4fdd9b79a2, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -673
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350082237683514449, guid: 97ae409ad5f8fe64292a8e4fdd9b79a2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -433
+      objectReference: {fileID: 0}
+    - target: {fileID: 6061127145395037442, guid: 97ae409ad5f8fe64292a8e4fdd9b79a2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -433
       objectReference: {fileID: 0}
     - target: {fileID: 6628430285009701130, guid: 97ae409ad5f8fe64292a8e4fdd9b79a2, type: 3}
       propertyPath: m_SortingOrder
