@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Capsule : MonoBehaviour
+public class titlebuildrion : MonoBehaviour
 {
     private Transform mytransform;
-
     // Start is called before the first frame update
     void Start()
     {
-        //this.gameObject.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -27,9 +26,7 @@ public class Capsule : MonoBehaviour
         GameObject efect = (GameObject)Resources.Load("tuchi2");
         Instantiate(efect, pos, Quaternion.identity);
 
-        GameObject shake = (GameObject)Resources.Load("shake");
+        GameObject shake = (GameObject)Resources.Load("titleshake");
         Instantiate(shake, pos, Quaternion.identity);
-        Destroy(this.gameObject, 5.0f);
     }
-
 }
