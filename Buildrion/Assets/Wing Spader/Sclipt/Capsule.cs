@@ -32,6 +32,7 @@ public class Capsule : MonoBehaviour
 
         GameObject shake = (GameObject)Resources.Load("shake");
         Instantiate(shake, pos, Quaternion.identity);
+        Singleton<SoundManager>.Instance.PlaySeByName("big_robo_tyakuti");
         Destroy(this.gameObject, 5.0f);
     }
 

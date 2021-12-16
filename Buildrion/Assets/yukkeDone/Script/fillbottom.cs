@@ -75,6 +75,7 @@ public class fillbottom : MonoBehaviour
         Singleton<GameManager>.Instance.isTimeStop = true;
         margeExistFlg = false;
         UIbtn.interactable = false;
+        Singleton<SoundManager>.Instance.PlaySeByName("gattai_button");
     }
 
     public void Resetfillamount()
