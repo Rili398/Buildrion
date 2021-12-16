@@ -35207,7 +35207,7 @@ PrefabInstance:
       objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 8579816566148322035, guid: e9d8c2749f812754dae05b6e317c2e20, type: 3}
       propertyPath: maxSlot
-      value: 36
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8878243413101015199, guid: e9d8c2749f812754dae05b6e317c2e20, type: 3}
       propertyPath: m_Color.b
