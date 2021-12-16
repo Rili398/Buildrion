@@ -70,18 +70,6 @@ public class OrderRelay : MonoBehaviour
         return false;
     }
 
-    //public bool GetOrdePossibleRep()
-    //{
-    //    LandStatus ls = myLand.GetLandStatus();
-
-    //    if(ls == LandStatus.IsBuilt)
-    //    {
-    //        return !orderExistFlg;
-    //    }
-
-    //    return false;
-    //}
-
     //=========================================================================
 
     //オーダー決定

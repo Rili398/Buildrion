@@ -87,7 +87,7 @@ public class SoundManager : Singleton<SoundManager>
 
         BgmAudioSource = gameObject.AddComponent<AudioSource>();
 
-        SeAudioSourceList = new AudioSource[8];
+        SeAudioSourceList = new AudioSource[10];
 
         for (var i = 0; i < SeAudioSourceList.Length; i++)
         {
