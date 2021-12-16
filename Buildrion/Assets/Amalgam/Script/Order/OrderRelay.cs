@@ -55,6 +55,7 @@ public class OrderRelay : MonoBehaviour
         //依頼書に依頼情報を設定
         orderForm.GetComponent<OrderForm>().SetOrderForm(orderInfo, this);
         orderForm.GetComponent<Canvas>().enabled = true;
+        Singleton<SoundManager>.Instance.PlaySeByName("click2");
     }
 
     public bool GetOrdePossibleCon()
@@ -95,6 +96,8 @@ public class OrderRelay : MonoBehaviour
         roboBase.OrderCatcher(myLand.transform.position, robotNum);
 
         transform.GetChild(0).gameObject.SetActive(false);
+
+        Singleton<SoundManager>.Instance.PlaySeByName("click2");
     }
 
     //オーダーキャンセル
@@ -102,6 +105,8 @@ public class OrderRelay : MonoBehaviour
     {
         orderExistFlg = false;
         transform.GetChild(0).gameObject.SetActive(false);
+
+        Singleton<SoundManager>.Instance.PlaySeByName("click2");
     }
 
     //=========================================================================
