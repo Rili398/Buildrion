@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FManager : MonoBehaviour
+public class FusionTitle : MonoBehaviour
 {
     [SerializeField] private float gtime;
     [SerializeField] private float pos_x = 0;
@@ -18,7 +18,7 @@ public class FManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void CreateParts()
@@ -46,9 +46,9 @@ public class FManager : MonoBehaviour
 
     private void Birth()
     {
-        GameObject buildrion = (GameObject)Resources.Load("buildrion");
+        GameObject buildrion = (GameObject)Resources.Load("buildrion-title");
         Instantiate(buildrion, new Vector3(0.0f + pos_x, 5.0f + pos_y, 0.0f + pos_z), Quaternion.identity);
-        
+
     }
 
 
@@ -69,7 +69,5 @@ public class FManager : MonoBehaviour
 
         GameObject hikari = (GameObject)Resources.Load("hikari");
         Instantiate(hikari, new Vector3(0.0f + pos_x, 1.0f + pos_y, -3.0f + pos_z), Quaternion.identity);
-        Singleton<SoundManager>.Instance.PlaySeByName("gattai2");
     }
-
 }
