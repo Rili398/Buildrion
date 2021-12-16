@@ -33,7 +33,7 @@ public class tama1 : MonoBehaviour
 
         GameObject efect = (GameObject)Resources.Load("tuchi");
         Instantiate(efect, pos, Quaternion.identity);
-       
+        Singleton<SoundManager>.Instance.PlaySeByName("robo_tyakuti");
     }
 
     void FixedUpdate()
