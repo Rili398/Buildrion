@@ -7,7 +7,7 @@ public class OnUpgradeBtn : MonoBehaviour
 {
     public GameObject infoBtnCvs;
     public GameObject infoBtn;
-    public GameObject upgradeBtn;
+    public GameObject CloseBtn;
 
     public Animator InfoAnimator;
     public Animator UpgradAnimator;
@@ -15,11 +15,11 @@ public class OnUpgradeBtn : MonoBehaviour
 
     public void Onclick()
     {
-        infoBtn.GetComponent<Button>().interactable = false;
+        //infoBtn.GetComponent<Button>().interactable = false;
         //infoBtnCvs.SetActive(false);
-        //upgradeBtn.SetActive(true);
-        InfoAnimator.GetComponent<Animator>().SetBool("Open", true);
-        UpgradAnimator.GetComponent<Animator>().SetBool("Open", true);
+        //CloseBtn.SetActive(true);
+        InfoAnimator.GetComponent<Animator>().SetBool("Open", !InfoAnimator.GetBool("Open"));
+        UpgradAnimator.GetComponent<Animator>().SetBool("Open", !UpgradAnimator.GetBool("Open"));
     }
     
 }
