@@ -31,9 +31,9 @@ public class tama1 : MonoBehaviour
         Vector3 pos = transform.position;
         pos.y -= 1.25f;
 
+        Singleton<SoundManager>.Instance.PlaySeByName("robo_tyakuti");
         GameObject efect = (GameObject)Resources.Load("tuchi");
         Instantiate(efect, pos, Quaternion.identity);
-        Singleton<SoundManager>.Instance.PlaySeByName("robo_tyakuti");
     }
 
     void FixedUpdate()
