@@ -84,8 +84,6 @@ public class OrderRelay : MonoBehaviour
         roboBase.OrderCatcher(myLand.transform.position, robotNum);
 
         transform.GetChild(0).gameObject.SetActive(false);
-
-        Singleton<SoundManager>.Instance.PlaySeByName("click2");
     }
 
     //オーダーキャンセル
@@ -93,8 +91,6 @@ public class OrderRelay : MonoBehaviour
     {
         orderExistFlg = false;
         transform.GetChild(0).gameObject.SetActive(false);
-
-        Singleton<SoundManager>.Instance.PlaySeByName("click2");
     }
 
     //=========================================================================

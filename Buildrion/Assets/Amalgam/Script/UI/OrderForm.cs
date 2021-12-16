@@ -95,6 +95,7 @@ public class OrderForm : MonoBehaviour
         {
             orderRelay.AcceptOrder(orderInfo.lowRobotCount);
         }
+        Singleton<SoundManager>.Instance.PlaySeByName("click2");
         GetComponent<Canvas>().enabled = false;
     }
 
@@ -104,6 +105,7 @@ public class OrderForm : MonoBehaviour
         {
             orderRelay.CanselOrder();
         }
+        Singleton<SoundManager>.Instance.PlaySeByName("click2");
         GetComponent<Canvas>().enabled = false;
     }
 
