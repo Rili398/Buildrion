@@ -28,5 +28,7 @@ public class titlebuildrion : MonoBehaviour
 
         GameObject shake = (GameObject)Resources.Load("titleshake");
         Instantiate(shake, pos, Quaternion.identity);
+
+        Singleton<SoundManager>.Instance.PlaySeByName("big_robo_tyakuti");
     }
 }
